@@ -6,6 +6,6 @@ html {
 }
 
 #main {
-    -webkit-perspective: 0;
-    perspective: 0;
+    -webkit-perspective: 0; /* no units */
+    perspective: none; /* use units */
 }

@@ -18,7 +18,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -webkit-tap-highlight-color: transparent;
     -webkit-perspective: 0;
-    perspective: 0;
+    perspective: none;
     overflow: hidden;
 }
 
@@ -52,7 +52,7 @@ body {
     -webkit-transform-style: flat;
     transform-style: flat;
     -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+    -moz-box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
     pointer-events: auto;
 }
