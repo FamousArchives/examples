@@ -31,8 +31,8 @@ body {
     overflow: visible;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+    -webkit-backface-visibility: visible;
+    backface-visibility: visible;
     pointer-events: none;
 }
 
