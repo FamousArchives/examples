@@ -1,11 +1,4 @@
 html {
     background-color: #000;
-    background-image: url('../content/bg.png');
-    background-size: cover;
     color: #fff;
-}
-
-#main {
-    -webkit-perspective: 0; /* no units */
-    perspective: none; /* use units */
-}
+} 
