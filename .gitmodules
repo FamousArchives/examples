@@ -4,6 +4,6 @@
 [submodule "tools"]
 	path = tools
 	url = git@github.com:Famous/build-tools.git
-[submodule "js/plugin"]
-	path = js/plugin
+[submodule "js/loader"]
+	path = js/loader
 	url = git@github.com:Famous/plugin.git
