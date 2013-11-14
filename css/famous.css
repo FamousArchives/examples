@@ -4,6 +4,8 @@ html {
     margin: 0px;
     padding: 0px;
     overflow: hidden;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
 }
 
 body {
@@ -41,6 +43,8 @@ body {
     height: 0px;
     margin: 0px;
     padding: 0px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
 }
 
 .surface {
@@ -50,7 +54,7 @@ body {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     -webkit-transform-style: flat;
-    transform-style: flat;
+    transform-style: preserve-3d; /* performance */
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
