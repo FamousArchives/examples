@@ -24,7 +24,7 @@ body {
     overflow: hidden;
 }
 
-.container, .container-surface, .group {
+.famous-container, .famous-group {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -38,7 +38,7 @@ body {
     pointer-events: none;
 }
 
-.group {
+.famous-group {
     width: 0px;
     height: 0px;
     margin: 0px;
@@ -47,7 +47,7 @@ body {
     transform-style: preserve-3d;
 }
 
-.surface {
+.famous-surface {
     position: absolute;
     -webkit-transform-origin: center center;
     transform-origin: center center;
