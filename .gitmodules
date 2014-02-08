@@ -1,6 +1,3 @@
 [submodule "js/famous"]
 	path = js/famous
 	url = git@github.com:Famous/famous.git
-[submodule "tools"]
-	path = tools
-	url = git@github.com:Famous/build-tools.git
