@@ -1,3 +1,9 @@
-[submodule "js/famous"]
-	path = js/famous
+[submodule "famous"]
+	path = famous
 	url = git@github.com:Famous/famous.git
+[submodule "famous-transitions"]
+	path = famous-transitions
+	url = git@github.com:Famous/famous-transitions.git
+[submodule "famous-utilities"]
+	path = famous-utilities
+	url = git@github.com:Famous/famous-utilities.git
