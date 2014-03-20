@@ -1,9 +1,3 @@
-[submodule "famous"]
-	path = famous
-	url = git@github.com:Famous/famous.git
-[submodule "famous-transitions"]
-	path = famous-transitions
-	url = git@github.com:Famous/famous-transitions.git
-[submodule "famous-utilities"]
-	path = famous-utilities
-	url = git@github.com:Famous/famous-utilities.git
+[submodule "src/famous"]
+	path = src/famous
+	url = git@github.com:Famous/shipping.git
