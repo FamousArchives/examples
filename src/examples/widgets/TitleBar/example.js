@@ -1,12 +1,15 @@
 define(function(require, exports, module) {
     // import dependencies
-    var Engine = require('famous/core/Engine');
+    var Engine   = require('famous/core/Engine');
+    var TitleBar = require('famous/widgets/TitleBar');
    
-    // create the main context
     var mainContext = Engine.createContext();
-    
-    
-    // your app here
-      
+    var titleBar = new TitleBar({
+        size: [undefined, 50],
+        inTransition: true,
+        outTransition: true
+    });
 
+    mainContext.add(titleBar);
+    titleBar.show('myTitle');
 });

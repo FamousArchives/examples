@@ -1,12 +1,16 @@
 define(function(require, exports, module) {
     // import dependencies
     var Engine = require('famous/core/Engine');
+    var FeedItem = require('famous/widgets/FeedItem');
    
-    // create the main context
     var mainContext = Engine.createContext();
-    
-    
-    // your app here
-      
+    var feedItem = new FeedItem();
 
+    mainContext.add(feedItem);
+    feedItem.setContent({
+    	icon: 'content/famous_symbol.svg',
+    	time: Date.now(),
+    	source: 'Famo.us',
+    	text: 'Hello There!'
+    });
 });

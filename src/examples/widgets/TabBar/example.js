@@ -1,12 +1,16 @@
 define(function(require, exports, module) {
     // import dependencies
     var Engine = require('famous/core/Engine');
+    var TabBar = require('famous/widgets/TabBar');
    
-    // create the main context
     var mainContext = Engine.createContext();
-    
-    
-    // your app here
-      
+    var tab = new TabBar();
 
+    mainContext.add(tab);
+    tab.defineSection('A', { content: 'A-Tab' });
+    tab.defineSection('B', { content: 'B-Tab' });
+    tab.defineSection('C', { content: 'C-Tab' });
+    tab.defineSection('D', { content: 'D-Tab' });
+
+    tab.select('A')
 });

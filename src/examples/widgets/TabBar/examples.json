@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "repository": "",
+  "name": "famous/widgets/TabBar",
+  "repository": "git@github.com:Famous/widgets.git",
   "versions": {
   	"0.1.0": [
   		"example.js"
