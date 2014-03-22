@@ -7,19 +7,19 @@ define(function(require, exports, module) {
     var eventHandlerB = new EventHandler();
     var eventHandlerC = new EventHandler();
       
-	var myMapper = new EventMapper(function(type, data) {
-	    return (data && (data.direction === 'x')) ? eventHandlerB : eventHandlerC;
-	});
+    var myMapper = new EventMapper(function(type, data) {
+        return (data && (data.direction === 'x')) ? eventHandlerB : eventHandlerC;
+    });
 
-	eventHandlerA.pipe(myMapper);
+    eventHandlerA.pipe(myMapper);
 
-	eventHandlerB.on('A', function(data){
-	    alert('B direction : ' + data.direction);
-	});
-	eventHandlerC.on('A', function(data){
-	    alert('C direction : ' + data.direction);
-	});
+    eventHandlerB.on('A', function(data){
+        alert('B direction : ' + data.direction);
+    });
+    eventHandlerC.on('A', function(data){
+        alert('C direction : ' + data.direction);
+    });
 
-	eventHandlerA.trigger('A', {direction : 'x'});  // pipes to eventHandlerB
-	eventHandlerA.trigger('A', {direction : 'y'});  // pipes to eventHandlerC
+    eventHandlerA.trigger('A', {direction : 'x'});  // pipes to eventHandlerB
+    eventHandlerA.trigger('A', {direction : 'y'});  // pipes to eventHandlerC
 });

@@ -3,8 +3,8 @@ define(function(require, exports, module) {
     var EventArbiter = require('famous/events/EventArbiter');
 
     var MODES = {
-    	A: 1,
-    	B: 2
+        A: 1,
+        B: 2
     };
 
     var eventArbiter = new EventArbiter(MODES.A);
