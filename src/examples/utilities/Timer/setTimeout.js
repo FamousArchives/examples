@@ -6,18 +6,16 @@ define(function(require, exports, module) {
    
     var counter = 0;
     var surface = new Surface({
-    	content: 'this function has run ' + counter + ' time(s)',
+    	content: 'this function has not been run',
     	properties: {
     		color: 'white'
     	}
     });
 
     var mainContext = Engine.createContext();
-    mainContext.add(surface)
+    mainContext.add(surface);
 
-    Timer.every(function() {
-    	surface.setContent('this function has run ' + ++counter + ' time(s)')
-    }, 100)
-      
-
+    Timer.setTimeout(function() {
+    	surface.setContent('this function was run after 1000 milliseconds')
+    }, 1000);
 });
