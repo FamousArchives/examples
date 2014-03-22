@@ -1,7 +1,7 @@
 define(function(require, exports, module) {
     // import dependencies
-    var Engine = require('famous/core/Engine');
-    var Surface = require('famous/core/Surface');
+    var Engine   = require('famous/core/Engine');
+    var Surface  = require('famous/core/Surface');
     var Modifier = require('famous/core/Modifier');
    
     var mainContext = Engine.createContext();
