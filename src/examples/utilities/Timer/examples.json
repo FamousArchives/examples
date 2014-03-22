@@ -2,11 +2,11 @@
   "name": "famous/utilities/Timer",
   "repository": "git@github.com:Famous/utilities.git",
   "versions": {
-  	"0.1.0": [
-  		"every.js",
+    "0.1.0": [
+      "every.js",
       "after.js",
       "setTimeout.js",
       "setInterval.js"
-  	]
+    ]
   } 
 }

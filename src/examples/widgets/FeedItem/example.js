@@ -8,9 +8,9 @@ define(function(require, exports, module) {
 
     mainContext.add(feedItem);
     feedItem.setContent({
-    	icon: 'content/famous_symbol.svg',
-    	time: Date.now(),
-    	source: 'Famo.us',
-    	text: 'Hello There!'
+        icon: 'content/famous_symbol.svg',
+        time: Date.now(),
+        source: 'Famo.us',
+        text: 'Hello There!'
     });
 });

@@ -2,9 +2,9 @@
   "name": "famous/events/EventFilter",
   "repository": "git@github.com:Famous/events.git",
   "versions": {
-  	"0.1.0": [
-  		"pipe-filter.js",
-  		"subscribe-filter.js"
-  	]
+    "0.1.0": [
+      "pipe-filter.js",
+      "subscribe-filter.js"
+    ]
   } 
 }

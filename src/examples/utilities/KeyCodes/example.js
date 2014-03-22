@@ -6,18 +6,18 @@ define(function(require, exports, module) {
    
     var mainContext = Engine.createContext();
     var surface = new Surface({
-    	content: 'start pressing some keys',
-    	properties: {
-	    	color: 'white'    		
-    	}
+        content: 'start pressing some keys',
+        properties: {
+            color: 'white'            
+        }
     });
     mainContext.add(surface);
 
     Engine.on('keypress', function(event) {
-    	if (event.charCode >= 48 && event.charCode <= 57) {
-    		surface.setContent('you hit a number');
-    	} else {
-    		surface.setContent('not a number')
-    	}
+        if (event.charCode >= 48 && event.charCode <= 57) {
+            surface.setContent('you hit a number');
+        } else {
+            surface.setContent('not a number')
+        }
     });
 });
