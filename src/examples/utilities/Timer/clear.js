@@ -19,7 +19,7 @@ define(function(require, exports, module) {
         surface.setContent('this function has run ' + ++counter + ' time(s) and will stop after 3')
     };
 
-    Timer.setInterval(fn, 1000);
+    Engine.on('prerender', fn);
 
     Timer.setTimeout(function() {
         Timer.clear(fn);
