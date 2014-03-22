@@ -6,7 +6,7 @@ define(function(require, exports, module) {
     var Modifier 			= require("famous/core/Modifier");
     var Transform 			= require("famous/core/Transform");
     var Timer               = require("famous/utilities/Timer");
-    var Transitionable  	= require("famous/transitions/transitionable");
+    var Transitionable  	= require("famous/transitions/Transitionable");
 
    	
     // create the main context
