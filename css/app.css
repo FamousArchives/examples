@@ -1,4 +1,20 @@
 html {
     background-color: #000;
     color: #fff;
-} 
+}
+
+.famousRedText{
+	color: #fa5c4f;
+}
+
+.famousRedBackground{
+	background-color: #fa5c4f;
+}
+
+.famousBlueText{
+	color: #3cf;
+}
+
+.famousBlueBackground{
+	background-color: #3cf;
+}
