@@ -3,9 +3,9 @@ define(function(require, exports, module) {
     var EventHandler = require('famous/core/EventHandler');
     var EventMapper = require('famous/events/EventMapper');
    
-   var eventHandlerA = new EventHandler();
-   var eventHandlerB = new EventHandler();
-   var eventHandlerC = new EventHandler();
+    var eventHandlerA = new EventHandler();
+    var eventHandlerB = new EventHandler();
+    var eventHandlerC = new EventHandler();
       
 	var myMapper = new EventMapper(function(type, data) {
 	    return (data && (data.direction === 'x')) ? eventHandlerB : eventHandlerC;

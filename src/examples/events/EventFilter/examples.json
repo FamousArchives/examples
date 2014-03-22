@@ -3,7 +3,8 @@
   "repository": "git@github.com:Famous/events.git",
   "versions": {
   	"0.1.0": [
-  		"example.js"
+  		"pipe-filter.js",
+  		"subscribe-filter.js"
   	]
   } 
 }
