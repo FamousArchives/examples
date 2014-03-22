@@ -11,6 +11,14 @@ define(function(require, exports, module) {
    	
     // create the main context
     var mainContext = Engine.createContext();
+    
+    //show a grid for reference
+    var grid = new Surface({
+        size: [481,481],
+        classes: ['graph']
+    });
+    mainContext.add(new Modifier({origin:[.5,.5]})).add(grid);
+
 
     //this is the surface displayed
     var surface = new Surface({
@@ -23,8 +31,7 @@ define(function(require, exports, module) {
 
 
     //set the initial value of the transtionable to the left side of the screen
-    var screenWidth = window.innerWidth;
-    var maxOffset = (screenWidth / 2) * .8;
+    var maxOffset = 240;
 
 
     //create our transitionable
@@ -38,17 +45,19 @@ define(function(require, exports, module) {
     });
 
 
-    //create an animation loop to redraw the surface
-    var interval = Timer.setInterval(function(){
+    Engine.on('prerender', function(){
         modifier.setTransform(Transform.translate(xPos.get(), 0, 0));
-    },0);
-
+    })
 
     //use the transitionable to modify the position of the surface
     //try spring, easeIn, easeOut, easeInOut, linear, easeOutBounce for curve values
-    xPos.set(maxOffset, {curve: "easeInOut", duration: 1000}, function(){
-        Timer.clear(interval);
+
+
+    surface.on("click", function(){
+        xPos.set(maxOffset, {curve: "easeInOut", duration: 1000});
     });
+
+    
 
     mainContext.add(modifier).add(surface);
 });

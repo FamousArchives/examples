@@ -12,6 +12,14 @@ define(function(require, exports, module) {
     // create the main context
     var mainContext = Engine.createContext();
 
+    //create a grid
+    var grid = new Surface({
+        size: [481,481],
+        classes: ['graph']
+    });
+    mainContext.add(new Modifier({origin:[.5,.5]})).add(grid);
+
+
     //this is the surface displayed
     var surface = new Surface({
     	size:[100,100],
@@ -25,12 +33,14 @@ define(function(require, exports, module) {
 
     //create our transitionable
     var tt = new TransitionableTransform();
-    tt.setScale([3,3,1], {duration: 3000});
-
-
+    
     var modifier = new Modifier({
         origin: [.5,.5],
         transform: tt
+    });
+
+    surface.on("click", function(){
+        tt.setScale([3,3,1], {duration: 3000});
     });
 
 

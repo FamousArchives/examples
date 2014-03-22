@@ -12,6 +12,14 @@ define(function(require, exports, module) {
     // create the main context
     var mainContext = Engine.createContext();
 
+    //show a grid for reference
+    var grid = new Surface({
+        size: [481,481],
+        classes: ['graph']
+    });
+    mainContext.add(new Modifier({origin:[.5,.5]})).add(grid);
+
+
     var surface = new Surface({
     	size:[100,100],
     	classes: ['famousRedBackground'],
@@ -21,15 +29,26 @@ define(function(require, exports, module) {
     });
 
     var modifier = new Modifier({
-    	origin: [.5,.5]
+    	origin: [.5,.5],
+        transform: Transform.translate(0,-240,0)
     });
 
     // debugger
 	Transitionable.registerMethod('wall', WallTransition);
 
-	var transition = {method: 'wall', dampingRatio : 0, period : 500};
+	var transition = {
+        method: 'wall', 
+        period: 1000,
+        dampingRatio : 0, 
+        velocity: 0,
+        restitution : .5 //how bouncy the wall is
+    };
 	
-    modifier.setTransform(Transform.translate(0,100,0),transition);
+
+    surface.on("click", function(){
+        modifier.setTransform(Transform.translate(0,0,0),transition);
+    });
+    
 
     mainContext.add(modifier).add(surface);
 });

@@ -12,6 +12,14 @@ define(function(require, exports, module) {
     // create the main context
     var mainContext = Engine.createContext();
 
+    var grid = new Surface({
+        size: [481,481],
+        classes: ['graph']
+    });
+    mainContext.add(new Modifier({origin:[.5,.5]})).add(grid);
+
+
+
     var surface = new Surface({
     	size:[100,100],
     	classes: ['famousRedBackground'],
@@ -21,16 +29,23 @@ define(function(require, exports, module) {
     });
 
     var modifier = new Modifier({
-    	origin: [.5,.5]
+    	origin: [.5,.5],
+        transform: Transform.translate(0,-240,0)
     });
 
 	Transitionable.registerMethod('spring', SpringTransition);
-	var transition = {method: "spring"}
+	var transition = {
+        method: "spring",
+        period: 1000,
+        dampingRatio: .1,
+        velocity: 0
 
+    }
 
+    surface.on("click", function(){
+        modifier.setTransform(Transform.translate(0,0,0),transition);
+    });
 	
-    modifier.setTransform(Transform.translate(0,100,0),transition);
-
     mainContext.add(modifier).add(surface);
 });
 
