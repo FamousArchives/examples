@@ -37,7 +37,7 @@ define(function(require, exports, module) {
     var transition = {
         method: "stiff-spring",
         period: 1000,
-        dampingRatio: .1,
+        dampingRatio: .3,
         velocity: 0
 
     }
