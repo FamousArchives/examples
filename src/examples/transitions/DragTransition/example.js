@@ -34,10 +34,10 @@ define(function(require, exports, module) {
     });
 
     // debugger
-    Transitionable.registerMethod('wall', DragTransition);
+    Transitionable.registerMethod('drag', DragTransition);
 
     var transition = {
-        method: 'wall', 
+        method: 'drag', 
         strength: .0001,
         velocity: 0
     };
