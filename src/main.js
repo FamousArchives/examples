@@ -1,4 +1,4 @@
 define(function(require, exports, module) {
 	// import your example
-	require('examples/utilities/Timer/clear');
+	require('examples/views/Deck/example');
 });

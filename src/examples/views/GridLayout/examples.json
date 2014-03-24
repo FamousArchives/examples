@@ -2,11 +2,9 @@
   "name": "",
   "repository": "",
   "versions": {
-      "0.0.2": [
-          "example.js"
-      ],
-      "0.0.1": [
-          "example.js"
+      "0.1.0": [
+          "example.js",
+          "with-sized-modifier.js"
       ]
   } 
 }

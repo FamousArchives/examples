@@ -1,6 +1,7 @@
 define(function(require, exports, module) {
 	var Engine             = require("famous/core/Engine");
 	var Surface            = require("famous/core/Surface");
+	var Modifier           = require("famous/core/Modifier");
 	var HeaderFooterLayout = require("famous/views/HeaderFooterLayout");
 
 	var mainCtx = Engine.createContext();
@@ -37,5 +38,5 @@ define(function(require, exports, module) {
 	    }
 	}));
 
-	mainCtx.add(layout);
+	mainCtx.add(new Modifier({size: [200, 200], origin: [.5, .5]})).add(layout);
 });
