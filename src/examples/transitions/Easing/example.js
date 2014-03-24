@@ -56,7 +56,7 @@ define(function(require, exports, module) {
         var surface = new Surface({
             size:[200,40],
             content: "<h3>" + curve + "</h3>",
-            properties: {color:"#404040"}
+            properties: {color:"#3cf"}
         });
 
         curves.push(surface);
