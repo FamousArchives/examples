@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "repository": "",
+  "name": "famous/views/Deck",
+  "repository": "git@github.com:Famous/views.git",
   "versions": {
       "0.1.0": [
           "example.js"
