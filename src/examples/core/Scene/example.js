@@ -1,3 +1,17 @@
+/**
+ * Scene
+ * --------
+ *
+ * Scene is a way to define a layout before hand and 
+ * then add components to that layout by way of accessing
+ * the unique id's.  You can also change the JSON defining
+ * the layout by way of the Scene's load function.  It is a
+ * great tool for having flexible layouts as you can load
+ * different scene configurations depending on the window size.
+ *
+ * In the example you can see a Scene is made and then surfaces
+ * are added to the exposed RenderNodes.
+ */
 define(function(require, exports, module) {
 	var Engine     = require("famous/core/Engine");
 	var Surface    = require("famous/core/Surface");
@@ -35,7 +49,7 @@ define(function(require, exports, module) {
 	    }
 	});
 
-	var surface2 = new Surface({
+	var surfaceTwo = new Surface({
 	    size: [200, 200],
 	    content: "Secondary",
 	    classes: ["grey-bg"],
@@ -46,8 +60,7 @@ define(function(require, exports, module) {
 	});
 
 	myScene.id["foo"].add(surface);
-
-	myScene.id["bar"].add(surface2);
+	myScene.id["bar"].add(surfaceTwo);
 
 	mainContext.add(myScene);
 });

@@ -1,10 +1,29 @@
+/**
+ * Transform
+ * ---------
+ *
+ * Transform is a class that helps create the proper matricies that 
+ * describe physical transformations such as:
+ *
+ * - Translation
+ * - Rotation
+ * - Scale
+ * - Skew
+ *
+ * Transform is generally used with Modifiers so that child elements
+ * can be affected by the physical transformations that are applied
+ * to them.
+ *
+ * In this example we see a surface that is rotated PI/4 clockwise and the
+ * is translated 
+ */
 define(function(require, exports, module) {
 	var Engine    = require("famous/core/Engine");
 	var Surface   = require("famous/core/Surface");
 	var Modifier  = require("famous/core/Modifier");
 	var Transform = require("famous/core/Transform");
 
-	var mainCtx = Engine.createContext();
+	var mainContext = Engine.createContext();
 
 	var transform = new Modifier({
 	    transform: Transform.thenMove(Transform.rotateZ(Math.PI * 0.25),[200, 100, 0]),
@@ -21,5 +40,5 @@ define(function(require, exports, module) {
 	    }
 	});
 
-	mainCtx.add(transform).add(surface);
+	mainCtx.add(mainContext).add(surface);
 });

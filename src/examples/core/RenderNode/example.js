@@ -1,3 +1,16 @@
+/**
+ * RenderNode
+ * ----------
+ *
+ * RenderNode is essentially a blank node in the render
+ * tree.  It gives the user a way to group renderables and
+ * modifiers together so that they can be treated as a single
+ * component.
+ *
+ * In this example you can see how render nodes are used and 
+ * that once you add components to a render node, you can
+ * continue to work with just the render node.
+ */
 define(function(require, exports, module) {
 	var Engine     = require("famous/core/Engine");
 	var RenderNode = require("famous/core/RenderNode");
@@ -5,10 +18,10 @@ define(function(require, exports, module) {
 	var Modifier   = require("famous/core/Modifier");
 	var Transform  = require("famous/core/Transform");
 
-	var mainCtx = Engine.createContext();
+	var mainContext = Engine.createContext();
 
 	var node = new RenderNode();
-	var node2 = new RenderNode();
+	var nodeTwo = new RenderNode();
 
 	var surface = new Surface({
 	    size: [200, 200],
@@ -20,7 +33,7 @@ define(function(require, exports, module) {
 	    }
 	});
 
-	var surface2 = new Surface({
+	var surfaceTwo = new Surface({
 	    size: [200, 200],
 	    content: "Secondary",
 	    classes: ["grey-bg"],
@@ -36,8 +49,8 @@ define(function(require, exports, module) {
 	});
 
 	node.add(surface);
-	node2.add(modifier).add(surface2);
+	nodeTwo.add(modifier).add(surfaceTwo);
 
-	mainCtx.add(node);
-	mainCtx.add(node2);
+	mainContext.add(node);
+	mainContext.add(nodeTwo);
 });

@@ -1,31 +1,32 @@
+/**
+ * Modifier branching
+ * ------------------
+ *
+ * When you create a new branch with a modifier, only the modifiers
+ * and renderables below it in the render tree will be affected by it.
+ *
+ * In this example, we can see that both surfaces are affected by 
+ * modifierOne but only the smaller grey surface is affected by 
+ * the translation.
+ */
 define(function(require, exports, module) {
 	var Engine    = require("famous/core/Engine");
 	var Surface   = require("famous/core/Surface");
 	var Modifier  = require("famous/core/Modifier");
 	var Transform = require("famous/core/Transform");
 
-	var mainCtx = Engine.createContext();
+	var mainContext = Engine.createContext();
 
-	var transformOne = new Modifier({
+	var modifierOne = new Modifier({
 		transform: Transform.rotateZ(.7),
 		origin: [.5, .5]
 	});
 
-	var transformTwo = new Modifier({
-	    transform: Transform.identity
+	var modifierTwo = new Modifier({
+	    transform: Transform.translate(200, 0, 0)
 	});
 
-	var surface = new Surface({
-	    size: [50, 50],
-	    content: "Small",
-	    classes: ["grey-bg"],
-	    properties: {
-	        textAlign: 'center',
-	        lineHeight: '50px'
-	    }
-	});
-
-	var surfaceTwo = new Surface({
+	var surfaceOne = new Surface({
 	    size: [200, 200],
 	    content: "Hello World",
 	    classes: ["red-bg"],
@@ -35,7 +36,17 @@ define(function(require, exports, module) {
 	    }
 	});
 
-	var temp = mainCtx.add(transformOne)
-	temp.add(surface)
-	temp.add(transformTwo).add(surfaceTwo);	
+	var surfaceTwo = new Surface({
+	    size: [50, 50],
+	    content: "Small",
+	    classes: ["grey-bg"],
+	    properties: {
+	        textAlign: 'center',
+	        lineHeight: '50px'
+	    }
+	});
+
+	var node = mainContext.add(modifierOne)
+	node.add(surfaceOne);
+	node.add(modifierTwo).add(surfaceTwo);	
 });
