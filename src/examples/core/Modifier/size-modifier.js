@@ -6,19 +6,19 @@ define(function(require, exports, module) {
 
 	var mainCtx = Engine.createContext();
 
-	var transform = new Modifier({
-	    transform: Transform.translate(200, 100, 0)
+	var sizeMod = new Modifier({
+	    size: [50, 50]
 	});
 
 	var surface = new Surface({
-	    size: [200, 200],
+	    size: [undefined, undefined],
 	    content: "Hello World",
-	    classes: ["famousTestSurface"],
+	    classes: ["red-bg"],
 	    properties: {
 	        color: "white",
-	        backgroundColor: "#3cf"
+	        backgroundColor: "black"
 	    }
 	});
 
-	mainCtx.add(transform).add(surface);
+	mainCtx.add(sizeMod).add(surface);
 });

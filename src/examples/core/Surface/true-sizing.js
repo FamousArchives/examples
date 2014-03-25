@@ -5,13 +5,9 @@ define(function(require, exports, module) {
 	var mainCtx = Engine.createContext();
 
 	var surface = new Surface({
-	    size: [200, 200],
+	    size: [true, true],
 	    content: "Hello World",
-	    classes: ["red-bg"],
-	    properties: {
-	        lineHeight: "200px",
-	        textAlign: "center"
-	    }
+	    classes: ["red-bg"]
 	});
 
 

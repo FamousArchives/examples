@@ -2,23 +2,23 @@ define(function(require, exports, module) {
 	var Engine    = require("famous/core/Engine");
 	var Surface   = require("famous/core/Surface");
 	var Modifier  = require("famous/core/Modifier");
-	var Transform = require("famous/core/Transform");
 
 	var mainCtx = Engine.createContext();
 
-	var transform = new Modifier({
-	    transform: Transform.translate(200, 100, 0)
+	var originMod = new Modifier({
+		origin: [.5, .5]
 	});
 
 	var surface = new Surface({
 	    size: [200, 200],
 	    content: "Hello World",
-	    classes: ["famousTestSurface"],
+	    classes: ["red-bg"],
 	    properties: {
-	        color: "white",
-	        backgroundColor: "#3cf"
+	        textAlign: 'center',
+	        lineHeight: '200px'
 	    }
 	});
 
-	mainCtx.add(transform).add(surface);
+
+	mainCtx.add(originMod).add(surface);
 });

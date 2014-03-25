@@ -2,6 +2,7 @@ define(function(require, exports, module) {
 	var Engine             = require("famous/core/Engine");
 	var Surface            = require("famous/core/Surface");
 	var Modifier           = require("famous/core/Modifier");
+	var Transform           = require("famous/core/Transform");
 	var HeaderFooterLayout = require("famous/views/HeaderFooterLayout");
 
 	var mainCtx = Engine.createContext();
@@ -38,5 +39,5 @@ define(function(require, exports, module) {
 	    }
 	}));
 
-	mainCtx.add(new Modifier({size: [200, 200], origin: [.5, .5]})).add(layout);
+	mainCtx.add(new Modifier({transform: Transform.rotateZ(.7),size: [300, 300], origin: [.5, .5]})).add(layout);
 });

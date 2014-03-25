@@ -1,6 +1,4 @@
 define(function(require, exports, module) {                                     
-    // TODO: Could make this a more engaging example 
-
     // import dependencies
     var Engine = require('famous/core/Engine');
     var Matrix = require('famous/math/Matrix');
@@ -8,7 +6,6 @@ define(function(require, exports, module) {
     var Surface = require('famous/core/Surface');
 
     var mainContext = Engine.createContext();
-
 
     // rotate 45 degrees about z axis
     var matrix = new Matrix([
@@ -25,5 +22,4 @@ define(function(require, exports, module) {
     surface.setProperties( { backgroundColor: "#3cf" } );
     surface.setSize([150, 50]);
     mainContext.add(surface); 
-
 });

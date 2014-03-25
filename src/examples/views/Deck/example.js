@@ -38,7 +38,7 @@ define(function(require, exports, module) {
         myLayout.sequenceFrom(surfaces);
 
         surfaces[0].on('click', function(layout) {
-            //layout.toggle();
+            layout.toggle();
         }.bind(this, myLayout));
         systems[j] = myLayout;
     } 
@@ -67,7 +67,6 @@ define(function(require, exports, module) {
     };
 
     Engine.on('click', function(e) {
-    	console.log('jsjsjs')
         toggle();
     });
 });
