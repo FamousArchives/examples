@@ -37,5 +37,5 @@ define(function(require, exports, module) {
 
 	var temp = mainCtx.add(transformOne)
 	temp.add(surface)
-	temp.add(transformTwo).add(surfaceTwo);
+	temp.add(transformTwo).add(surfaceTwo);	
 });

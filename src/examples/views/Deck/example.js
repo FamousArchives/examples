@@ -64,7 +64,7 @@ define(function(require, exports, module) {
         if(open) topLayout.setOptions({dimensions: [1, 1]});
         else topLayout.setOptions({dimensions: [0, 0]});
         open = !open;
-    };
+    }
 
     Engine.on('click', function(e) {
         toggle();

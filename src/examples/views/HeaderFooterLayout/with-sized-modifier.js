@@ -2,7 +2,7 @@ define(function(require, exports, module) {
 	var Engine             = require("famous/core/Engine");
 	var Surface            = require("famous/core/Surface");
 	var Modifier           = require("famous/core/Modifier");
-	var Transform           = require("famous/core/Transform");
+	var Transform          = require("famous/core/Transform");
 	var HeaderFooterLayout = require("famous/views/HeaderFooterLayout");
 
 	var mainCtx = Engine.createContext();
