@@ -15,7 +15,7 @@
  * to them.
  *
  * In this example we see a surface that is rotated PI/4 clockwise and the
- * is translated 
+ * is translated 200px right and 100px down.
  */
 define(function(require, exports, module) {
 	var Engine    = require("famous/core/Engine");
@@ -26,8 +26,7 @@ define(function(require, exports, module) {
 	var mainContext = Engine.createContext();
 
 	var transform = new Modifier({
-	    transform: Transform.thenMove(Transform.rotateZ(Math.PI * 0.25),[200, 100, 0]),
-	    opacity: [0.6]
+	    transform: Transform.thenMove(Transform.rotateZ(Math.PI/4),[200, 100, 0])
 	});
 
 	var surface = new Surface({
@@ -40,5 +39,5 @@ define(function(require, exports, module) {
 	    }
 	});
 
-	mainCtx.add(mainContext).add(surface);
+	mainContext.add(transform).add(surface);
 });

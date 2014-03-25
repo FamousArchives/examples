@@ -1,3 +1,20 @@
+/**
+ * View
+ * -------
+ *
+ * View is one of the core components of Famo.us.  A view is 
+ * a way to encapsulate modifiers, surfaces, and other views 
+ * into a single view so it can be treated as a simgle component.
+ *
+ * Views also have dual EventHandlers for controlling the input
+ * and output of events and an OptionsManager for dealing with 
+ * recursive options passing.
+ *
+ * In this example, you can see that once the surfaces are added 
+ * and have their output piped to the view, you no longer have
+ * to deal with the surfaces themselves and just deal with the
+ * view itself.
+ */
 define(function(require, exports, module) {
 	var Engine    = require("famous/core/Engine");
 	var View      = require("famous/core/View");
@@ -5,7 +22,7 @@ define(function(require, exports, module) {
 	var Modifier  = require("famous/core/Modifier");
 	var Transform = require("famous/core/Transform");
 
-	var mainCtx = Engine.createContext();
+	var mainContext = Engine.createContext();
 
 	var view = new View();
 
@@ -24,14 +41,14 @@ define(function(require, exports, module) {
 	    alert("Primary Surface Clicked");
 	});
 
-	var view2 = new View();
+	var viewTwo = new View();
 
 	var mod = new Modifier({
 	    transform: Transform.thenMove(Transform.rotateZ(Math.PI * 0.25),[200, 100, 0]),
 	    opacity: [0.6]
 	});
 
-	var surface2 = new Surface({
+	var surfaceTwo = new Surface({
 	    size: [200, 200],
 	    content: "Secondary",
 	    classes: ["grey-bg"],
@@ -40,15 +57,15 @@ define(function(require, exports, module) {
 	        textAlign: "center"
 	    }
 	});
-	surface2.pipe(view2);
+	surfaceTwo.pipe(viewTwo);
 
-	view2._eventInput.on("click", function() {
+	viewTwo._eventInput.on("click", function() {
 	    alert("Secondary Surface Clicked");
 	});
 
 	view._add(surface);
-	view2._add(mod).add(surface2);
+	viewTwo._add(mod).add(surfaceTwo);
 
-	mainCtx.add(view);
-	mainCtx.add(view2);
+	mainContext.add(view);
+	mainContext.add(viewTwo);
 });

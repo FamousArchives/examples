@@ -20,7 +20,7 @@ define(function(require, exports, module) {
 	var Surface  = require("famous/core/Surface");
 	var Modifier = require("famous/core/Modifier");
 
-	var mainCtx = Engine.createContext();
+	var mainContext = Engine.createContext();
 
 	var origins = {
 		'tl': [0, 0],
@@ -49,6 +49,6 @@ define(function(require, exports, module) {
 			}
 		});
 
-		mainCtx.add(modifier).add(surface);
+		mainContext.add(modifier).add(surface);
 	}
 });
