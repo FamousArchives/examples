@@ -1,12 +1,14 @@
 define(function(require, exports, module) {
-    // import dependencies
-    var Engine = require('famous/core/Engine');
-   
-    // create the main context
-    var mainContext = Engine.createContext();
-    
-    
-    // your app here
-      
+	var Engine       = require("famous/core/Engine");
+	var ImageSurface = require("famous/surfaces/ImageSurface");
 
+	var mainCtx = Engine.createContext();
+
+	var image = new ImageSurface({
+		size: [200, 200]
+	});
+
+	image.setContent("content/famous_symbol.svg");
+
+	mainCtx.add(image);
 });
