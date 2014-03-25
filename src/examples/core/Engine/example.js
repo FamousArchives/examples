@@ -1,3 +1,15 @@
+/**
+ * Engine
+ * ------
+ *
+ * Engine is the core component of Famo.us.  It is responsible
+ * for managing the requestAnimationFrame loop, creating contexts,
+ * listening to global events, and more.
+ *
+ * In this example we can see it being used to create a context,
+ * listening to window events, and managing functions to be run on
+ * various engine ticks.
+ */
 define(function(require, exports, module) {
 	var Engine  = require("famous/core/Engine");
 	var Surface = require("famous/core/Surface");
@@ -6,11 +18,10 @@ define(function(require, exports, module) {
 
 	var surface = new Surface({
 	    size: [undefined, undefined],
+	    classes: ['red-bg'],
 	    properties: {
-	        backgroundColor: "#3cf",
 	        color: "white",
-	        fontSize: "50px",
-	        paddingTop: "50px",
+	        paddingTop: "100px",
 	        textAlign: "center"
 	    }
 	});
@@ -21,15 +32,11 @@ define(function(require, exports, module) {
 	    surface.setContent("Click");
 	});
 
-	Engine.on("mousemove", function() {
-	    surface.setContent("The mouse is moving");
-	});
-
 	Engine.on("resize", function() {
 	    surface.setContent("The window is being resized");
 	});
 
 	Engine.nextTick(function() {
-	    surface.setContent("This message was scheduled for the next animation tick");   
+	    surface.setContent("This message was run on the next animation tick");   
 	});
 });

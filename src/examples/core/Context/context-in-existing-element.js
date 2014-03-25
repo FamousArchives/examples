@@ -1,19 +1,31 @@
+/**
+ * Context inside of an existing element
+ * -------------------------------------
+ *
+ * Instead of creating a new div for the context, you can also
+ * using an existing HTML element for your context by passing
+ * a reference to it when you create the context. 
+ */
 define(function(require, exports, module) {
-	var Engine = require("famous/core/Engine");
+	var Engine  = require("famous/core/Engine");
 	var Surface = require("famous/core/Surface");
 
 	var el = document.createElement('div');
 	el.id = 'testId';
-	el.className = 'testClass'
+	el.className = 'testClass';
 	document.body.appendChild(el);
 
-	var mainCtx = Engine.createContext(el);
+	var mainContext = Engine.createContext(el);
 
-	mainCtx.add(new Surface({
-	    size: [undefined, undefined],
-	    content: "I am a surface",
+	var surface = new Surface({
+	    size: [200, 200],
+	    content: "Hello World",
+	    classes: ["red-bg"],
 	    properties: {
-	        backgroundColor: "#3cf"
+	        lineHeight: "200px",
+	        textAlign: "center"
 	    }
-	}));
+	});
+
+	mainContext.add(surface);
 });

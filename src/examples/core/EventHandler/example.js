@@ -1,7 +1,7 @@
 define(function(require, exports, module) {
-    var Engine = require('famous/core/Engine');
+    var Engine       = require('famous/core/Engine');
 	var EventHandler = require('famous/core/EventHandler');
-	var Surface = require('famous/core/Surface');
+	var Surface      = require('famous/core/Surface');
 
     var mainContext = Engine.createContext();
     

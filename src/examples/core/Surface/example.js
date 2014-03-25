@@ -2,7 +2,7 @@ define(function(require, exports, module) {
 	var Engine  = require("famous/core/Engine");
 	var Surface = require("famous/core/Surface");
 
-	var mainCtx = Engine.createContext();
+	var mainContext = Engine.createContext();
 
 	var surface = new Surface({
 	    size: [200, 200],
@@ -14,6 +14,5 @@ define(function(require, exports, module) {
 	    }
 	});
 
-
-	mainCtx.add(surface);
+	mainContext.add(surface);
 });

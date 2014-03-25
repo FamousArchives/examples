@@ -32,7 +32,7 @@ define(function(require, exports, module) {
      });
     surface.pipe(draggable);
 
-    var node = mainContext.add(new Modifier({origin:[0.5,0.5]}))
+    var node = mainContext.add(new Modifier({origin:[0.5,0.5]}));
     node.add(grid);
     node.add(draggable).add(surface);
 });
