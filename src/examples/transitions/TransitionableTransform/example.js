@@ -1,14 +1,9 @@
 define(function(require, exports, module) {
-    "use strict";
-    // import dependencies
-    var Engine 				= require("famous/core/Engine");
-    var Surface 			= require("famous/core/Surface");
-    var Modifier 			= require("famous/core/Modifier");
-
+    var Engine 	 = require("famous/core/Engine");
+    var Surface  = require("famous/core/Surface");
+    var Modifier = require("famous/core/Modifier");
     var TransitionableTransform = require("famous/transitions/TransitionableTransform");
 
-
-   	
     // create the main context
     var mainContext = Engine.createContext();
 
@@ -19,7 +14,6 @@ define(function(require, exports, module) {
     });
     mainContext.add(new Modifier({origin:[.5,.5]})).add(grid);
 
-
     //this is the surface displayed
     var surface = new Surface({
     	size:[100,100],
@@ -28,8 +22,6 @@ define(function(require, exports, module) {
     		borderRadius: "50px"
     	}
     });
-
-
 
     //create our transitionable
     var tt = new TransitionableTransform();
@@ -42,7 +34,6 @@ define(function(require, exports, module) {
     surface.on("click", function(){
         tt.setScale([3,3,1], {duration: 3000});
     });
-
 
     mainContext.add(modifier).add(surface);
 });

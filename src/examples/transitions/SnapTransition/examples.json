@@ -1,5 +1,5 @@
 {
-  "name": "famous/transitions/Transitionable",
+  "name": "famous/transitions/SnapTransition",
   "repository": "git@github.com:Famous/transitions.git",
   "versions": {
       "0.1.0": [

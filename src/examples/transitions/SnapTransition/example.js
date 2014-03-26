@@ -5,10 +5,9 @@ define(function(require, exports, module) {
     var Modifier            = require("famous/core/Modifier");
     var Transform           = require("famous/core/Transform");
 
-    var Transitionable      = require("famous/transitions/Transitionable");
-    var StiffSpringTransition    = require("famous/transitions/StiffSpringTransition");
-
-    
+    var Transitionable        = require("famous/transitions/Transitionable");
+    var SnapTransition = require("famous/transitions/SnapTransition");
+ 
     // create the main context
     var mainContext = Engine.createContext();
 
@@ -33,9 +32,9 @@ define(function(require, exports, module) {
         transform: Transform.translate(0,-240,0)
     });
 
-    Transitionable.registerMethod('stiff-spring', StiffSpringTransition);
+    Transitionable.registerMethod('snap', SnapTransition);
     var transition = {
-        method: "stiff-spring",
+        method: "snap",
         period: 1000,
         dampingRatio: .3,
         velocity: 0
@@ -45,9 +44,6 @@ define(function(require, exports, module) {
     surface.on("click", function(){
         modifier.setTransform(Transform.translate(0,0,0),transition);
     });
-    
-    
 
     mainContext.add(modifier).add(surface);
 });
-
