@@ -1,10 +1,21 @@
+/**
+ * ModifierChain
+ * -------------
+ * 
+ * ModifierChain is a class to add and remove a chain of modifiers
+ * at a single point in the render tree.  Because it add exists 
+ * in a single element, it has slight performance benefits over 
+ * chaining individual modifiers.
+ *
+ * In the example, you can see that on the click event we are able
+ * to remove a modifier after it has been added to the render tree.
+ */
 define(function(require, exports, module) {
-    var Engine = require('famous/core/Engine');
-    var Modifier = require('famous/core/Modifier');
-    var Surface = require('famous/core/Surface');
-    var Transform = require('famous/core/Transform');
+    var Engine        = require('famous/core/Engine');
+    var Modifier      = require('famous/core/Modifier');
+    var Surface       = require('famous/core/Surface');
+    var Transform     = require('famous/core/Transform');
     var ModifierChain = require('famous/modifiers/ModifierChain');
-    var Timer = require('famous/utilities/Timer');
    
     var mainContext = Engine.createContext();
 
@@ -35,5 +46,6 @@ define(function(require, exports, module) {
 
 	surface.on('click', function() {
 		modifierChain.removeModifier(modifierOne);
+        surface.setContent('Wunderbar');
 	});
 });

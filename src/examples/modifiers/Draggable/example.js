@@ -1,7 +1,18 @@
+/**
+ * Draggable
+ * -----------
+ *
+ * Draggable is a modifier that allows a renderable to be
+ * responsive to drag behavior.
+ *
+ * In this example we can see that the red surface is draggable
+ * because it sits behind a draggable modifier.  It has boundaries
+ * and snaps because of the options set on the draggable modifier.
+ */
 define(function(require, exports, module) {                                                                                                                                                                 
-    var Engine = require('famous/core/Engine');
-    var Surface = require('famous/core/Surface');
-    var Modifier = require('famous/core/Modifier');
+    var Engine    = require('famous/core/Engine');
+    var Surface   = require('famous/core/Surface');
+    var Modifier  = require('famous/core/Modifier');
     var Transform = require('famous/core/Transform');
     var Draggable = require('famous/modifiers/Draggable');
 
@@ -27,7 +38,8 @@ define(function(require, exports, module) {
         classes: ['red-bg'],
         properties: {
             lineHeight: '40px',
-            textAlign: 'center'
+            textAlign: 'center',
+            cursor: 'pointer'
         }
      });
     surface.pipe(draggable);
