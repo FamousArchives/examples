@@ -1,3 +1,16 @@
+/**
+ * HeaderFooterLayout with sized modifier
+ * ---------------------------------------
+ *
+ * HeaderFooterLayout will respect the size of any parent
+ * sizing.  When is sits below a modifier with a set size,
+ * it will fit the size of the modifier instead of the
+ * context's size.
+ *
+ * In this example, we have a HeaderFooterLayout sit below a 
+ * sized modifier in the render tree with a rotation applied
+ * as well.
+ */
 define(function(require, exports, module) {
 	var Engine             = require("famous/core/Engine");
 	var Surface            = require("famous/core/Surface");
@@ -5,7 +18,7 @@ define(function(require, exports, module) {
 	var Transform          = require("famous/core/Transform");
 	var HeaderFooterLayout = require("famous/views/HeaderFooterLayout");
 
-	var mainCtx = Engine.createContext();
+	var mainContext = Engine.createContext();
 
 	var layout = new HeaderFooterLayout({
 	    headerSize: 100,
@@ -13,31 +26,34 @@ define(function(require, exports, module) {
 	});
 
 	layout.header.add(new Surface({
-	    size: [undefined, undefined],
+	    size: [undefined, 100],
 	    content: "Header",
+	    classes: ["red-bg"],
 	    properties: {
-	        backgroundColor: "#3cf",
-	        color: "white"
+	        lineHeight: "100px",
+	        textAlign: "center"
 	    }
 	}));
 
 	layout.content.add(new Surface({
 	    size: [undefined, undefined],
 	    content: "Content",
+	    classes: ["grey-bg"],
 	    properties: {
-	        backgroundColor: "white",
-	        color: "#3cf"
+	        lineHeight: '150px',
+	        textAlign: "center"
 	    }
 	}));
 
 	layout.footer.add(new Surface({
-	    size: [undefined, undefined],
+	    size: [undefined, 50],
 	    content: "Footer",
+	    classes: ["red-bg"],
 	    properties: {
-	        backgroundColor: "#3cf",
-	        color: "white"
+	        lineHeight: "50px",
+	        textAlign: "center"
 	    }
 	}));
 
-	mainCtx.add(new Modifier({transform: Transform.rotateZ(.7),size: [300, 300], origin: [.5, .5]})).add(layout);
+	mainContext.add(new Modifier({transform: Transform.rotateZ(.7),size: [300, 300], origin: [.5, .5]})).add(layout);
 });

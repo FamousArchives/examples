@@ -1,20 +1,32 @@
+/**
+ * RenderController
+ * -------------------
+ *
+ * RenderController is a dynamic view that can show or hide
+ * different renerables with transitions.
+ *
+ * In this example, we iterate through a collection of 10
+ * surfaces on click events.
+ */
 define(function(require, exports, module) {
-	var Engine   = require("famous/core/Engine");
-	var Surface  = require("famous/core/Surface");
+	var Engine           = require("famous/core/Engine");
+	var Modifier         = require("famous/core/Modifier");
+	var Surface          = require("famous/core/Surface");
 	var RenderController = require("famous/views/RenderController");
 
-	var mainCtx = Engine.createContext();
+	var mainContext = Engine.createContext();
 	var renderController = new RenderController();
 	var surfaces = [];
 	var counter = 0;
 
 	for (var i = 0; i < 10; i++) {
 	    surfaces.push(new Surface({
-	         content: "test",
+	         content: "Surface: " + (i + 1),
 	         size: [200, 200],
 	         properties: {
 	             backgroundColor: "hsl(" + (i * 360 / 10) + ", 100%, 50%)",
-	             lineHeight: "200px"
+	             lineHeight: "200px",
+	             textAlign: 'center'
 	         }
 	    }));
 	}
@@ -26,5 +38,5 @@ define(function(require, exports, module) {
 	    this.show(surfaces[next]);
 	}.bind(renderController));
 
-	mainCtx.add(renderController);
+	mainContext.add(new Modifier({origin: [.5, .5]})).add(renderController);
 });

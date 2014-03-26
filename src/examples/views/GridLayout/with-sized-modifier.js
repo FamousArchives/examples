@@ -1,3 +1,13 @@
+/**
+ * GridLayout with sized modifier
+ * ------------------------------
+ * 
+ * GridLayouts will respect their parents size.  When placed behind
+ * a modifier with a set size, the layout will expand to that size
+ * instead of filling the full window.
+ *
+ * In this example, we see a GridLayout behind a sized Modifier.
+ */
 define(function(require, exports, module) {
 	var Engine     = require("famous/core/Engine");
 	var Surface    = require("famous/core/Surface");
@@ -16,10 +26,12 @@ define(function(require, exports, module) {
 	for(var i = 0; i < 8; i++) {
 	    surfaces.push(new Surface({
 	        content: "I am panel " + (i + 1),
-	        size: [undefined, undefined],
+	        size: [undefined, 100],
 	        properties: {
 	            backgroundColor: "hsl(" + (i * 360 / 8) + ", 100%, 50%)",
-	            color: "black"
+	            color: "black",
+	            lineHeight: '100px',
+	            textAlign: 'center'
 	        }
 	    }));
 	}

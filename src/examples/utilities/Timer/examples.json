@@ -5,6 +5,7 @@
     "0.1.0": [
       "every.js",
       "after.js",
+      "clear.js",
       "setTimeout.js",
       "setInterval.js"
     ]

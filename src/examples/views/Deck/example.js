@@ -1,11 +1,21 @@
+/**
+ * Deck
+ * -----------
+ *
+ * Deck is a SequentialLayout that can be open and closed
+ * with defined animations.
+ *
+ * In this example, we can see that when we click we end up
+ * opening the decks so that their contents expand outwards.
+ */
 define(function(require, exports, module) {
-	var Engine = require('famous/core/Engine');
-    var Transform = require('famous/core/Transform');
-    var Modifier = require('famous/core/Modifier');
-    var Surface = require('famous/core/Surface');
+	var Engine         = require('famous/core/Engine');
+    var Transform      = require('famous/core/Transform');
+    var Modifier       = require('famous/core/Modifier');
+    var Surface        = require('famous/core/Surface');
     var Transitionable = require('famous/transitions/Transitionable');
-    var Deck = require('famous/views/Deck');
-    var GridLayout = require('famous/views/GridLayout');
+    var Deck           = require('famous/views/Deck');
+    var GridLayout     = require('famous/views/GridLayout');
 
     var SpringTransition = require('famous/transitions/SpringTransition');
     Transitionable.registerMethod('spring', SpringTransition);
