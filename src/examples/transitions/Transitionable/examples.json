@@ -1,0 +1,9 @@
+{
+  "name": "famous/transitions/Transitionable",
+  "repository": "git@github.com:Famous/transitions.git",
+  "versions": {
+      "0.1.0": [
+          "example.js"
+      ]
+  } 
+}
