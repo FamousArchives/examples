@@ -1,3 +1,22 @@
+/**
+ * ContainerSurface
+ * ----------------
+ * ContainerSurface is an object designed to contain surfaces and 
+ * set properties to be applied to all of them at once.
+ * A container surface will enforce these properties on the 
+ * surfaces it contains:
+ * 
+ * - size (clips contained surfaces to its own width and height)
+ * - origin
+ * - its own opacity and transform, which will be automatically 
+ *   applied to  all Surfaces contained directly and indirectly.
+ *
+ * In this example we have a ContainerSurface that contains a Scrollview.
+ * Because the ContainerSurface creates it's own context the
+ * Scrollview will behave accoriding to the size of the ContainerSurface
+ * it exists within.  The ContainerSurface having the an overflow of
+ * 'hidden' means that the scrollview overflow will be hidden.
+ */
 define(function(require, exports, module) {
 	var Engine           = require("famous/core/Engine");
 	var Surface          = require("famous/core/Surface");
@@ -5,10 +24,13 @@ define(function(require, exports, module) {
 	var ContainerSurface = require("famous/surfaces/ContainerSurface");
 	var Scrollview       = require("famous/views/Scrollview");
 
-	var mainCtx = Engine.createContext();
+	var mainContext = Engine.createContext();
 
 	var container = new ContainerSurface({
-		size: [400, 400]
+		size: [400, 400],
+		properties: {
+			overflow: 'hidden'
+		}
 	});
 
 	var surfaces = [];
@@ -19,7 +41,7 @@ define(function(require, exports, module) {
 		temp = new Surface({
 			size: [undefined, 50],
 			content: 'I am surface: ' + (i + 1),
-			classes: ['red-bg']
+			classes: ['red-bg'],
 			properties: {
 				textAlign: 'center',
 				lineHeight: '50px'
@@ -33,5 +55,5 @@ define(function(require, exports, module) {
 	scrollview.sequenceFrom(surfaces);
 	container.add(scrollview);
 
-	mainCtx.add(new Modifier({origin: [.5, .5]})).add(container);
+	mainContext.add(new Modifier({origin: [.5, .5]})).add(container);
 });
