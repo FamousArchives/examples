@@ -17,7 +17,7 @@ define(function(require, exports, module) {
         var surfaces = [];
         for(var i = 0; i < 5; i++) {
             surfaces[i] = new Surface({
-                size: [100 + Math.random()*100, 200],
+                size: [100, 200],
                 classes: ['test'],
                 properties: {
                     backgroundColor: 'hsla(' + ((j*5 + i)*15 % 360) + ', 60%, 50%, 0.8)'
