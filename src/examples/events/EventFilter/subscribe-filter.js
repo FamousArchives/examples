@@ -1,5 +1,19 @@
+/**
+ * EventFilter with subscription
+ * -----------------------------
+ *
+ * EventFilter provides a way to define a function that 
+ * can decide whether or not to propogate events downwards.
+ *
+ * In this example, eventHandlerB is subscribed to all events coming
+ * out of the filter and the filter is subscribed to all events
+ * coming out of eventHandlerA.  This filter will only propogate events
+ * if the data's 'msg' property is 'ALERT!'.  Because we change
+ * the msg that is broadcast every click, you can see that the
+ * alert occurs every other click.
+ */
 define(function(require, exports, module) {
-    // import dependencies
+    var Engine       = require('famous/core/Engine');
     var EventHandler = require('famous/core/EventHandler');
     var EventFilter  = require('famous/events/EventFilter');
 
@@ -16,6 +30,10 @@ define(function(require, exports, module) {
         alert('subscribed message: ' + data.msg);
     });
 
-    eventHandlerA.trigger('A', {msg: 'chickenDogStar'});
-    eventHandlerA.trigger('A', {msg: 'ALERT!'});
+    var currentMsg = 'ALERT!';
+
+    Engine.on('click', function() {
+        eventHandlerA.trigger('A', {msg: currentMsg});
+        currentMsg = currentMsg === 'ALERT!' ? 'chickenDogStar': 'ALERT!';
+    });
 });

@@ -3,7 +3,7 @@
   "repository": "git@github.com:Famous/events.git",
   "versions": {
     "0.1.0": [
-        "data-map.js"
+        "example.js"
     ]
   } 
 }
