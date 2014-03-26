@@ -1,9 +1,21 @@
+/**
+ * MouseSync
+ * ------------
+ * 
+ * MousSync handles mouse drag events. Outputs an object with two
+ * properties, position and velocity.
+ *
+ * In this example, we create a MouseSync and displays the data
+ * it recieves to the screen.  Based on the update information
+ * we can determine how far away from the mousedown event location
+ * we are when we are dragging.
+ */
 define(function(require, exports, module) {
 	var Engine    = require("famous/core/Engine");
 	var MouseSync = require("famous/inputs/MouseSync");
 	var Surface   = require("famous/core/Surface");
 
-	var mainCtx = Engine.createContext();
+	var mainContext = Engine.createContext();
 
 	var start = 0;
 	var update = 0;
@@ -26,7 +38,8 @@ define(function(require, exports, module) {
 	};
 
 	var surface = new Surface({
-	    size: [true, true],
+	    size: [undefined, undefined],
+	    classes: ["grey-bg"],
 	    content: contentTemplate()
 	});
 
@@ -49,5 +62,5 @@ define(function(require, exports, module) {
 	    surface.setContent(contentTemplate());
 	});
 
-	mainCtx.add(surface);
+	mainContext.add(surface);
 });

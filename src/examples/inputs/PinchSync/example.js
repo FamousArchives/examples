@@ -1,3 +1,15 @@
+/**
+ * PinchSync
+ * ------------
+ * 
+ * PinchSync handles piped in two-finger touch events to change
+ * position via pinching / expanding. It outputs an object with
+ * position, velocity, touch ids, and distance.
+ *
+ * In this example, we create a PinchSync and displays the data
+ * it recieves to the screen.  Based on the data we can decide if
+ * it is pinching or expanding.
+ */
 define(function(require, exports, module) {
 	var Engine    = require("famous/core/Engine");
 	var Surface   = require("famous/core/Surface");
@@ -27,7 +39,8 @@ define(function(require, exports, module) {
 	};
 
 	var surface = new Surface({
-	    size: [true, true],
+	    size: [undefined, undefined],
+	    classes: ["grey-bg"],
 	    content: contentTemplate()
 	});
 
@@ -39,7 +52,7 @@ define(function(require, exports, module) {
 	pinchSync.on("update", function(data) {
 	    update++;
 	    distance = data.distance;
-	    direction = data.v > 0 ? "Outwards" : "Inwards";
+	    direction = data.v > 0 ? "Expanding" : "Pinching";
 	    recentData = JSON.stringify(data, undefined, 2); 
 	    surface.setContent(contentTemplate());
 	});

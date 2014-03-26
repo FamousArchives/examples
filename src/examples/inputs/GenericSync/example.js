@@ -1,11 +1,26 @@
+/**
+ * GenericSync
+ * ------------
+ * 
+ * GenericSync combines multiple types of event handling 
+ * (e.g. touch, trackpad scrolling) into one standardized 
+ * interface for inclusion in widgets. TouchSync and ScrollSync
+ * are enabled by default.
+ *
+ * In this example we create a GenericSync that listens to
+ * TouchSync, ScrollSync, MouseSync and displays the data
+ * it recieves to the screen.
+ *
+ */
 define(function(require, exports, module) {
 	var Engine      = require("famous/core/Engine");
 	var GenericSync = require("famous/inputs/GenericSync");
 	var MouseSync   = require("famous/inputs/MouseSync");
 	var TouchSync   = require("famous/inputs/TouchSync");
+	var ScrollSync  = require("famous/inputs/ScrollSync");
 	var Surface     = require("famous/core/Surface");
 
-	var mainCtx = Engine.createContext();
+	var mainContext = Engine.createContext();
 
 	var start = 0;
 	var update = 0;
@@ -16,7 +31,7 @@ define(function(require, exports, module) {
 	var genericSync = new GenericSync(function() {
 	    return [0, 0];
 	}, {
-	    syncClasses: [MouseSync, TouchSync]
+	    syncClasses: [MouseSync, TouchSync, ScrollSync]
 	});
 	Engine.pipe(genericSync);
 
@@ -29,7 +44,8 @@ define(function(require, exports, module) {
 	};
 
 	var surface = new Surface({
-	    size: [true, true],
+	    size: [undefined, undefined],
+	    classes: ['grey-bg'],
 	    content: contentTemplate()
 	});
 
@@ -52,5 +68,5 @@ define(function(require, exports, module) {
 	    surface.setContent(contentTemplate());
 	});
 
-	mainCtx.add(surface);
+	mainContext.add(surface);
 });

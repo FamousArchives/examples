@@ -1,9 +1,20 @@
+/**
+ * TouchSync
+ * ------------
+ * 
+ * TouchSync handles piped in touch events. On update it outputs an
+ * object with position, velocity, acceleration, and touch id. On end
+ * it outputs an object with position, velocity, count, and touch id.
+ *
+ * In this example, we create a TouchSync and displays the data
+ * it recieves to the screen.
+ */
 define(function(require, exports, module) {
 	var Engine    = require("famous/core/Engine");
 	var TouchSync = require("famous/inputs/TouchSync");
 	var Surface   = require("famous/core/Surface");
 
-	var mainCtx = Engine.createContext();
+	var mainContext = Engine.createContext();
 
 	var start = 0;
 	var update = 0;
@@ -26,7 +37,8 @@ define(function(require, exports, module) {
 	};
 
 	var surface = new Surface({
-	    size: [true, true],
+	    size: [undefined, undefined],
+	    classes: ['grey-bg'],
 	    content: contentTemplate()
 	});
 
@@ -49,5 +61,5 @@ define(function(require, exports, module) {
 	    surface.setContent(contentTemplate());
 	});
 
-	mainCtx.add(surface);
+	mainContext.add(surface);
 });

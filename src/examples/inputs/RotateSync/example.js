@@ -1,9 +1,19 @@
+/**
+ * RotateSync
+ * ------------
+ * 
+ * RotateSync handles piped in two-finger touch events to support rotation.
+ * It outputs an object with position, velocity, touch ids, and angle.
+ *
+ * In this example, we create a RoateSync and displays the data
+ * it recieves to the screen.
+ */
 define(function(require, exports, module) {
 	var Engine     = require("famous/core/Engine");
 	var Surface    = require("famous/core/Surface");
 	var RotateSync = require("famous/inputs/RotateSync");
 
-	var mainCtx = Engine.createContext();
+	var mainContext = Engine.createContext();
 
 	var start = 0;
 	var update = 0;
@@ -28,7 +38,8 @@ define(function(require, exports, module) {
 	};
 
 	var surface = new Surface({
-	    size: [true, true],
+	    size: [undefined, undefined],
+	    classes: ['grey-bg'],
 	    content: contentTemplate()
 	});
 
@@ -51,5 +62,5 @@ define(function(require, exports, module) {
 	    surface.setContent(contentTemplate());
 	});
 
-	mainCtx.add(surface);
+	mainContext.add(surface);
 });

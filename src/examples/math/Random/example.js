@@ -1,18 +1,34 @@
-define(function(require, exports, module) {                                     
-    // TODO: Could make this a more engaging example
-
-    // import dependencies
+/**
+ * Random
+ * -------
+ *
+ * Random is a library for creating random integers,
+ * booleans, ranges, and signs.
+ *
+ * In this example we set the content based on the random
+ * boolean that is created
+ */
+define(function(require, exports, module) {
     var Engine = require('famous/core/Engine');
     var Random = require('famous/math/Random');
     var Surface = require('famous/core/Surface');
 
     var mainContext = Engine.createContext();
     
-    var surface = new Surface();
+    var surface = new Surface({
+        size: [200, 200],
+        classes: ['red-bg'],
+        properties: {
+            lineHeight: '200px',
+            textAlign: 'center'
+        }
+    });
     var is_heads = Random.bool();
     surface.setContent(is_heads ? 'Heads' : 'Tails');
-    surface.setProperties( { backgroundColor: "#3cf" } );
-    surface.setSize([150, 50]);
-    mainContext.add(surface); 
 
+    mainContext.add(surface);
+
+    Engine.on('click', function() {
+        surface.setContent(Random.bool() ? 'Heads' : 'Tails');
+    });
 });

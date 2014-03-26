@@ -1,9 +1,19 @@
+/**
+ * ScrollSync
+ * ------------
+ * 
+ * ScrollSync handles piped in mousewheel events. Can be used
+ * as delegate of GenericSync.
+ *
+ * In this example, we create a ScrollSync and displays the data
+ * it recieves to the screen.
+ */
 define(function(require, exports, module) {
 	var Engine     = require("famous/core/Engine");
 	var Surface    = require("famous/core/Surface");
 	var ScrollSync = require("famous/inputs/ScrollSync");
 
-	var mainCtx = Engine.createContext();
+	var mainContext = Engine.createContext();
 
 	var start = 0;
 	var update = 0;
@@ -24,7 +34,8 @@ define(function(require, exports, module) {
 	};
 
 	var surface = new Surface({
-	    size: [true, true],
+	    size: [undefined, undefined],
+	    classes: ['grey-bg'],
 	    content: contentTemplate()
 	});
 
@@ -44,5 +55,5 @@ define(function(require, exports, module) {
 	    surface.setContent(contentTemplate());
 	});
 
-	mainCtx.add(surface);
+	mainContext.add(surface);
 });
