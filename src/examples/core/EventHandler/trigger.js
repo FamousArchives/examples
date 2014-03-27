@@ -8,14 +8,14 @@
  * register listeners.
  */
 define(function(require, exports, module) {
-	var EventHandler = require('famous/core/EventHandler');
+    var EventHandler = require('famous/core/EventHandler');
 
-	var eventHandler = new EventHandler();
+    var eventHandler = new EventHandler();
 
-	eventHandler.on('ILikeToEat', function(data) {
-		alert(data.food);
-	});
+    eventHandler.on('ILikeToEat', function(data) {
+        alert(data.food);
+    });
 
-	eventHandler.trigger('ILikeToEat', {food: 'Apple and bananas'});
+    eventHandler.trigger('ILikeToEat', {food: 'Apple and bananas'});
 });
 

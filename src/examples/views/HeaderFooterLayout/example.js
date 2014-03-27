@@ -10,46 +10,46 @@
  * size for the header and footer
  */
 define(function(require, exports, module) {
-	var Engine             = require("famous/core/Engine");
-	var Surface            = require("famous/core/Surface");
-	var HeaderFooterLayout = require("famous/views/HeaderFooterLayout");
+    var Engine             = require("famous/core/Engine");
+    var Surface            = require("famous/core/Surface");
+    var HeaderFooterLayout = require("famous/views/HeaderFooterLayout");
 
-	var mainCtx = Engine.createContext();
+    var mainCtx = Engine.createContext();
 
-	var layout = new HeaderFooterLayout({
-	    headerSize: 100,
-	    footerSize: 50
-	});
+    var layout = new HeaderFooterLayout({
+        headerSize: 100,
+        footerSize: 50
+    });
 
-	layout.header.add(new Surface({
-	    size: [undefined, 100],
-	    content: "Header",
-	    classes: ["red-bg"],
-	    properties: {
-	        lineHeight: "100px",
-	        textAlign: "center"
-	    }
-	}));
+    layout.header.add(new Surface({
+        size: [undefined, 100],
+        content: "Header",
+        classes: ["red-bg"],
+        properties: {
+            lineHeight: "100px",
+            textAlign: "center"
+        }
+    }));
 
-	layout.content.add(new Surface({
-	    size: [undefined, undefined],
-	    content: "Content",
-	    classes: ["grey-bg"],
-	    properties: {
-	        lineHeight: window.innerHeight - 150 + 'px',
-	        textAlign: "center"
-	    }
-	}));
+    layout.content.add(new Surface({
+        size: [undefined, undefined],
+        content: "Content",
+        classes: ["grey-bg"],
+        properties: {
+            lineHeight: window.innerHeight - 150 + 'px',
+            textAlign: "center"
+        }
+    }));
 
-	layout.footer.add(new Surface({
-	    size: [undefined, 50],
-	    content: "Footer",
-	    classes: ["red-bg"],
-	    properties: {
-	        lineHeight: "50px",
-	        textAlign: "center"
-	    }
-	}));
+    layout.footer.add(new Surface({
+        size: [undefined, 50],
+        content: "Footer",
+        classes: ["red-bg"],
+        properties: {
+            lineHeight: "50px",
+            textAlign: "center"
+        }
+    }));
 
-	mainCtx.add(layout);
+    mainCtx.add(layout);
 });

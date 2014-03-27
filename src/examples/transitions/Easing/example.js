@@ -1,10 +1,16 @@
+/**
+ * Easing
+ * --------
+ *
+ * To do
+ */
 define(function(require, exports, module) {
-    var Engine 				= require("famous/core/Engine");
-    var Surface 			= require("famous/core/Surface");
-    var Modifier 			= require("famous/core/Modifier");
-    var Transform 			= require("famous/core/Transform");
-    var Transitionable  	= require("famous/transitions/Transitionable");
-    var Easing		        = require("famous/transitions/Easing");
+    var Engine                 = require("famous/core/Engine");
+    var Surface             = require("famous/core/Surface");
+    var Modifier             = require("famous/core/Modifier");
+    var Transform             = require("famous/core/Transform");
+    var Transitionable      = require("famous/transitions/Transitionable");
+    var Easing                = require("famous/transitions/Easing");
     var ContainerSurface    = require("famous/surfaces/ContainerSurface");
     var ScrollView          = require("famous/views/ScrollView");
 
@@ -20,15 +26,15 @@ define(function(require, exports, module) {
 
     //create the dot
     var surface = new Surface({
-    	size:[100,100],
-    	classes: ['famousRedBackground'],
-    	properties: {
-    		borderRadius: "50px"
-    	}
+        size:[100,100],
+        classes: ['famousRedBackground'],
+        properties: {
+            borderRadius: "50px"
+        }
     });
 
     var modifier = new Modifier({
-    	origin: [.5,.5],
+        origin: [.5,.5],
         transform: Transform.translate(100,-240,0)
     });
 

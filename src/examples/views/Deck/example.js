@@ -9,7 +9,7 @@
  * opening the decks so that their contents expand outwards.
  */
 define(function(require, exports, module) {
-	var Engine         = require('famous/core/Engine');
+    var Engine         = require('famous/core/Engine');
     var Transform      = require('famous/core/Transform');
     var Modifier       = require('famous/core/Modifier');
     var Surface        = require('famous/core/Surface');

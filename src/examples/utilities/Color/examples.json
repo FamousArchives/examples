@@ -2,8 +2,8 @@
   "name": "famous/utilities/Color",
   "repository": "git@github.com:Famous/utilities.git",
   "versions": {
-	"0.1.0": [
-	  "example.js"
-	]
+    "0.1.0": [
+      "example.js"
+    ]
   } 
 }

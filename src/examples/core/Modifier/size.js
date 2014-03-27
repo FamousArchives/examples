@@ -14,37 +14,37 @@
  * that sits in front of it in the render tree.
  */
 define(function(require, exports, module) {
-	var Engine    = require("famous/core/Engine");
-	var Surface   = require("famous/core/Surface");
-	var Modifier  = require("famous/core/Modifier");
-	var Transform = require("famous/core/Transform");
+    var Engine    = require("famous/core/Engine");
+    var Surface   = require("famous/core/Surface");
+    var Modifier  = require("famous/core/Modifier");
+    var Transform = require("famous/core/Transform");
 
-	var mainContext = Engine.createContext();
+    var mainContext = Engine.createContext();
 
-	var sizeMod = new Modifier({
-	    size: [200, 200]
-	});
+    var sizeMod = new Modifier({
+        size: [200, 200]
+    });
 
-	var surfaceOne = new Surface({
-	    size: [undefined, undefined],
-	    content: "Parent is context",
-	    classes: ["red-bg"],
-	    properties: {
-	    	lineHeight: window.innerHeight + 'px',
-	    	textAlign: 'center'
-	    }
-	});
+    var surfaceOne = new Surface({
+        size: [undefined, undefined],
+        content: "Parent is context",
+        classes: ["red-bg"],
+        properties: {
+            lineHeight: window.innerHeight + 'px',
+            textAlign: 'center'
+        }
+    });
 
-	var surfaceTwo = new Surface({
-	    size: [undefined, undefined],
-	    content: "Parent is modifier",
-	    classes: ["grey-bg"],
-	    properties: {
-	    	lineHeight: '200px',
-	    	textAlign: 'center'
-	    }
-	});
+    var surfaceTwo = new Surface({
+        size: [undefined, undefined],
+        content: "Parent is modifier",
+        classes: ["grey-bg"],
+        properties: {
+            lineHeight: '200px',
+            textAlign: 'center'
+        }
+    });
 
-	mainContext.add(surfaceOne);
-	mainContext.add(sizeMod).add(surfaceTwo);
+    mainContext.add(surfaceOne);
+    mainContext.add(sizeMod).add(surfaceTwo);
 });

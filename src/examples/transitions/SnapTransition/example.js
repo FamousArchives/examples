@@ -1,3 +1,9 @@
+/**
+ * SnapTransition
+ * ----------------
+ *
+ * To do
+ */
 define(function(require, exports, module) {
     // import dependencies
     var Engine         = require("famous/core/Engine");

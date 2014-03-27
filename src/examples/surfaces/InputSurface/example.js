@@ -12,19 +12,19 @@
  * text.
  */
 define(function(require, exports, module) {
-	var Engine       = require("famous/core/Engine");
-	var Modifier     = require("famous/core/Modifier");
-	var InputSurface = require("famous/surfaces/InputSurface");
+    var Engine       = require("famous/core/Engine");
+    var Modifier     = require("famous/core/Modifier");
+    var InputSurface = require("famous/surfaces/InputSurface");
 
-	var mainCtx = Engine.createContext();
+    var mainCtx = Engine.createContext();
 
-	var input = new InputSurface({
-		size: [200, 200],
-		name: 'inputSurface',
-		placeholder: 'Type text here',
-		value: '',
-		type: 'text'
-	});
+    var input = new InputSurface({
+        size: [200, 200],
+        name: 'inputSurface',
+        placeholder: 'Type text here',
+        value: '',
+        type: 'text'
+    });
 
-	mainCtx.add(new Modifier({origin: [.5, .5]})).add(input);
+    mainCtx.add(new Modifier({origin: [.5, .5]})).add(input);
 });

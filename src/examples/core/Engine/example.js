@@ -11,32 +11,32 @@
  * various engine ticks.
  */
 define(function(require, exports, module) {
-	var Engine  = require("famous/core/Engine");
-	var Surface = require("famous/core/Surface");
+    var Engine  = require("famous/core/Engine");
+    var Surface = require("famous/core/Surface");
 
-	var mainCtx = Engine.createContext();
+    var mainCtx = Engine.createContext();
 
-	var surface = new Surface({
-	    size: [undefined, undefined],
-	    classes: ['red-bg'],
-	    properties: {
-	        color: "white",
-	        paddingTop: "100px",
-	        textAlign: "center"
-	    }
-	});
+    var surface = new Surface({
+        size: [undefined, undefined],
+        classes: ['red-bg'],
+        properties: {
+            color: "white",
+            paddingTop: "100px",
+            textAlign: "center"
+        }
+    });
 
-	mainCtx.add(surface);
+    mainCtx.add(surface);
 
-	Engine.on("click", function() {
-	    surface.setContent("Click");
-	});
+    Engine.on("click", function() {
+        surface.setContent("Click");
+    });
 
-	Engine.on("resize", function() {
-	    surface.setContent("The window is being resized");
-	});
+    Engine.on("resize", function() {
+        surface.setContent("The window is being resized");
+    });
 
-	Engine.nextTick(function() {
-	    surface.setContent("This message was run on the next animation tick");   
-	});
+    Engine.nextTick(function() {
+        surface.setContent("This message was run on the next animation tick");   
+    });
 });

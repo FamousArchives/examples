@@ -1,8 +1,14 @@
+/**
+ * Transitionable
+ * --------
+ *
+ * To do
+ */
 define(function(require, exports, module) {
-    var Engine 		   = require("famous/core/Engine");
-    var Surface 	   = require("famous/core/Surface");
-    var Modifier 	   = require("famous/core/Modifier");
-    var Transform 	   = require("famous/core/Transform");
+    var Engine            = require("famous/core/Engine");
+    var Surface        = require("famous/core/Surface");
+    var Modifier        = require("famous/core/Modifier");
+    var Transform        = require("famous/core/Transform");
     var Timer          = require("famous/utilities/Timer");
     var Transitionable = require("famous/transitions/Transitionable");
 
@@ -18,18 +24,18 @@ define(function(require, exports, module) {
 
     //this is the surface displayed
     var surface = new Surface({
-    	size:[100,100],
-    	classes: ["famousRedBackground"],
-    	properties: {
-    		borderRadius: "50px"
-    	}
+        size:[100,100],
+        classes: ["famousRedBackground"],
+        properties: {
+            borderRadius: "50px"
+        }
     });
 
     //set the initial value of the transtionable to the left side of the screen
     var maxOffset = 240;
 
     //create our transitionable
-	var xPos = new Transitionable(-maxOffset);
+    var xPos = new Transitionable(-maxOffset);
 
     //this controls the position of surface
     var modifier = new Modifier({

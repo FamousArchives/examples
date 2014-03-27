@@ -9,16 +9,16 @@
  * This example shows this property in action.
  */
 define(function(require, exports, module) {
-	var Engine  = require("famous/core/Engine");
-	var Surface = require("famous/core/Surface");
+    var Engine  = require("famous/core/Engine");
+    var Surface = require("famous/core/Surface");
 
-	var mainContext = Engine.createContext();
+    var mainContext = Engine.createContext();
 
-	var surface = new Surface({
-	    size: [true, true],
-	    content: "Hello World",
-	    classes: ["red-bg"]
-	});
+    var surface = new Surface({
+        size: [true, true],
+        content: "Hello World",
+        classes: ["red-bg"]
+    });
 
-	mainContext.add(surface);
+    mainContext.add(surface);
 });

@@ -12,49 +12,49 @@
  * and the other has the reverse.
  */
 define(function(require, exports, module) {
-	var Engine    = require("famous/core/Engine");
-	var Surface   = require("famous/core/Surface");
-	var Modifier  = require("famous/core/Modifier");
-	var Transform = require("famous/core/Transform");
+    var Engine    = require("famous/core/Engine");
+    var Surface   = require("famous/core/Surface");
+    var Modifier  = require("famous/core/Modifier");
+    var Transform = require("famous/core/Transform");
 
-	var mainContext = Engine.createContext();
+    var mainContext = Engine.createContext();
 
-	var modifierOne = new Modifier({
-	    transform: Transform.translate(200, 0, 0)
-	});
+    var modifierOne = new Modifier({
+        transform: Transform.translate(200, 0, 0)
+    });
 
-	var modifierTwo = new Modifier({
-	    transform: Transform.rotateZ(0.7)
-	});
+    var modifierTwo = new Modifier({
+        transform: Transform.rotateZ(0.7)
+    });
 
-	var surface = new Surface({
-	    size: [200, 200],
-	    content: "Translate then rotate",
-	    classes: ["red-bg"],
-	    properties: {
-	        textAlign: 'center',
-	        lineHeight: '200px'
-	    }
-	});
+    var surface = new Surface({
+        size: [200, 200],
+        content: "Translate then rotate",
+        classes: ["red-bg"],
+        properties: {
+            textAlign: 'center',
+            lineHeight: '200px'
+        }
+    });
 
-	var modifierThree = new Modifier({
-	    transform: Transform.rotateZ(0.7)
-	});
+    var modifierThree = new Modifier({
+        transform: Transform.rotateZ(0.7)
+    });
 
-	var modifierFour = new Modifier({
-	    transform: Transform.translate(200, 0, 0)
-	});
+    var modifierFour = new Modifier({
+        transform: Transform.translate(200, 0, 0)
+    });
 
-	var surfaceTwo = new Surface({
-	    size: [200, 200],
-	    content: "Rotate then translate",
-	    classes: ["grey-bg"],
-	    properties: {
-	        textAlign: 'center',
-	        lineHeight: '200px'
-	    }
-	});
+    var surfaceTwo = new Surface({
+        size: [200, 200],
+        content: "Rotate then translate",
+        classes: ["grey-bg"],
+        properties: {
+            textAlign: 'center',
+            lineHeight: '200px'
+        }
+    });
 
-	mainContext.add(modifierOne).add(modifierTwo).add(surface);
-	mainContext.add(modifierThree).add(modifierFour).add(surfaceTwo);
+    mainContext.add(modifierOne).add(modifierTwo).add(surface);
+    mainContext.add(modifierThree).add(modifierFour).add(surfaceTwo);
 });

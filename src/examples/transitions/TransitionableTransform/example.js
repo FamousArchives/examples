@@ -1,5 +1,11 @@
+/**
+ * TransitionableTransform
+ * --------
+ *
+ * To do
+ */
 define(function(require, exports, module) {
-    var Engine 	                = require("famous/core/Engine");
+    var Engine                     = require("famous/core/Engine");
     var Surface                 = require("famous/core/Surface");
     var Modifier                = require("famous/core/Modifier");
     var TransitionableTransform = require("famous/transitions/TransitionableTransform");
@@ -16,11 +22,11 @@ define(function(require, exports, module) {
 
     //this is the surface displayed
     var surface = new Surface({
-    	size:[100,100],
-    	classes: ["famousRedBackground"],
-    	properties: {
-    		borderRadius: "50px"
-    	}
+        size:[100,100],
+        classes: ["famousRedBackground"],
+        properties: {
+            borderRadius: "50px"
+        }
     });
 
     //create our transitionable

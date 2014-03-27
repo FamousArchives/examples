@@ -32,13 +32,13 @@ define(function(require, exports, module) {
 
     var modifier = new Modifier();
     modifier.transformFrom(function() {
-    	return toggle ? Transform.identity : quaternion.getTransform();
+        return toggle ? Transform.identity : quaternion.getTransform();
     });
 
     mainContext.add(new Modifier({origin: [.5, .5]})).add(modifier).add(surface);
 
     var toggle = true;
     Engine.on('click', function() {
-    	toggle = toggle ? false : true;
+        toggle = toggle ? false : true;
     });
 });

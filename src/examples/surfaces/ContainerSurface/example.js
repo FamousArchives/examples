@@ -18,42 +18,42 @@
  * 'hidden' means that the scrollview overflow will be hidden.
  */
 define(function(require, exports, module) {
-	var Engine           = require("famous/core/Engine");
-	var Surface          = require("famous/core/Surface");
-	var Modifier         = require("famous/core/Modifier");
-	var ContainerSurface = require("famous/surfaces/ContainerSurface");
-	var Scrollview       = require("famous/views/Scrollview");
+    var Engine           = require("famous/core/Engine");
+    var Surface          = require("famous/core/Surface");
+    var Modifier         = require("famous/core/Modifier");
+    var ContainerSurface = require("famous/surfaces/ContainerSurface");
+    var Scrollview       = require("famous/views/Scrollview");
 
-	var mainContext = Engine.createContext();
+    var mainContext = Engine.createContext();
 
-	var container = new ContainerSurface({
-		size: [400, 400],
-		properties: {
-			overflow: 'hidden'
-		}
-	});
+    var container = new ContainerSurface({
+        size: [400, 400],
+        properties: {
+            overflow: 'hidden'
+        }
+    });
 
-	var surfaces = [];
-	var scrollview = new Scrollview();
+    var surfaces = [];
+    var scrollview = new Scrollview();
 
-	var temp;
-	for (var i = 0; i < 100; i++) {
-		temp = new Surface({
-			size: [undefined, 50],
-			content: 'I am surface: ' + (i + 1),
-			classes: ['red-bg'],
-			properties: {
-				textAlign: 'center',
-				lineHeight: '50px'
-			}
-		});
+    var temp;
+    for (var i = 0; i < 100; i++) {
+        temp = new Surface({
+            size: [undefined, 50],
+            content: 'I am surface: ' + (i + 1),
+            classes: ['red-bg'],
+            properties: {
+                textAlign: 'center',
+                lineHeight: '50px'
+            }
+        });
 
-		temp.pipe(scrollview);
-		surfaces.push(temp);
-	}
+        temp.pipe(scrollview);
+        surfaces.push(temp);
+    }
 
-	scrollview.sequenceFrom(surfaces);
-	container.add(scrollview);
+    scrollview.sequenceFrom(surfaces);
+    container.add(scrollview);
 
-	mainContext.add(new Modifier({origin: [.5, .5]})).add(container);
+    mainContext.add(new Modifier({origin: [.5, .5]})).add(container);
 });

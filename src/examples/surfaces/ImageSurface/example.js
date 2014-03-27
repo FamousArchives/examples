@@ -11,17 +11,17 @@
  * Famo.us logo as it's content.
  */
 define(function(require, exports, module) {
-	var Engine       = require("famous/core/Engine");
-	var Modifier     = require("famous/core/Modifier");
-	var ImageSurface = require("famous/surfaces/ImageSurface");
+    var Engine       = require("famous/core/Engine");
+    var Modifier     = require("famous/core/Modifier");
+    var ImageSurface = require("famous/surfaces/ImageSurface");
 
-	var mainCtx = Engine.createContext();
+    var mainCtx = Engine.createContext();
 
-	var image = new ImageSurface({
-		size: [200, 200]
-	});
+    var image = new ImageSurface({
+        size: [200, 200]
+    });
 
-	image.setContent("content/famous_symbol.svg");
+    image.setContent("content/famous_symbol.svg");
 
-	mainCtx.add(new Modifier({origin: [.5, .5]})).add(image);
+    mainCtx.add(new Modifier({origin: [.5, .5]})).add(image);
 });

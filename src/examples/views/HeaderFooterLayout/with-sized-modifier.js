@@ -12,48 +12,48 @@
  * as well.
  */
 define(function(require, exports, module) {
-	var Engine             = require("famous/core/Engine");
-	var Surface            = require("famous/core/Surface");
-	var Modifier           = require("famous/core/Modifier");
-	var Transform          = require("famous/core/Transform");
-	var HeaderFooterLayout = require("famous/views/HeaderFooterLayout");
+    var Engine             = require("famous/core/Engine");
+    var Surface            = require("famous/core/Surface");
+    var Modifier           = require("famous/core/Modifier");
+    var Transform          = require("famous/core/Transform");
+    var HeaderFooterLayout = require("famous/views/HeaderFooterLayout");
 
-	var mainContext = Engine.createContext();
+    var mainContext = Engine.createContext();
 
-	var layout = new HeaderFooterLayout({
-	    headerSize: 100,
-	    footerSize: 50
-	});
+    var layout = new HeaderFooterLayout({
+        headerSize: 100,
+        footerSize: 50
+    });
 
-	layout.header.add(new Surface({
-	    size: [undefined, 100],
-	    content: "Header",
-	    classes: ["red-bg"],
-	    properties: {
-	        lineHeight: "100px",
-	        textAlign: "center"
-	    }
-	}));
+    layout.header.add(new Surface({
+        size: [undefined, 100],
+        content: "Header",
+        classes: ["red-bg"],
+        properties: {
+            lineHeight: "100px",
+            textAlign: "center"
+        }
+    }));
 
-	layout.content.add(new Surface({
-	    size: [undefined, undefined],
-	    content: "Content",
-	    classes: ["grey-bg"],
-	    properties: {
-	        lineHeight: '150px',
-	        textAlign: "center"
-	    }
-	}));
+    layout.content.add(new Surface({
+        size: [undefined, undefined],
+        content: "Content",
+        classes: ["grey-bg"],
+        properties: {
+            lineHeight: '150px',
+            textAlign: "center"
+        }
+    }));
 
-	layout.footer.add(new Surface({
-	    size: [undefined, 50],
-	    content: "Footer",
-	    classes: ["red-bg"],
-	    properties: {
-	        lineHeight: "50px",
-	        textAlign: "center"
-	    }
-	}));
+    layout.footer.add(new Surface({
+        size: [undefined, 50],
+        content: "Footer",
+        classes: ["red-bg"],
+        properties: {
+            lineHeight: "50px",
+            textAlign: "center"
+        }
+    }));
 
-	mainContext.add(new Modifier({transform: Transform.rotateZ(.7),size: [300, 300], origin: [.5, .5]})).add(layout);
+    mainContext.add(new Modifier({transform: Transform.rotateZ(.7),size: [300, 300], origin: [.5, .5]})).add(layout);
 });

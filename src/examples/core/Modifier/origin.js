@@ -16,39 +16,39 @@
  * 
  */
 define(function(require, exports, module) {
-	var Engine   = require("famous/core/Engine");
-	var Surface  = require("famous/core/Surface");
-	var Modifier = require("famous/core/Modifier");
+    var Engine   = require("famous/core/Engine");
+    var Surface  = require("famous/core/Surface");
+    var Modifier = require("famous/core/Modifier");
 
-	var mainContext = Engine.createContext();
+    var mainContext = Engine.createContext();
 
-	var origins = {
-		'tl': [0, 0],
-		'tc': [.5, 0],
-		'tr': [1, 0],
-		'cl': [0, .5],
-		'cc': [.5, .5],
-		'cr': [1, .5],
-		'bl': [0, 1],
-		'bc': [.5, 1],
-		'br': [1, 1]
-	};
+    var origins = {
+        'tl': [0, 0],
+        'tc': [.5, 0],
+        'tr': [1, 0],
+        'cl': [0, .5],
+        'cc': [.5, .5],
+        'cr': [1, .5],
+        'bl': [0, 1],
+        'bc': [.5, 1],
+        'br': [1, 1]
+    };
 
-	for (var key in origins) {
-		var modifier = new Modifier({
-			origin: origins[key]
-		});
+    for (var key in origins) {
+        var modifier = new Modifier({
+            origin: origins[key]
+        });
 
-		var surface = new Surface({
-			size: [50, 50],
-			content: key,
-			classes: ['red-bg'],
-			properties: {
-				lineHeight: '50px',
-				textAlign: 'center'
-			}
-		});
+        var surface = new Surface({
+            size: [50, 50],
+            content: key,
+            classes: ['red-bg'],
+            properties: {
+                lineHeight: '50px',
+                textAlign: 'center'
+            }
+        });
 
-		mainContext.add(modifier).add(surface);
-	}
+        mainContext.add(modifier).add(surface);
+    }
 });
