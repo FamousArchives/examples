@@ -7,7 +7,7 @@
  * components that act of a collection of renderables such
  * as Scrollview.
  *
- * In this example you can see that we are iterating through 
+ * In this example, you can see that we are iterating through 
  * the ViewSequence by changing the index that the ViewSequence 
  * is referring to.
  */
