@@ -6,7 +6,7 @@
  * and renderables below it in the render tree will be affected by it.
  *
  * In this example, we can see that both surfaces are affected by 
- * modifierOne but only the smaller grey surface is affected by 
+ * modifierOne, but only the smaller gray surface is affected by 
  * the translation.
  */
 define(function(require, exports, module) {
