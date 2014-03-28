@@ -6,7 +6,7 @@
  *
  * In this example, we pipe the DOM events of the surface to the
  * EventHandler.  When we then click the surface, the event handler
- * receives that event and calls all of the listeners of the 'click'
+ * receives that event and calls all of the listeners of the "click"
  * event.
  */
 define(function(require, exports, module) {
