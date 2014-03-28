@@ -7,9 +7,9 @@
  * interface for inclusion in widgets. TouchSync and ScrollSync
  * are enabled by default.
  *
- * In this example we create a GenericSync that listens to
- * TouchSync, ScrollSync, MouseSync and displays the data
- * it recieves to the screen.
+ * In this example, we create a GenericSync that listens to
+ * TouchSync, ScrollSync, and MouseSync and displays the data
+ * it receives to the screen.
  *
  */
 define(function(require, exports, module) {
