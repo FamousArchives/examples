@@ -7,9 +7,9 @@
  * the modifiers matters greatly.  Translating and then rotating
  * means something very different than rotating and then translating.
  *
- * In this example, we can see that the two surfaces are layed out
- * differently because one has its translation happen before its rotation
- * and the other has the reverse.
+ * In this example, we can see that the two surfaces are laid out
+ * differently because one has its translation happen before its rotation,
+ * and the reverse is true for the other.
  */
 define(function(require, exports, module) {
     var Engine    = require("famous/core/Engine");
