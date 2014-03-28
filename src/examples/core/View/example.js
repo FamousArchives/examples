@@ -4,7 +4,7 @@
  *
  * View is one of the core components of Famo.us.  A view is 
  * a way to encapsulate modifiers, surfaces, and other views 
- * into a single view so it can be treated as a simgle component.
+ * into a single view so they can be treated as a simgle component.
  *
  * Views also have dual EventHandlers for controlling the input
  * and output of events and an OptionsManager for dealing with 
