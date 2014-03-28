@@ -2,11 +2,11 @@
  * MouseSync
  * ------------
  * 
- * MousSync handles mouse drag events. Outputs an object with two
- * properties, position and velocity.
+ * MouseSync handles mouse drag events. It outputs an object with two
+ * properties: position and velocity.
  *
- * In this example, we create a MouseSync and displays the data
- * it recieves to the screen.  Based on the update information
+ * In this example, we create a MouseSync and display the data
+ * it receives to the screen.  Based on the update information,
  * we can determine how far away from the mousedown event location
  * we are when we are dragging.
  */
