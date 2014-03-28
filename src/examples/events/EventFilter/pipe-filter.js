@@ -6,7 +6,7 @@
  * can decide whether or not to propogate events downwards.
  *
  * In this example, we pipe all events from eventHandlerA to
- * the an EventFilter.  This filter will only propogate events
+ * the EventFilter.  This filter will only propogate events
  * if the data's 'msg' property is 'ALERT!'.  Because we change
  * the msg that is broadcast every click, you can see that the
  * alert occurs every other click.
