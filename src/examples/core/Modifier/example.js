@@ -5,7 +5,7 @@
  * Modifiers are nodes that can be added to the render tree
  * to affect the physical position and look of their children.
  *
- * In this example we can see the surfaces is translated 200
+ * In this example, we can see that the surface is translated 200
  * pixels right and 100 pixels down because it sits below the
  * modifier in the render tree.
  */
