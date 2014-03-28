@@ -5,12 +5,12 @@
  * Modifiers have a size property that will affect any children
  * that depend on the size of the parent.
  *
- * In this example we have two surfaces, one that is added directly
+ * In this example, we have two surfaces: one that is added directly
  * to the context and one that is added to a modifier with a size of
  * [200, 200].  By setting the size of both of the surfaces to
  * [undefined, undefined], we allow them to fill their parent's
  * size.  Because of this, we see that the red surface fills the whole
- * window while the grey surface will respect the size of the modifier
+ * window while the gray surface will respect the size of the modifier
  * that sits in front of it in the render tree.
  */
 define(function(require, exports, module) {
