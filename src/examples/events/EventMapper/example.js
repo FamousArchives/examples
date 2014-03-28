@@ -6,7 +6,7 @@
  * based on the type of the event.
  *
  * In this example, we pipe all events from eventHandlerA to
- * the an EventMapper.  This filter will decide whether to send
+ * an EventMapper.  This filter will decide whether to send
  * the event to eventHandlerB or eventHandlerC based on the
  * direction property of the data sent along with the event.
  */
