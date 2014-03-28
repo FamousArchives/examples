@@ -4,13 +4,13 @@
  *
  * Modifiers have an origin property which affects the positioning
  * of children in the render tree.  By default, modifiers have an
- * origin of [0, 0], which means that all children will have their
- * [0, 0] origin be at the same location as the parents [0, 0] origin.
+ * origin of [0, 0], which means that all children have their
+ * [0, 0] origin at the same location as the parent's [0, 0] origin.
  * This is the same as the top left.  By changing this value, you gain
  * the ability to lay out children relative to the size of the direct
  * parent in the render tree.
  *
- * In the example below, we place the 9 surfaces inside of the context,
+ * In the example below, we place the nine surfaces inside of the context,
  * which is the size of the entire window.  By then using origin, we can
  * place surfaces relative to the entire window.
  * 
