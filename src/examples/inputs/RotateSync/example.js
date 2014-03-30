@@ -3,7 +3,7 @@
  * ------------
  * 
  * RotateSync handles piped-in two-finger touch events to support rotation.
- * It outputs an object with position, velocity, touch IDs, and angle.
+ * It outputs an object with position, velocity, touches, and angle.
  *
  * In this example, we create a RotateSync and display the data
  * it receives to the screen.

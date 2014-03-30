@@ -4,7 +4,7 @@
  *
  * Scene is a way to define a layout first and
  * then add components to that layout by way of accessing
- * the unique IDs.  You can also change the JSON defining
+ * the unique identifier (id).  You can also change the JSON defining
  * the layout by way of the Scene's load function.  It is a
  * great tool for having flexible layouts since you can load
  * different Scene configurations depending on the window size.

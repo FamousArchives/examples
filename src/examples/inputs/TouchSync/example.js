@@ -4,7 +4,7 @@
  * 
  * TouchSync handles piped in touch events. On update it outputs an
  * object with position, velocity, acceleration, and touch id. On end
- * it outputs an object with position, velocity, count, and touch id.
+ * it outputs an object with position, velocity, count, and touch.
  *
  * In this example, we create a TouchSync and displays the data
  * it recieves to the screen.
