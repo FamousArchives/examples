@@ -7,7 +7,8 @@
           "chaining.js",
           "branching.js",
           "size.js",
-          "origin.js"
+          "origin.js",
+          "opacity.js"
       ]
   } 
 }
