@@ -5,7 +5,7 @@
  * Modifiers have a size property that will affect any children
  * that depend on the size of the parent.
  *
- * In this example, we have two surfaces: one that is added directly
+ * In this example, we have two surfaces, one that is added directly
  * to the context and one that is added to a modifier with a size of
  * [200, 200].  By setting the size of both of the surfaces to
  * [undefined, undefined], we allow them to fill their parent's
@@ -22,6 +22,7 @@ define(function(require, exports, module) {
     var mainContext = Engine.createContext();
 
     var sizeMod = new Modifier({
+        transform: Transform.translate(0, 0, 1),
         size: [200, 200]
     });
 

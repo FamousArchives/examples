@@ -44,8 +44,7 @@ define(function(require, exports, module) {
     });
 
     var modifier = new Modifier({
-        transform: Transform.move(Transform.rotateZ(Math.PI/4),[200, 100, 0]),
-        opacity: [0.6]
+        transform: Transform.thenMove(Transform.rotateZ(Math.PI/4),[200, 100, 1])
     });
 
     node.add(surface);

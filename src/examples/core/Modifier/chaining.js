@@ -20,7 +20,7 @@ define(function(require, exports, module) {
     var mainContext = Engine.createContext();
 
     var modifierOne = new Modifier({
-        transform: Transform.translate(200, 0, 0)
+        transform: Transform.translate(200, 0, -1)
     });
 
     var modifierTwo = new Modifier({

@@ -2,7 +2,7 @@
  * Surface with true sizing
  * ------------------------
  *
- * A surface can have its size set to true.  What this means
+ * A surface can have its size set to "true".  What this means
  * is that the size of the surface will be equal to the size
  * of the content it holds.
  *
