@@ -48,6 +48,6 @@ define(function(require, exports, module) {
         } else {
             edgeswapper.show(primary);
             showing = true;
-        };
+        }
     });
 });

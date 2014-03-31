@@ -14,7 +14,7 @@ define(function(require, exports, module) {
     var Modifier   = require("famous/core/Modifier");
     var GridLayout = require("famous/views/GridLayout");
 
-    var mainCtx = Engine.createContext();
+    var mainContext = Engine.createContext();
 
     var grid = new GridLayout({
         dimensions: [4, 2]
@@ -36,5 +36,5 @@ define(function(require, exports, module) {
         }));
     }
 
-    mainCtx.add(new Modifier({size: [400, 200], origin: [.5, .5]})).add(grid);
+    mainContext.add(new Modifier({size: [400, 200], origin: [.5, .5]})).add(grid);
 });

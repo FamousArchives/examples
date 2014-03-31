@@ -22,61 +22,38 @@ define(function(require, exports, module) {
 
     var mainDisplay = Engine.createContext();
 
-    var systems = [];
-    for(var j = 0; j < 5; j++) {
-        var surfaces = [];
-        for(var i = 0; i < 5; i++) {
-            surfaces[i] = new Surface({
-                size: [100, 200],
-                classes: ['test'],
-                properties: {
-                    backgroundColor: 'hsla(' + ((j*5 + i)*15 % 360) + ', 60%, 50%, 0.8)'
-                },
-                content: j.toString() + ' &bowtie; ' + i.toString()
-            });
-        }
-
-        var myLayout = new Deck({
-            itemSpacing: 10,
-            transition: {
-                method: 'spring',
-                period: 300,
-                dampingRatio: 0.5
-            },
-            stackRotation: 0.02
-        });
-        myLayout.sequenceFrom(surfaces);
-
-        surfaces[0].on('click', function(layout) {
-            layout.toggle();
-        }.bind(this, myLayout));
-        systems[j] = myLayout;
-    } 
-
-    var topLayout = new GridLayout({
-        dimensions: [1, 1],
-        cellSize: [800, 250],
+    var surfaces = [];
+    var myLayout = new Deck({
+        itemSpacing: 10,
         transition: {
             method: 'spring',
             period: 300,
             dampingRatio: 0.5
-        }
+        },
+        stackRotation: 0.02
     });
-    topLayout.sequenceFrom(systems);
+
+    myLayout.sequenceFrom(surfaces);
+
+    for(var i = 0; i < 5; i++) {
+        var temp = new Surface({
+            size: [100, 200],
+            classes: ['test'],
+            properties: {
+                backgroundColor: 'hsla(' + ((i*5 + i)*15 % 360) + ', 60%, 50%, 0.8)'
+            },
+            content: i
+        });
+
+        temp.on('click', function() {
+            myLayout.toggle();
+        });
+        surfaces.push(temp);
+    }
 
     var containerModifier = new Modifier({
         origin: [0.5, 0.5]
     });
-    mainDisplay.add(containerModifier).add(topLayout);
+    mainDisplay.add(containerModifier).add(myLayout);
 
-    var open = false;
-    function toggle() {
-        if(open) topLayout.setOptions({dimensions: [1, 1]});
-        else topLayout.setOptions({dimensions: [0, 0]});
-        open = !open;
-    }
-
-    Engine.on('click', function(e) {
-        toggle();
-    });
 });
