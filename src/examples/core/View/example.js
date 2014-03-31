@@ -44,8 +44,7 @@ define(function(require, exports, module) {
     var viewTwo = new View();
 
     var mod = new Modifier({
-        transform: Transform.thenMove(Transform.rotateZ(Math.PI * 0.25),[200, 100, 0]),
-        opacity: [0.6]
+        transform: Transform.thenMove(Transform.rotateZ(Math.PI * 0.25),[200, 100, 1])
     });
 
     var surfaceTwo = new Surface({

@@ -6,7 +6,7 @@
  * booleans, ranges, and signs.
  *
  * In this example we set the content based on the random
- * boolean that is created
+ * boolean that is created.
  */
 define(function(require, exports, module) {
     var Engine = require('famous/core/Engine');

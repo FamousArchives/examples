@@ -18,8 +18,8 @@ define(function(require, exports, module) {
     var mainContext = Engine.createContext();
 
     var modifierOne = new Modifier({
-        transform: Transform.rotateZ(.7),
-        origin: [.5, .5]
+        transform: Transform.rotateZ(0.7),
+        origin: [0.5, 0.5]
     });
 
     var modifierTwo = new Modifier({

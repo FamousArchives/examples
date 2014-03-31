@@ -22,7 +22,7 @@ define(function(require, exports, module) {
     var modifierChain = new ModifierChain();
 
     var modifierOne = new Modifier({
-        origin: [.5, .5]
+        origin: [0.5, 0.5]
     });
 
     var modifierTwo = new Modifier({
@@ -30,13 +30,11 @@ define(function(require, exports, module) {
     });
     
     var surface = new Surface({
-        size: [200, 200],
+        size: [200, true],
         content: "Click me to remove the center origin modifier",
         classes: ["red-bg"],
         properties: {
-            lineHeight: "20px",
             textAlign: "center",
-            padding: '80px 0'
         }
     });
 
@@ -46,6 +44,6 @@ define(function(require, exports, module) {
 
     surface.on('click', function() {
         modifierChain.removeModifier(modifierOne);
-        surface.setContent('Wunderbar');
+        surface.setContent('Success!');
     });
 });

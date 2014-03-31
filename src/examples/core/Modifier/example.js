@@ -5,8 +5,8 @@
  * Modifiers are nodes that can be added to the render tree
  * to affect the physical position and look of their children.
  *
- * In this example, we can see that the surface is translated 200
- * pixels right and 100 pixels down because it sits below the
+ * In this example, we can see that the surface is translated 50
+ * pixels right and 50 pixels down because it sits below the
  * modifier in the render tree.
  */
 define(function(require, exports, module) {
@@ -18,16 +18,16 @@ define(function(require, exports, module) {
     var mainContext = Engine.createContext();
 
     var transform = new Modifier({
-        transform: Transform.translate(200, 100, 0)
+        transform: Transform.translate(50, 50, 0)
     });
 
     var surface = new Surface({
         size: [200, 200],
         content: "Hello World",
-        classes: ["famousTestSurface"],
+        classes: ["red-bg"],
         properties: {
-            color: "white",
-            backgroundColor: "#3cf"
+            lineHeight: "200px",
+            textAlign: "center"
         }
     });
 

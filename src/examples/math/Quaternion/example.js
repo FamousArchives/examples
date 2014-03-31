@@ -7,7 +7,8 @@
  * be applied around that axis, represented by w.  Quaternions are
  * particularly useful because they have no chance of gimbal lock.
  *
- * In this example, 
+ * In this example, we have a Quaternion that defined the surface's
+ * rotation.
  */
 define(function(require, exports, module) {
     var Engine     = require('famous/core/Engine');

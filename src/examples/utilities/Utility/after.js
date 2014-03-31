@@ -6,19 +6,16 @@
  * once the returned function is called a set number of
  * times.
  *
- * In the example, the callback is run after the 5th execution.
+ * In the example, the callback is run after the 5th click.
  */
 
 define(function(require, exports, module) {
+    var Engine  = require('famous/core/Engine');
     var Utility = require('famous/utilities/Utility');
 
     var fn = Utility.after(5, function() {
         alert('Was called on 5th try');
     });
 
-    fn();
-    fn();
-    fn();
-    fn();
-    fn();
+    Engine.on('click', fn);
 });

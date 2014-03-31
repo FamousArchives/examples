@@ -18,7 +18,7 @@ define(function(require, exports, module) {
 
     var counter = 0;
     var surface = new Surface({
-        size: [500, 500],
+        size: [undefined, undefined],
         content: 'this function will run every 100 engine ticks',
         classes: ['red-bg'],
         properties: {
@@ -29,6 +29,6 @@ define(function(require, exports, module) {
     mainContext.add(new Modifier({origin :[.5, .5]})).add(surface);
 
     Timer.every(function() {
-        surface.setContent('this function has run ' + ++counter + ' time(s)')
+        surface.setContent('this function has run ' + ++counter + ' time(s)');
     }, 100);
 });

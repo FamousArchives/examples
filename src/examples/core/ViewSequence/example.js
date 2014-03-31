@@ -37,7 +37,7 @@ define(function(require, exports, module) {
 
     var counter = 0;
     Timer.setInterval(function() {
-        viewSequence.index = counter++ % (viewSequence.array.length - 1)
+        viewSequence.index = ++counter % (viewSequence.array.length - 1)
     }, 1000);
 
     mainContext.add(new Modifier({origin: [.5, .5]})).add(viewSequence);
