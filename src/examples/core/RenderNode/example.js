@@ -7,7 +7,7 @@
  * modifiers together so that they can be treated as a single
  * component.
  *
- * In this example, you can see how render nodes are used. 
+ * In this example, you can see how render nodes are used.
  * Once you add components to a render node, you can
  * continue to work with just the render node.
  */

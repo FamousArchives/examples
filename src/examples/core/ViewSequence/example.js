@@ -3,7 +3,7 @@
  * ------------
  *
  * ViewSequence is way to iterate through and modify
- * a collection of renderable elements.  It is useful for 
+ * a collection of renderable elements.  It is useful for
  * components that act of a collection of renderables such
  * as Scrollview.
  *

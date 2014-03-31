@@ -4,7 +4,7 @@
  * 
  * RotateSync handles piped in two-finger touch events to increase
  * or decrease scale via pinching / expanding. It outputs an object
- * with position, velocity, touch ids, and distance.
+ * with position, velocity, touches, and distance.
  *
  * In this example, we create a ScaleSync and displays the data
  * it recieves to the screen.
