@@ -7,7 +7,9 @@
  * surfaces it contains:
  * 
  * - size (clips contained surfaces to its own width and height)
+ * 
  * - origin
+ * 
  * - its own opacity and transform, which will be automatically 
  *   applied to  all Surfaces contained directly and indirectly.
  *

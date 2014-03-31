@@ -6,7 +6,7 @@
  * perform more precise timing operations.
  * 
  * In this example we reset the content of the surface
- * afer 100 ticks from the Engine.
+ * afer 200 ticks from the Engine.
  */
 define(function(require, exports, module) {
     // import dependencies
@@ -32,6 +32,6 @@ define(function(require, exports, module) {
     mainContext.add(new Modifier({origin :[.5, .5]})).add(surface);
 
     Timer.after(function() {
-        surface.setContent('this function was run after 100 Engine ticks')
-    }, 100);
+        surface.setContent('this function was run after 200 Engine ticks')
+    }, 200);
 });

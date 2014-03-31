@@ -12,19 +12,20 @@ define(function(require, exports, module) {
     var Engine   = require('famous/core/Engine');
     var Surface  = require('famous/core/Surface');
     var Modifier = require('famous/core/Modifier');
-    var KeyCodes = require('famous/utilities/KeyCodes')
+    var KeyCodes = require('famous/utilities/KeyCodes');
    
     var mainContext = Engine.createContext();
 
     var surface = new Surface({
         size: [200, 200],
-        content: 'start pressing some keys',
+        content: 'press keys',
         classes: ['red-bg'],
         properties: {
             lineHeight: '200px',
             textAlign: 'center'
         }
     });
+
     mainContext.add(new Modifier({origin :[.5, .5]})).add(surface);
 
     Engine.on('keypress', function(event) {
