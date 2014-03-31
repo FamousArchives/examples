@@ -5,7 +5,7 @@
  * A context is the root of the render tree.  In order for something to
  * be rendered, it either needs to be added directly to the context or
  * something that is already added to the context.  While it is possible
- * to have multiple contexts, it is not endorsed as overuse can lead to
+ * to have multiple contexts, this is not endorsed as overuse can lead to
  * performance issues.
  *
  * In HTML, the default behavior is that the new context is added to the

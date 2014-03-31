@@ -7,8 +7,8 @@
  * event handler that handles the events when the 
  * EventArbiter is in that mode.
  *
- * In this example we have two event handlers, one for mode A
- * and one for mode B.  Everytime we click we are changing the
+ * In this example, we have two event handlers: one for mode A
+ * and one for mode B.  Every time we click we are changing the
  * mode of the EventArbiter and thus toggling which EventHandlers
  * are getting the events.
  */

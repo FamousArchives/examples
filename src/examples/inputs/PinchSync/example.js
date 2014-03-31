@@ -2,12 +2,12 @@
  * PinchSync
  * ------------
  * 
- * PinchSync handles piped in two-finger touch events to change
+ * PinchSync handles piped-in two-finger touch events to change
  * position via pinching / expanding. It outputs an object with
- * position, velocity, touch ids, and distance.
+ * position, velocity, touch IDs, and distance.
  *
- * In this example, we create a PinchSync and displays the data
- * it recieves to the screen.  Based on the data we can decide if
+ * In this example, we create a PinchSync and display the data
+ * it receives to the screen.  Based on the data, we can decide if
  * it is pinching or expanding.
  */
 define(function(require, exports, module) {

@@ -2,14 +2,14 @@
  * Scene
  * --------
  *
- * Scene is a way to define a layout before hand and 
+ * Scene is a way to define a layout first and
  * then add components to that layout by way of accessing
- * the unique id's.  You can also change the JSON defining
+ * the unique identifier (id).  You can also change the JSON defining
  * the layout by way of the Scene's load function.  It is a
- * great tool for having flexible layouts as you can load
- * different scene configurations depending on the window size.
+ * great tool for having flexible layouts since you can load
+ * different Scene configurations depending on the window size.
  *
- * In the example you can see a Scene is made and then surfaces
+ * In the example, you can see a Scene is made and then surfaces
  * are added to the exposed RenderNodes.
  */
 define(function(require, exports, module) {

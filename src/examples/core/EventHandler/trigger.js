@@ -4,7 +4,7 @@
  *
  * This example shows the most basic functionality of EVentHandler.
  * First, we register a function to be run on the "ILikeToEat" event.
- * Then we trigger "ILikeToEat" which will call all of the
+ * Then we trigger "ILikeToEat", which will call all of the
  * register listeners.
  */
 define(function(require, exports, module) {

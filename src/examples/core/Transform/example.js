@@ -10,11 +10,11 @@
  * - Scale
  * - Skew
  *
- * Transform is generally used with Modifiers so that child elements
+ * Transform is generally used with modifiers so that child elements
  * can be affected by the physical transformations that are applied
  * to them.
  *
- * In this example we see a surface that is rotated PI/4 clockwise and the
+ * In this example, we see a surface that is rotated PI/4 clockwise and the
  * is translated 200px right and 100px down.
  */
 define(function(require, exports, module) {
