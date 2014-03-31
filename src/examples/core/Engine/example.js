@@ -14,7 +14,7 @@ define(function(require, exports, module) {
     var Engine  = require("famous/core/Engine");
     var Surface = require("famous/core/Surface");
 
-    var mainCtx = Engine.createContext();
+    var mainContext = Engine.createContext();
 
     var surface = new Surface({
         size: [undefined, undefined],
@@ -26,14 +26,14 @@ define(function(require, exports, module) {
         }
     });
 
-    mainCtx.add(surface);
+    mainContext.add(surface);
 
     Engine.on("click", function() {
         surface.setContent("Click");
     });
 
     Engine.on("resize", function() {
-        surface.setContent("The window is being resized");
+        surface.setContent("The window was resized");
     });
 
     Engine.nextTick(function() {
