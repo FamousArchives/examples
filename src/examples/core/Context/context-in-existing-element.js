@@ -11,20 +11,14 @@ define(function(require, exports, module) {
     var Surface = require("famous/core/Surface");
 
     var el = document.createElement('div');
-    el.id = 'testId';
-    el.className = 'testClass';
+    el.id = 'test';
     document.body.appendChild(el);
 
     var mainContext = Engine.createContext(el);
 
     var surface = new Surface({
         size: [200, 200],
-        content: "Hello World",
-        classes: ["red-bg"],
-        properties: {
-            lineHeight: "200px",
-            textAlign: "center"
-        }
+        properties: {background : 'red'}
     });
 
     mainContext.add(surface);
