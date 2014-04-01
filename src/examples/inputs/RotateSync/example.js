@@ -18,7 +18,6 @@ define(function(require, exports, module) {
     var start = 0;
     var update = 0;
     var end = 0;
-    var recentData = "";
     var direction = "";
     var angle = 0;
 
@@ -32,7 +31,6 @@ define(function(require, exports, module) {
         return "<div>Start Count: " + start + "</div>" +
         "<div>End Count: " + end + "</div>" +
         "<div>Update Count: " + update + "</div>" +
-        "<div>Update Data:<pre>" + recentData + "</pre></div>" +
         "<div>Direction: " + direction + "</div>" +
         "<div>Angle: " + angle + "</div>";
     };
@@ -51,9 +49,8 @@ define(function(require, exports, module) {
 
     rotateSync.on("update", function(data) {
         update++;
-        direction = data.v > 0 ? "Clockwise" : "Counter-Clockwise";
+        direction = data.velocity > 0 ? "Clockwise" : "Counter-Clockwise";
         angle = data.angle;
-        recentData = JSON.stringify(data, undefined, 2);
         surface.setContent(contentTemplate());
     });
 

@@ -18,7 +18,6 @@ define(function(require, exports, module) {
     var start = 0;
     var update = 0;
     var end = 0;
-    var recentData = "";
 
     var scrollSync = new ScrollSync(function() {
         return [0,0];
@@ -29,8 +28,7 @@ define(function(require, exports, module) {
     var contentTemplate = function() {
         return "<div>Start Count: " + start + "</div>" +
         "<div>End Count: " + end + "</div>" +
-        "<div>Update Count: " + update + "</div>" +
-        "<div>Update Data:<pre>" + recentData + "</pre></div>";
+        "<div>Update Count: " + update + "</div>";
     };
 
     var surface = new Surface({
@@ -46,7 +44,6 @@ define(function(require, exports, module) {
 
     scrollSync.on("update", function(data) {
         update++;
-        recentData = JSON.stringify(data, undefined, 2);
         surface.setContent(contentTemplate());
     });
 

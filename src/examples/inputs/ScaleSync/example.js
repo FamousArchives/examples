@@ -19,7 +19,6 @@ define(function(require, exports, module) {
     var start = 0;
     var update = 0;
     var end = 0;
-    var recentData = "";
     var growShrink = "";
 
     var scaleSync = new ScaleSync(function() {
@@ -32,7 +31,6 @@ define(function(require, exports, module) {
         return "<div>Start Count: " + start + "</div>" +
         "<div>End Count: " + end + "</div>" +
         "<div>Update Count: " + update + "</div>" +
-        "<div>Update Data:<pre>" + recentData + "</pre></div>" +
         "<div>Scale Direction: " + growShrink + "</div>";
     };
 
@@ -49,8 +47,7 @@ define(function(require, exports, module) {
 
     scaleSync.on("update", function(data) {
         update++;
-        growShrink = data.v > 0 ? "Growing" : "Shrinking";
-        recentData = JSON.stringify(data)
+        growShrink = data.velocity > 0 ? "Growing" : "Shrinking";
         surface.setContent(contentTemplate());
     });
 

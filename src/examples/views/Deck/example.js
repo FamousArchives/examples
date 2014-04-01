@@ -20,7 +20,7 @@ define(function(require, exports, module) {
     var SpringTransition = require('famous/transitions/SpringTransition');
     Transitionable.registerMethod('spring', SpringTransition);
 
-    var mainDisplay = Engine.createContext();
+    var mainContext = Engine.createContext();
 
     var surfaces = [];
     var myLayout = new Deck({
@@ -54,6 +54,6 @@ define(function(require, exports, module) {
     var containerModifier = new Modifier({
         origin: [0.5, 0.5]
     });
-    mainDisplay.add(containerModifier).add(myLayout);
 
+    mainContext.add(containerModifier).add(myLayout);
 });

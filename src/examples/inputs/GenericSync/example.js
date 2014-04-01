@@ -25,7 +25,6 @@ define(function(require, exports, module) {
     var start = 0;
     var update = 0;
     var end = 0;
-    var recentData = "";
     var position = [0, 0];
 
     var genericSync = new GenericSync(function() {
@@ -39,8 +38,7 @@ define(function(require, exports, module) {
         return "<div>Start Count: " + start + "</div>" +
         "<div>End Count: " + end + "</div>" + 
         "<div>Update Count: " + update + "</div>" +
-        "<div>Update Data:<pre>" + recentData + "</pre></div>"+ 
-        "<div>Distance away from mousedown origin:<br>" + position + "</div>";
+        "<div>Distance away from mousedown/touch origin:<br>" + position + "</div>";
     };
 
     var surface = new Surface({
@@ -57,9 +55,8 @@ define(function(require, exports, module) {
 
     genericSync.on("update", function(data) {
         update++;
-        position[0] += data.p[0];
-        position[1] += data.p[1]; 
-        recentData = JSON.stringify(data, undefined, 2); 
+        position[0] += data.position[0];
+        position[1] += data.position[1]; 
         surface.setContent(contentTemplate());
     });
 
