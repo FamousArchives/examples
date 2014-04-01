@@ -90,6 +90,4 @@ define(function(require, exports, module) {
     
     //finally add the scroll container to the context
     mainContext.add(new Modifier({origin: [.5,.5], transform: Transform.translate(-240,0,0)})).add(scrollContainer);
-
-
 });

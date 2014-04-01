@@ -1,4 +1,4 @@
 define(function(require, exports, module) {
 	// import your example
-	require('examples/modifiers/ModifierChain/example');
+	require('examples/transitions/Easing/example');
 });
