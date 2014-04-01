@@ -2,7 +2,12 @@
  * WallTransition
  * --------
  *
- * To do
+ * WallTransition is a method of transitioning between two values (numbers,
+ * or arrays of numbers) with a bounce. Unlike a SpringTransition
+ * The transition will not overshoot the target, but bounce back against it.
+ * The behavior of the bounce is specified by the transition options.
+ *
+ * In this example, there is a surface attached to a WallTransition.
  */
 define(function(require, exports, module) {
     var Engine         = require("famous/core/Engine");

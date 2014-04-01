@@ -2,37 +2,34 @@
  * Transitionable
  * --------
  *
- * To do
+ * Transitionable is  state maintainer for a smooth transition between
+ * numerically-specified states. Example numeric states include floats or
+ * Matrix objects. Transitionables form the basis
+ * of Transform objects.
  */
 define(function(require, exports, module) {
-    var Engine            = require("famous/core/Engine");
+    var Engine         = require("famous/core/Engine");
     var Surface        = require("famous/core/Surface");
-    var Modifier        = require("famous/core/Modifier");
-    var Transform        = require("famous/core/Transform");
+    var Modifier       = require("famous/core/Modifier");
+    var Transform      = require("famous/core/Transform");
     var Timer          = require("famous/utilities/Timer");
     var Transitionable = require("famous/transitions/Transitionable");
 
     // create the main context
     var mainContext = Engine.createContext();
-    
-    //show a grid for reference
-    var grid = new Surface({
-        size: [481,481],
-        classes: ['graph']
-    });
-    mainContext.add(new Modifier({origin:[.5,.5]})).add(grid);
 
-    //this is the surface displayed
     var surface = new Surface({
         size:[100,100],
-        classes: ["famousRedBackground"],
+        content: 'Click Me',
+        classes: ['red-bg'],
         properties: {
-            borderRadius: "50px"
+            textAlign: 'center',
+            lineHeight: '100px'
         }
     });
 
     //set the initial value of the transtionable to the left side of the screen
-    var maxOffset = 240;
+    var maxOffset = 100;
 
     //create our transitionable
     var xPos = new Transitionable(-maxOffset);

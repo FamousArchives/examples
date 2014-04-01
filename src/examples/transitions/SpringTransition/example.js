@@ -2,7 +2,11 @@
  * SpringTransition
  * --------
  *
- * To do
+ * SpringTransition is a method of transitioning between two values (numbers,
+ * or arrays of numbers) with a bounce. The transition will overshoot the target
+ * state depending on the parameters of the transition.
+ *
+ * In this example, there is a surface attached to a SpringTransition.
  */
 define(function(require, exports, module) {
     var Engine              = require("famous/core/Engine");

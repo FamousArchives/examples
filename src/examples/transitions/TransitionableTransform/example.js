@@ -2,43 +2,40 @@
  * TransitionableTransform
  * --------
  *
- * To do
+ * TransitionableTransform is a class for transitioning 
+ * the state of a Transform by transitioning its translate,
+ * scale, skew and rotate components independently.
+ *
+ * In this example, there is a surface having its scale
+ * affected by a TransitionableTransform.
  */
 define(function(require, exports, module) {
-    var Engine                     = require("famous/core/Engine");
+    var Engine                  = require("famous/core/Engine");
     var Surface                 = require("famous/core/Surface");
     var Modifier                = require("famous/core/Modifier");
     var TransitionableTransform = require("famous/transitions/TransitionableTransform");
 
-    // create the main context
     var mainContext = Engine.createContext();
 
-    //create a grid
-    var grid = new Surface({
-        size: [481,481],
-        classes: ['graph']
-    });
-    mainContext.add(new Modifier({origin:[.5,.5]})).add(grid);
-
-    //this is the surface displayed
     var surface = new Surface({
         size:[100,100],
-        classes: ["famousRedBackground"],
+        content: 'Click Me',
+        classes: ['red-bg'],
         properties: {
-            borderRadius: "50px"
+            textAlign: 'center',
+            lineHeight: '100px'
         }
     });
 
-    //create our transitionable
-    var tt = new TransitionableTransform();
+    var transitionableTransform = new TransitionableTransform();
     
     var modifier = new Modifier({
         origin: [.5,.5],
-        transform: tt
+        transform: transitionableTransform
     });
 
     surface.on("click", function(){
-        tt.setScale([3,3,1], {duration: 3000});
+        transitionableTransform.setScale([3,3,1], {duration: 3000});
     });
 
     mainContext.add(modifier).add(surface);

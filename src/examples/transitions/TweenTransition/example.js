@@ -1,8 +1,11 @@
 /**
- * WallTransition
+ * TweenTransition
  * --------
  *
- * To do
+ * TweenTransition is a state maintainer for a smooth transition between
+ * numerically-specified states.
+ *
+ * In this example, a surface is faded out based on a TweenTransition.
  */
 define(function(require, exports, module) {
     var Engine          = require("famous/core/Engine");

@@ -2,7 +2,11 @@
  * SnapTransition
  * ----------------
  *
- * To do
+ * SnapTransition is a method of transitioning between two values (numbers,
+ * or arrays of numbers). It is similar to SpringTransition except
+ * the transition can be much faster and always has a damping effect.
+ *
+ * In this example you can see a surface attached to a SnapTransition.
  */
 define(function(require, exports, module) {
     // import dependencies
