@@ -16,23 +16,23 @@ define(function(require, exports, module) {
     // create the main context
     var mainContext = Engine.createContext();
 
-    var grid = new Surface({
-        size: [481,481],
-        classes: ['graph']
-    });
-    mainContext.add(new Modifier({origin:[.5,.5]})).add(grid);
-
     var surface = new Surface({
         size:[100,100],
-        classes: ['famousRedBackground'],
+        content: 'Click Me',
+        classes: ['red-bg'],
         properties: {
-            borderRadius: "50px"
+            textAlign: 'center',
+            lineHeight: '100px'
         }
     });
 
     var modifier = new Modifier({
         origin: [.5,.5],
         transform: Transform.translate(0,-240,0)
+    });
+
+    var mod2 = new Modifier({
+        transform: Transform.rotateX(0.2)
     });
 
     Transitionable.registerMethod('snap', SnapTransition);
@@ -47,5 +47,5 @@ define(function(require, exports, module) {
         modifier.setTransform(Transform.translate(0,0,0),transition);
     });
 
-    mainContext.add(modifier).add(surface);
+    mainContext.add(modifier).add(mod2).add(surface);
 });

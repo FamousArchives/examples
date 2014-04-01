@@ -2,35 +2,30 @@
  * Easing
  * --------
  *
- * To do
+ * Easing is a library of curves which map an animation
+ * explicitly as a function of time.
+ *
+ * In this example we have a red ball that transitions from
+ * the top of the box to the middle based on various easing
+ * curves.
  */
 define(function(require, exports, module) {
-    var Engine                 = require("famous/core/Engine");
-    var Surface             = require("famous/core/Surface");
-    var Modifier             = require("famous/core/Modifier");
-    var Transform             = require("famous/core/Transform");
-    var Transitionable      = require("famous/transitions/Transitionable");
-    var Easing                = require("famous/transitions/Easing");
-    var ContainerSurface    = require("famous/surfaces/ContainerSurface");
-    var ScrollView          = require("famous/views/ScrollView");
+    var Engine           = require("famous/core/Engine");
+    var Surface          = require("famous/core/Surface");
+    var Modifier         = require("famous/core/Modifier");
+    var Transform        = require("famous/core/Transform");
+    var Transitionable   = require("famous/transitions/Transitionable");
+    var Easing           = require("famous/transitions/Easing");
+    var ContainerSurface = require("famous/surfaces/ContainerSurface");
+    var ScrollView       = require("famous/views/ScrollView");
 
     // create the main context
     var mainContext = Engine.createContext();
 
-    //show a grid for reference
-    var grid = new Surface({
-        size: [481,481],
-        classes: ['graph']
-    });
-    mainContext.add(new Modifier({origin:[.5,.5], transform: Transform.translate(100,0,0)})).add(grid);
-
-    //create the dot
+   //create the dot
     var surface = new Surface({
         size:[100,100],
-        classes: ['famousRedBackground'],
-        properties: {
-            borderRadius: "50px"
-        }
+        classes: ['red-bg']
     });
 
     var modifier = new Modifier({
