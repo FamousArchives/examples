@@ -1,8 +1,11 @@
 /**
- * WallTransition
+ * TweenTransition
  * --------
  *
- * To do
+ * TweenTransition is a state maintainer for a smooth transition between
+ * numerically-specified states.
+ *
+ * In this example, a surface is faded out based on a TweenTransition.
  */
 define(function(require, exports, module) {
     var Engine          = require("famous/core/Engine");
@@ -14,18 +17,13 @@ define(function(require, exports, module) {
     
     var mainContext = Engine.createContext();
 
-    //show a grid for reference
-    var grid = new Surface({
-        size: [481,481],
-        classes: ['graph']
-    });
-    mainContext.add(new Modifier({origin:[.5,.5]})).add(grid);
-
     var surface = new Surface({
         size:[100,100],
-        classes: ['famousRedBackground'],
+        content: 'Click Me',
+        classes: ['red-bg'],
         properties: {
-            borderRadius: "50px"
+            textAlign: 'center',
+            lineHeight: '100px'
         }
     });
 

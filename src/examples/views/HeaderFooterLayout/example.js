@@ -14,7 +14,7 @@ define(function(require, exports, module) {
     var Surface            = require("famous/core/Surface");
     var HeaderFooterLayout = require("famous/views/HeaderFooterLayout");
 
-    var mainCtx = Engine.createContext();
+    var mainContext = Engine.createContext();
 
     var layout = new HeaderFooterLayout({
         headerSize: 100,
@@ -51,5 +51,5 @@ define(function(require, exports, module) {
         }
     }));
 
-    mainCtx.add(layout);
+    mainContext.add(layout);
 });

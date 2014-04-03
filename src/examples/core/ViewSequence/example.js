@@ -12,11 +12,11 @@
  * is referring to.
  */
 define(function(require, exports, module) {
-    var Engine       = require("famous/core/Engine");
-    var Surface      = require("famous/core/Surface");
-    var Modifier     = require("famous/core/Modifier")
-    var ViewSequence = require("famous/core/ViewSequence");
-    var Timer        = require("famous/utilities/Timer");
+    var Engine           = require("famous/core/Engine");
+    var Surface          = require("famous/core/Surface");
+    var Modifier         = require("famous/core/Modifier")
+    var ViewSequence     = require("famous/core/ViewSequence");
+    var SequentialLayout = require("famous/views/SequentialLayout");
 
     var mainContext = Engine.createContext();
 
@@ -25,7 +25,7 @@ define(function(require, exports, module) {
     for(var i = 0; i < 8; i++) {
         viewSequence.push(new Surface({
             content: "I am panel " + (i + 1),
-            size: [200, 200],
+            size: [undefined, 200],
             properties: {
                 backgroundColor: "hsl(" + (i * 360 / 8) + ", 100%, 50%)",
                 color: "black",
@@ -35,10 +35,14 @@ define(function(require, exports, module) {
         }));
     }
 
-    var counter = 0;
-    Timer.setInterval(function() {
-        viewSequence.index = ++counter % (viewSequence.array.length - 1)
-    }, 1000);
+    var sequentialLayout = new SequentialLayout({
+        direction: 1
+    });
+    sequentialLayout.sequenceFrom(viewSequence);
 
-    mainContext.add(new Modifier({origin: [.5, .5]})).add(viewSequence);
+    mainContext.add(sequentialLayout);
+
+    Engine.on('click', function() {
+        viewSequence.splice(1, 1);
+    });
 });

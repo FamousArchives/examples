@@ -20,7 +20,6 @@ define(function(require, exports, module) {
     var start = 0;
     var update = 0;
     var end = 0;
-    var recentData = "";
     var direction = "";
     var distance = 0;
 
@@ -33,7 +32,6 @@ define(function(require, exports, module) {
         return "<div>Start Count: " + start + "</div>" +
         "<div>End Count: " + end + "</div>" +
         "<div>Update Count: " + update + "</div>" +
-        "<div>Update Data:<pre>" + recentData + "</pre></div>" +
         "<div>Pinch Direction: " + direction + "</div>" +
         "<div>Finger Separation Distance:" + distance + "</div>";
     };
@@ -52,8 +50,7 @@ define(function(require, exports, module) {
     pinchSync.on("update", function(data) {
         update++;
         distance = data.distance;
-        direction = data.v > 0 ? "Expanding" : "Pinching";
-        recentData = JSON.stringify(data, undefined, 2); 
+        direction = data.velocity > 0 ? "Expanding" : "Pinching";
         surface.setContent(contentTemplate());
     });
 
