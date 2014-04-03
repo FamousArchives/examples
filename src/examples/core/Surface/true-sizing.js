@@ -2,11 +2,10 @@
  * Surface with true sizing
  * ------------------------
  *
- * A surface can have its size set to "true".  What this means
- * is that the size of the surface will be equal to the size
- * of the content it holds.
+ * A surface can have its size set to "true".  This will size the surface
+ * according to the size of its contents.
  *
- * This example shows this property in action.
+ * In this example, a surface is created that is sized to its textual content.
  */
 define(function(require, exports, module) {
     var Engine  = require("famous/core/Engine");

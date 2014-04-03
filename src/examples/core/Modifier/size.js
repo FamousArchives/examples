@@ -3,15 +3,18 @@
  * ------------------
  *
  * Modifiers have a size property that will affect any children
- * that depend on the size of the parent.
+ * that depend on the size or origin of the parent. Size can be thought of as
+ * a "bounding box" from which an origin and node size is relative to.
  *
- * In this example, we have two surfaces, one that is added directly
- * to the context and one that is added to a modifier with a size of
- * [200, 200].  By setting the size of both of the surfaces to
- * [undefined, undefined], we allow them to fill their parent's
- * size.  Because of this, we see that the red surface fills the whole
- * window while the gray surface will respect the size of the modifier
- * that sits in front of it in the render tree.
+ * In this example, we have a surface whose size is [undefined, undefined].
+ * Famo.us will then size the surface relative to the last defined size context.
+ * Since we include a modifier with size of [200,200] before the surface, the surface
+ * is sized to [200,200].
+ *
+ * To demonstrate origin relative to a size context, we have defined a rotation
+ * about the center of a [200,200] bounding box, so that our surface rotates about
+ * its center, as opposed to the default origin [0,0] (top left corner).
+ *
  */
 define(function(require, exports, module) {
     var Engine    = require("famous/core/Engine");
@@ -22,23 +25,16 @@ define(function(require, exports, module) {
     var mainContext = Engine.createContext();
 
     var sizeMod = new Modifier({
-        transform: Transform.translate(0, 0, 1),
         size: [200, 200]
     });
 
-    var surfaceOne = new Surface({
-        size: [undefined, undefined],
-        content: "Parent is context",
-        classes: ["red-bg"],
-        properties: {
-            lineHeight: window.innerHeight + 'px',
-            textAlign: 'center'
-        }
+    var rotateMod = new Modifier({
+        origin : [.5,.5],
+        transform : Transform.rotateZ(Math.PI/4)
     });
 
-    var surfaceTwo = new Surface({
+    var surface = new Surface({
         size: [undefined, undefined],
-        content: "Parent is modifier",
         classes: ["grey-bg"],
         properties: {
             lineHeight: '200px',
@@ -46,6 +42,5 @@ define(function(require, exports, module) {
         }
     });
 
-    mainContext.add(surfaceOne);
-    mainContext.add(sizeMod).add(surfaceTwo);
+    mainContext.add(sizeMod).add(rotateMod).add(surface);
 });

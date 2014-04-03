@@ -2,9 +2,9 @@
  * Context
  * -------
  *
- * A context is the root of the render tree.  In order for a Famo.us node to
- * be rendered, it either needs to be added to the context or added to
- * a node that has been added the context.
+ * A context is the root of the render tree.  In order for a Famo.us renderable
+ * (such as a Surface) to be rendered, it either needs to be added to the context
+ * or added to a node that has been added to the context.
  *
  * In HTML, the new context is added to the body tag as a <div> with class
  * 'famous-container'. Renderables added to the context will be child nodes of

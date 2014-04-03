@@ -2,9 +2,9 @@
  * Context inside of an existing element
  * -------------------------------------
  *
- * Instead of creating a new div for the context, you can also
- * using an existing HTML element for your context by passing
- * a reference to it when you create the context. 
+ * A Famo.us Context can be applied to a pre-existing HTML element.
+ * Note: You may need to add properties from famous.css for your
+ * targeted HTML element to respect Famo.us 3D primites.
  */
 define(function(require, exports, module) {
     var Engine  = require("famous/core/Engine");

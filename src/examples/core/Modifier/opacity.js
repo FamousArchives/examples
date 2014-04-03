@@ -4,8 +4,7 @@
  *
  * Modifiers have an opacity property.  By setting the opacity
  * of a modifier, all renderables below the modifier in the
- * render tree will have their opacity's affected.  Opacity is 
- * a multiplicative property.
+ * render tree will have their opacity's affected multiplicatively.
  *
  * In this example we have one surface being affected by a .5
  * opacity modifier and another surface that is affected by that
