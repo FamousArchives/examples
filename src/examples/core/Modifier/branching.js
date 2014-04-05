@@ -2,8 +2,7 @@
  * Modifier branching
  * ------------------
  *
- * When you create a new branch with a modifier, only the modifiers
- * and renderables below it in the render tree will be affected by it.
+ * Modifiers only affect Famo.us nodes beneath them in the render tree.
  *
  * In this example, we can see that both surfaces are affected by
  * modifierOne, but only the smaller gray surface is affected by

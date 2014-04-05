@@ -2,15 +2,17 @@
  * Surface
  * ---------
  *
- * Surface is the main renderable in Famo.us.  When
- * you create a Surface, it creates a div that will
- * and sets the content, classes, and CSS properties
- * of the div.  When the surface is added into the
- * render tree, the div is added to the DOM and becomes
- * viewable.
+ * A Famo.us Surface is loosely coupled to an HTML <div> on screen. A Surface
+ * can take in any valid HTML as content.
  *
- * In this example, we create a single surface with
- * some properties set and add it into the render tree.
+ * A popular question to ask is, when should I craete multiple surfaces, versus
+ * populating a single surface with more HTML content? The answer hinges on animating
+ * content, versus static content. If your content is dynamically changing, create
+ * a Surface for it. If your content is static (or rarely changing) HTML,
+ * populate a Surface with it.
+ *
+ * In this example, a single surface with
+ * some properties is set and add to the render tree.
  */
 define(function(require, exports, module) {
     var Engine  = require("famous/core/Engine");

@@ -2,7 +2,7 @@
  * EventHandler
  * ------------
  *
- * EventHandler is a way to send and respond to events.
+ * EventHandler is a way to broadcast and listen to events.
  *
  * In this example, we pipe the DOM events of the surface to the
  * EventHandler.  When we then click the surface, the event handler
@@ -18,11 +18,10 @@ define(function(require, exports, module) {
     
     var surface = new Surface({
         size: [200, 200],
-        content: "Hello World",
-        classes: ["red-bg"],
+        content : 'Click Me',
         properties: {
-            lineHeight: "200px",
-            textAlign: "center"
+            background : 'red',
+            textAlign : 'center'
         }
     });
 

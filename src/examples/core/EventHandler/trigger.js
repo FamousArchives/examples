@@ -6,6 +6,8 @@
  * First, we register a function to be run on the "ILikeToEat" event.
  * When the event handler gets the surface click, we trigger "ILikeToEat", 
  * which will call all of the register listeners resulting in the alert.
+ *
+ * TODO: confusing. Emit is also valid here
  */
 define(function(require, exports, module) {
     var Engine       = require('famous/core/Engine');

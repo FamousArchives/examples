@@ -10,6 +10,8 @@
  * In this example, you can see how render nodes are used.
  * Once you add components to a render node, you can
  * continue to work with just the render node.
+ *
+ * TODO: REMOVE RenderNode from documentation
  */
 define(function(require, exports, module) {
     var Engine     = require("famous/core/Engine");

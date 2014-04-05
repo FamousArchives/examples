@@ -10,6 +10,8 @@
  * In this example, you can see that we are iterating through 
  * the ViewSequence by changing the index that the ViewSequence 
  * is referring to.
+ *
+ * TODO: REMOVE
  */
 define(function(require, exports, module) {
     var Engine           = require("famous/core/Engine");

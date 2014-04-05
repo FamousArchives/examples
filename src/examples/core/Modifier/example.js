@@ -2,8 +2,10 @@
  * Modifier
  * --------
  *
- * Modifiers are nodes that can be added to the render tree
- * to affect the physical position and look of their children.
+ * Modifiers are Famo.us nodes that can be added to the render tree which affect
+ * the appearance of the nodes below. Modifiers can apply a CSS3 3D
+ * transform (translation, rotation, scale or skew), or an opacity. Modifiers also
+ * affect layout primitives by defining a size context (bounding box) and origin.
  *
  * In this example, we can see that the surface is translated 50
  * pixels right and 50 pixels down because it sits below the

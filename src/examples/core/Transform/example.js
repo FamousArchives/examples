@@ -2,20 +2,20 @@
  * Transform
  * ---------
  *
- * Transform is a class that helps create the proper matricies that 
- * describe physical transformations such as:
+ * A Famo.us Transform corresponds to a CSS3 3D transform.
  *
- * - Translation
- * - Rotation
- * - Scale
- * - Skew
+ * See: https://developer.mozilla.org/en-US/docs/Web/CSS/transform
  *
- * Transform is generally used with modifiers so that child elements
- * can be affected by the physical transformations that are applied
- * to them.
+ * With transforms you can affect the translation, rotation, scale, or skew of a
+ * Famo.us renderable, e.g., a Famo.us Surface.
  *
- * In this example, we see a surface that is rotated PI/4 clockwise and the
- * is translated 200px right and 100px down.
+ * Transforms are generally parameters to Famo.us modifiers which apply the
+ * transform to its children.
+ *
+ * In this example, a Transform corresponding to a rotation of 45 degreees
+ * is created and applied to a surface via a Famo.us Modifier.
+ *
+ * TODO: add example with a transitioning transform
  */
 define(function(require, exports, module) {
     var Engine    = require("famous/core/Engine");
@@ -25,8 +25,8 @@ define(function(require, exports, module) {
 
     var mainContext = Engine.createContext();
 
-    var transform = new Modifier({
-        transform: Transform.thenMove(Transform.rotateZ(Math.PI/4),[200, 100, 0])
+    var rotateModifier = new Modifier({
+        transform: Transform.rotateZ(Math.PI/4)
     });
 
     var surface = new Surface({
@@ -39,5 +39,5 @@ define(function(require, exports, module) {
         }
     });
 
-    mainContext.add(transform).add(surface);
+    mainContext.add(rotateModifier).add(surface);
 });
