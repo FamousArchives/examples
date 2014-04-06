@@ -2,17 +2,15 @@
  * Context
  * -------
  *
- * A context is the root of the render tree.  In order for something to
- * be rendered, it either needs to be added directly to the context or
- * something that is already added to the context.  While it is possible
- * to have multiple contexts, this is not endorsed as overuse can lead to
- * performance issues.
+ * A context is the root of the render tree.  In order for a Famo.us renderable
+ * (such as a Surface) to be rendered, it either needs to be added to the context
+ * or added to a node that has been added to the context.
  *
- * In HTML, the default behavior is that the new context is added to the
- * body tag as a new div.  Every renderable that is added to the context
- * will be represented by a new tag inside of that div.
+ * In HTML, the new context is added to the body tag as a <div> with class
+ * 'famous-container'. Renderables added to the context will be child nodes of
+ * this container.
  *
- * In this example, we create a context and add a surface to it so that
+ * In this example, we create a context and add a Famo.us surface to it so that
  * the surface will be rendered on the screen.
  * 
  */
@@ -24,12 +22,7 @@ define(function(require, exports, module) {
 
     var surface = new Surface({
         size: [200, 200],
-        content: "Hello World",
-        classes: ["red-bg"],
-        properties: {
-            lineHeight: "200px",
-            textAlign: "center"
-        }
+        properties: {background : 'red'}
     });
 
     mainContext.add(surface);

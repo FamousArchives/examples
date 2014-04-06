@@ -2,13 +2,10 @@
  * Engine
  * ------
  *
- * Engine is the core component of Famo.us.  It is responsible
- * for managing the requestAnimationFrame loop, creating contexts,
- * listening to global events, and more.
+ * The Famo.us Engine is responsible for managing the requestAnimationFrame loop,
+ * creating Famo.us contexts, and listening to DOM events on the window. The
+ * Engine is a JavaScript singleton: there is only one instance per app.
  *
- * In this example we can see it being used to create a context,
- * listening to window events, and managing functions to be run on
- * various engine ticks.
  */
 define(function(require, exports, module) {
     var Engine  = require("famous/core/Engine");
@@ -17,26 +14,36 @@ define(function(require, exports, module) {
     var mainContext = Engine.createContext();
 
     var surface = new Surface({
-        size: [undefined, undefined],
-        classes: ['red-bg'],
+        size: [undefined, 200],
         properties: {
-            color: "white",
-            paddingTop: "100px",
-            textAlign: "center"
+            background : 'red',
+            fontSize : '24px',
+            textAlign : 'center'
         }
     });
 
     mainContext.add(surface);
 
-    Engine.on("click", function() {
-        surface.setContent("Click");
-    });
-
+    // listen on window resize
     Engine.on("resize", function() {
-        surface.setContent("The window was resized");
+        surface.setContent(
+            'dimensions:' + '<br>' +
+            'width : ' + window.innerWidth  + 'px ' + '<br>' +
+            'height: ' + window.innerHeight + 'px'
+        );
     });
 
+    // listen on click
+    Engine.on("click", function(event){
+        surface.setContent(
+            'click position:' + '<br>' +
+            'x :' + event.clientX + 'px ' + '<br>' +
+            'y :' + event.clientY + 'px'
+        );
+    });
+
+    // exectute function on next requestAnimationFrame cycle
     Engine.nextTick(function() {
-        surface.setContent("This message was run on the next animation tick");   
+        surface.setContent("Try resizing the device/window or clicking somewhere!");
     });
 });

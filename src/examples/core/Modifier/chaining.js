@@ -3,9 +3,9 @@
  * ------------------
  *
  * When you chain modifiers all of them will be applied to 
- * any children in the render tree.  Also, the order in which you add
- * the modifiers matters greatly.  Translating and then rotating
- * means something very different than rotating and then translating.
+ * any children in the render tree.  The order in which you add
+ * the modifiers matters.  Translating and then rotating is not the same as
+ * rotating and then translating.
  *
  * In this example, we can see that the two surfaces are laid out
  * differently because one has its translation happen before its rotation,
