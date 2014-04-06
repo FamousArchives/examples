@@ -17,13 +17,18 @@ define(function(require, exports, module) {
     var Transitionable = require("famous/transitions/Transitionable");
     var WallTransition = require("famous/transitions/WallTransition");
 
-       
+
     // create the main context
     var mainContext = Engine.createContext();
 
     var surface = new Surface({
         size:[100,100],
-        classes: ['red-bg']
+        content: 'Click Me',
+        classes: ['red-bg'],
+        properties: {
+            textAlign: 'center',
+            lineHeight: '100px'
+        }
     });
 
     var modifier = new Modifier({
@@ -34,13 +39,13 @@ define(function(require, exports, module) {
     Transitionable.registerMethod('wall', WallTransition);
 
     var transition = {
-        method: 'wall', 
+        method: 'wall',
         period: 1000,
-        dampingRatio : 0, 
+        dampingRatio : 0,
         velocity: 0,
         restitution : .5 //how bouncy the wall is
     };
-    
+
     surface.on("click", function(){
         modifier.setTransform(Transform.translate(0,0,0),transition);
     });

@@ -7,7 +7,7 @@
  * In the example you can see how a Vector is affected when it
  * is multiplied against a rotation matrix.
  */
-define(function(require, exports, module) {                                     
+define(function(require, exports, module) {
     // import dependencies
     var Engine  = require('famous/core/Engine');
     var Matrix  = require('famous/math/Matrix');
@@ -34,6 +34,6 @@ define(function(require, exports, module) {
             textAlign: 'center'
         }
     });
-    surface.setContent('[' + rotatedVector.toArray() + ']');
-    mainContext.add(surface); 
+    surface.setContent('[' + rotatedVector.get() + ']');
+    mainContext.add(surface);
 });
