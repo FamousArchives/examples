@@ -24,7 +24,7 @@ define(function(require, exports, module) {
     var position = [0, 0];
     var mouseSync = new MouseSync(function() {
         return [0, 0];
-    });
+    },{ direction: 0, rails: true });
 
     Engine.pipe(mouseSync);
 
