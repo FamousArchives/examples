@@ -18,10 +18,11 @@ define(function(require, exports, module) {
     
     var surface = new Surface({
         size: [200, 200],
-        content : 'Click Me',
+        content: "Click Me",
+        classes: ["red-bg"],
         properties: {
-            background : 'red',
-            textAlign : 'center'
+            lineHeight: "200px",
+            textAlign: "center"
         }
     });
 

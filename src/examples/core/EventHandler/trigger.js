@@ -3,11 +3,10 @@
  * -----------------------
  *
  * This example shows the most basic functionality of EventHandler.
- * First, we register a function to be run on the "ILikeToEat" event.
- * When the event handler gets the surface click, we trigger "ILikeToEat", 
+ * First, we register a function to be run on the "click" event.
+ * When the event handler gets the surface click, we trigger "triggeredEvent", 
  * which will call all of the register listeners resulting in the alert.
  *
- * TODO: confusing. Emit is also valid here
  */
 define(function(require, exports, module) {
     var Engine       = require('famous/core/Engine');
@@ -31,11 +30,11 @@ define(function(require, exports, module) {
     surface.pipe(eventHandler);
 
     eventHandler.on('click', function() {
-        eventHandler.trigger('ILikeToEat', {food: 'Apple and bananas'});
+        eventHandler.trigger('triggeredEvent', {data: 'I am the data'});
     });
 
-    eventHandler.on('ILikeToEat', function(data) {
-        alert(data.food);
+    eventHandler.on('triggeredEvent', function(data) {
+        alert(data);
     });
 
     mainContext.add(surface);
