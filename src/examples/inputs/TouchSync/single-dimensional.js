@@ -1,13 +1,14 @@
 /**
- * TouchSync
+ * MouseSync
  * ------------
- * 
- * TouchSync handles piped in touch events. On update it outputs an
- * object with position, velocity, acceleration, and touch id. On end
- * it outputs an object with position, velocity, count, and touch.
  *
- * In this example, we create a TouchSync and displays the data
- * it recieves to the screen.
+ * Famo.us syncs default to track two-dimensional movement,
+ * but can be passed as optional direction parameter to restrict
+ * movement to a single axis.
+ *
+ * In this example, we create a TouchSync but only track the y-axis
+ * changes on touchmove.
+ *
  */
 define(function(require, exports, module) {
     var Engine    = require("famous/core/Engine");
@@ -19,37 +20,39 @@ define(function(require, exports, module) {
     var start = 0;
     var update = 0;
     var end = 0;
-    var position = [0, 0];
+
+    var x = 0;
+    var y = 0;
+    var position = [x, y];
 
     var touchSync = new TouchSync(function() {
-        return position;
-    });
+        return x;
+    }, {direction : TouchSync.DIRECTION_Y});
 
     Engine.pipe(touchSync);
 
     var contentTemplate = function() {
         return "<div>Start Count: " + start + "</div>" +
-        "<div>End Count: " + end + "</div>" + 
-        "<div>Update Count: " + update + "</div>" +
-        "<div>Distance away from touch origin:<br>" + position + "</div>"
+               "<div>End Count: " + end + "</div>" +
+               "<div>Update Count: " + update + "</div>" +
+               "<div>Distance away from touch origin:<br>" + position + "</div>";
     };
 
     var surface = new Surface({
         size: [undefined, undefined],
-        classes: ['grey-bg'],
+        classes: ["grey-bg"],
         content: contentTemplate()
     });
 
     touchSync.on("start", function() {
         start++;
-        position = [0, 0];
+        position = [x, y];
         surface.setContent(contentTemplate());
     });
 
     touchSync.on("update", function(data) {
         update++;
-        position[0] += data.position[0];
-        position[1] += data.position[1]; 
+        position[1] += data.position;
         surface.setContent(contentTemplate());
     });
 
