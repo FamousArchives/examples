@@ -43,6 +43,9 @@ define(function(require, exports, module) {
         }
      });
     surface.pipe(draggable);
+    surface.on('click', function() {
+        console.log('click')
+    })
 
     var node = mainContext.add(new Modifier({origin:[0.5,0.5]}));
     node.add(grid);

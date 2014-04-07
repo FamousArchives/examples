@@ -1,5 +1,5 @@
 define(function(require, exports, module) {
 	// import your example
-	require('examples/core/Modifier/size');
+	require('examples/transitions/Transitionable/example');
 });
 

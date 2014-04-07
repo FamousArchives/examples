@@ -32,20 +32,19 @@ define(function(require, exports, module) {
     var maxOffset = 100;
 
     //create our transitionable
-    var xPos = new Transitionable(-maxOffset);
+    var transitionable = new Transitionable(-maxOffset);
 
     //this controls the position of surface
     var modifier = new Modifier({
-        origin: [.5,.5],
-        transform: Transform.translate(xPos.get(), 0, 0)
+        origin: [.5,.5]
     });
 
-    Engine.on('prerender', function(){
-        modifier.setTransform(Transform.translate(xPos.get(), 0, 0));
+    modifier.transformFrom(function() {
+        return Transform.translate(transitionable.get(), 0, 0);
     });
 
     surface.on("click", function(){
-        xPos.set(maxOffset, {curve: "easeInOut", duration: 1000});
+        transitionable.set(maxOffset, {curve: "easeInOut", duration: 1000});
     });
 
     mainContext.add(modifier).add(surface);
