@@ -9,7 +9,7 @@
  * In this example we create a 3x3 matrix and multiply it by a
  * unit vector to create the 3x1 matrix [0.707,0.707,0].
  */
-define(function(require, exports, module) {                                     
+define(function(require, exports, module) {
     // import dependencies
     var Engine  = require('famous/core/Engine');
     var Matrix  = require('famous/math/Matrix');
@@ -36,6 +36,6 @@ define(function(require, exports, module) {
             textAlign: 'center'
         }
     });
-    surface.setContent('[' + rotatedVector.toArray() + ']');
-    mainContext.add(surface); 
+    surface.setContent('[' + rotatedVector.get() + ']');
+    mainContext.add(surface);
 });
