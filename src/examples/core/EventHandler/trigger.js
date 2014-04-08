@@ -4,7 +4,7 @@
  *
  * This example shows the most basic functionality of EventHandler.
  * First, we register a function to be run on the "click" event.
- * When the event handler gets the surface click, we trigger "triggeredEvent", 
+ * When the event handler gets the surface click, we trigger "triggeredEvent",
  * which will call all of the register listeners resulting in the alert.
  *
  */
@@ -14,7 +14,7 @@ define(function(require, exports, module) {
     var Surface      = require('famous/core/Surface');
 
     var mainContext = Engine.createContext();
-    
+
     var surface = new Surface({
         size: [200, 200],
         content: "Click Me",
@@ -34,7 +34,7 @@ define(function(require, exports, module) {
     });
 
     eventHandler.on('triggeredEvent', function(data) {
-        alert(data);
+        alert(data.data);
     });
 
     mainContext.add(surface);
