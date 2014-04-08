@@ -21,7 +21,12 @@ define(function(require, exports, module) {
 
     var surface = new Surface({
         size: [200, 200],
-        properties: {background : 'red'}
+        content: "Hello World",
+        classes: ["red-bg"],
+        properties: {
+            lineHeight: "200px",
+            textAlign: "center"
+        }
     });
 
     var rotateX = new Modifier({

@@ -43,11 +43,11 @@ define(function(require, exports, module) {
         });
 
         var surface = new Surface({
-            size: [50, 50],
+            size: [100, 100],
             content: key,
             classes: ['red-bg'],
             properties: {
-                lineHeight: '50px',
+                lineHeight: '100px',
                 textAlign: 'center'
             }
         });

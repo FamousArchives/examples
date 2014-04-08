@@ -1,7 +1,7 @@
 /**
  * MouseSync
  * ------------
- * 
+ *
  * MouseSync handles mouse drag events. It outputs an object with two
  * properties: position and velocity.
  *
@@ -30,7 +30,7 @@ define(function(require, exports, module) {
 
     var contentTemplate = function() {
         return "<div>Start Count: " + start + "</div>" +
-        "<div>End Count: " + end + "</div>" + 
+        "<div>End Count: " + end + "</div>" +
         "<div>Update Count: " + update + "</div>" +
         "<div>Distance away from mousedown origin:<br>" + position + "</div>";
     };

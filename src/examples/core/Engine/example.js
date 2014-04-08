@@ -15,10 +15,10 @@ define(function(require, exports, module) {
 
     var surface = new Surface({
         size: [undefined, 200],
+        content: "Hello World",
+        classes: ["red-bg"],
         properties: {
-            background : 'red',
-            fontSize : '24px',
-            textAlign : 'center'
+            textAlign: "center"
         }
     });
 
