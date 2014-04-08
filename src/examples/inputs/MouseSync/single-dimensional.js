@@ -2,13 +2,13 @@
  * MouseSync
  * ------------
  *
- * MouseSync handles mouse drag events. It outputs an object with two
- * properties: position and velocity.
+ * Famo.us syncs default to track two-dimensional movement,
+ * but can be passed as optional direction parameter to restrict
+ * movement to a single axis.
  *
- * In this example, we create a MouseSync and display the data
- * it receives to the screen.  Based on the update information,
- * we can determine how far away from the mousedown event location
- * we are when we are dragging.
+ * In this example, we create a MouseSync but only track the x-axis
+ * changes on mouse drag.
+ *
  */
 define(function(require, exports, module) {
     var Engine    = require("famous/core/Engine");
@@ -21,18 +21,21 @@ define(function(require, exports, module) {
     var update = 0;
     var end = 0;
 
-    var position = [0, 0];
+    var x = 0;
+    var y = 0;
+    var position = [x, y];
+
     var mouseSync = new MouseSync(function() {
-        return position;
-    });
+        return x;
+    }, {direction : MouseSync.DIRECTION_X});
 
     Engine.pipe(mouseSync);
 
     var contentTemplate = function() {
         return "<div>Start Count: " + start + "</div>" +
-        "<div>End Count: " + end + "</div>" +
-        "<div>Update Count: " + update + "</div>" +
-        "<div>Distance away from mousedown origin:<br>" + position + "</div>";
+               "<div>End Count: " + end + "</div>" +
+               "<div>Update Count: " + update + "</div>" +
+               "<div>Distance away from mousedown origin:<br>" + position + "</div>";
     };
 
     var surface = new Surface({
@@ -43,14 +46,13 @@ define(function(require, exports, module) {
 
     mouseSync.on("start", function() {
         start++;
-        position = [0, 0];
+        position = [x, y];
         surface.setContent(contentTemplate());
     });
 
     mouseSync.on("update", function(data) {
         update++;
-        position[0] += data.position[0];
-        position[1] += data.position[1];
+        position[0] += data.position;
         surface.setContent(contentTemplate());
     });
 
