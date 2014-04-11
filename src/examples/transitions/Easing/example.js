@@ -42,7 +42,7 @@ define(function(require, exports, module) {
     var Transitionable   = require("famous/transitions/Transitionable");
     var Easing           = require("famous/transitions/Easing");
     var ContainerSurface = require("famous/surfaces/ContainerSurface");
-    var ScrollView       = require("famous/views/ScrollView");
+    var ScrollView       = require("famous/views/Scrollview");
 
     // create the main context
     var mainContext = Engine.createContext();
