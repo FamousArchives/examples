@@ -1,21 +1,28 @@
 Famous Examples
 ===============
 
-This repo contains a bunch of examples for the famous modules. 
+This repository contains discrete examples of how to use every Famo.us class. It is meant to be an easy way to get started learning Famo.us primitives.
 
 To use clone this repo with the recursive option
 
     git clone git@github.com:Famous/examples.git --recursive
 
-Once you've successfully cloned this repo, just serve the root folder of this repo as a static site with a tool like serve, apache or nginx. We recommend using serve since it is pretty simple to get started with:
+You'll see the following directory structure
 
-    # install serve
-    npm install -g serve
-    
-    # go to your clone and type:
-    serve
+```
+├── content
+├── css
+├── src
+│   ├── examples
+│   ├── famous
+│   ├── lib
+│   ├── main.js
+├── index.html
+```
 
-Once you've done that, you can open up the current example in your browser. The default example is `src/examples/views/Scrollview/example.js`. If you want to change the current example, just edit the `src/main.js` file to point at a different example.
+The `index.html` page loads an example in `src/main.js`. The default example is `src/examples/views/Scrollview/example.js`. If you want to change the current example, edit string in the require statement to point to any other file in the folder `src/examples`.
+
+The examples folder has a one-to-one relationship to each Famo.us module in the famous folder, and includes a folder of examples for each file in its respective module that is considered a public interface.
 
 
 ## License
