@@ -34,12 +34,14 @@ define(function(require, exports, module) {
     var mainContext = Engine.createContext();
     
     var mySurface = new Surface({
-        size: [400, 300],
+        size: [100, 100],
         properties: {
             backgroundColor: '#fa5c4f',
+            lineHeight: '100px',
+            textAlign: 'center',
             color: '#eee'
         },
-        content: 'Hello world'
+        content: 'Click Me'
     });
 
     var myModifier = new StateModifier({
