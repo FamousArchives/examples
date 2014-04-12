@@ -27,7 +27,7 @@
  * InputSurface
  * ------------
  *
- * ImageSurface is the same interface as a regular Surface
+ * InputSurface is the same interface as a regular Surface
  * except that it will create an input tag instead of a
  * div tag.  It also exposes an interface for defining
  * input specific properites such as name, placeholder, value,
