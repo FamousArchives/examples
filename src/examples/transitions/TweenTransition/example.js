@@ -58,15 +58,20 @@ define(function(require, exports, module) {
     });
 
     Transitionable.registerMethod('tween', TweenTransition);
+    var transitionable = new Transitionable(1);
+
+    modifier.opacityFrom(function() {
+        return transitionable.get();
+    });
 
     var transition = {
         method: 'tween',
         curve: "easeInOut",
-        period: 1500,
+        duration: 1500,
     };
     
     surface.on("click", function(){
-        modifier.setOpacity(0,transition);
+        transitionable.set(0, transition);
     });
 
     mainContext.add(modifier).add(surface);
