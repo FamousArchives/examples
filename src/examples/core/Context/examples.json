@@ -5,7 +5,7 @@
       "0.1.0": [
           "example.js",
           "context-in-existing-element.js",
-          "setting-perspective"
+          "setting-perspective.js"
       ]
   } 
 }
