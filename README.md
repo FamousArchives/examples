@@ -5,7 +5,7 @@ This repository contains discrete examples of how to use every Famo.us class. It
 
 To use clone this repo with the recursive option
 
-    git clone git@github.com:Famous/examples.git --recursive
+    git clone https://github.com/Famous/examples.git --recursive
 
 You'll see the following directory structure
 
