@@ -1,0 +1,10 @@
+{
+  "name": "famous/inputs/MouseSync",
+  "repository": "git@github.com:Famous/inputs.git",
+  "versions": {
+      "0.1.0": [
+          "example.js",
+          "single-dimensional.js"
+      ]
+  } 
+}

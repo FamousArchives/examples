@@ -1,0 +1,10 @@
+{
+  "name": "famous/core/Surface",
+  "repository": "git@github.com:Famous/core.git",
+  "versions": {
+      "0.1.0": [
+          "example.js",
+          "true-sizing.js"
+      ]
+  } 
+}
