@@ -1,29 +1,43 @@
-Famous Examples
-===============
+#Famous Examples
+> This repository contains discrete examples of how to use every Famo.us class. It is meant to be an easy way to get started learning Famo.us primitives..
 
-This repository contains discrete examples of how to use every Famo.us class. It is meant to be an easy way to get started learning Famo.us primitives.
+##Dependencies
+It is actually quite simple really
 
-To use clone this repo with the recursive option
+First make sure you have node.js installed... without that nothing works!  You can either install it with your favorite package manager or with [the installer](http://nodejs.org/download) found on [nodejs.org](http://nodejs.org).
 
-    git clone https://github.com/Famous/examples.git --recursive
-
-You'll see the following directory structure
+This project relies on grunt-cli, and bower to do all the heavy lifting for you
 
 ```
-├── content
-├── css
-├── src
-│   ├── examples
-│   ├── famous
-│   ├── lib
-│   ├── main.js
-├── index.html
+npm install -g grunt-cli bower
 ```
 
-The `index.html` page loads an example in `src/main.js`. The default example is `src/examples/views/Scrollview/example.js`. If you want to change the current example, edit string in the require statement to point to any other file in the folder `src/examples`.
+##Getting Started
 
-The examples folder has a one-to-one relationship to each Famo.us module in the famous folder, and includes a folder of examples for each file in its respective module that is considered a public interface.
+```
+npm install && bower install
+```
 
+That's it!!!
+
+##Running the Development Server
+
+Simply run ```grunt serve``` and you will start a local development server and open Chrome.  Watch tasks will be running, and your browser will be automatically refreshed whenever a file in the repo changes.
+
+You can run serve with ```--port=9001``` to manually pick the port that the server will run on
+
+*This option is currently borked...*
+You can also change the port livereload is running on with the option ```--livereload=8675309```
+*... if you think you can fix it check out the [issue on github](https://github.com/Famous/generator-famous/issues/22)*
+
+If you would like to have your server be accessible to other devices on your local machine use the option ```--hostname=0.0.0.0```
+
+##Production
+
+If you would like to compile your project for distribution simply run the command ```grunt``` to build ```dist/``` which will be a deployment ready version of your app.  Preprocessing will be applied to html, all js will be concatenated and minified.  All js / css assets will also have their name prepended with a hash for cache busting.
+
+## Contributing
+All contributions are welcome! The simplest way to show your support for this project is to **"star" it**.
 
 ## License
 
