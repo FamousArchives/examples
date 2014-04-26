@@ -1,0 +1,32 @@
+{
+  "name": "famous-examples",
+  "description": "This repository contains discrete examples of how to use every Famo.us class. It is meant to be an easy way to get started learning Famo.us primitives..",
+  "version": "0.1.0",
+  "homepage": "https://github.com/Famous/famous-examples",
+  "authors": [{
+    "name": "Myles Borins",
+    "url": "http://github.com/Famous/"
+  }],
+  "main": "app/index.html",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "famo.us"
+  ],
+  "license": "ISC",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "src/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.11",
+    "almond": "~0.2.9",
+    "famous-polyfills": "git+https://github.com/Famous/polyfills.git#0.1.1",
+    "famous": "git+https://github.com/Famous/famous.git#flat0.1.1"
+  }
+}
