@@ -39,8 +39,8 @@
  *   applied to  all Surfaces contained directly and indirectly.
  *
  * In this example we have a ContainerSurface that contains a Scrollview.
- * Because the ContainerSurface creates it's own context the
- * Scrollview will behave accoriding to the size of the ContainerSurface
+ * Because the ContainerSurface creates its own context the
+ * Scrollview will behave according to the size of the ContainerSurface
  * it exists within.  The ContainerSurface having the an overflow of
  * 'hidden' means that the scrollview overflow will be hidden.
  */
