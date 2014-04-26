@@ -7,6 +7,12 @@ To use clone this repo with the recursive option
 
     git clone https://github.com/Famous/examples.git --recursive
 
+If the above command errors out with message _Permission denied (publickey)_, you may want to run
+
+    git config --global url.'https://github.com/'.insteadOf git@github.com:
+
+Before doing the recursive git clone.
+
 You'll see the following directory structure
 
 ```
