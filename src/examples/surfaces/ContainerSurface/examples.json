@@ -1,9 +1,0 @@
-{
-  "name": "famous/surfaces/ContainerSurface",
-  "repository": "git@github.com:Famous/surfaces.git",
-  "versions": {
-      "0.1.0": [
-          "example.js"
-      ]
-  } 
-}
