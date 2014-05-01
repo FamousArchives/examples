@@ -1,0 +1,4 @@
+[submodule "src/famous"]
+	path = src/famous
+	url = git@github.com:FamousInternal/famous.git
+	branch = master
