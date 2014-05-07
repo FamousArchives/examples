@@ -1,7 +1,7 @@
 define(function(require, exports, module) {
     // uncomment your desired demo
 
-    require('examples/core/Context/context-in-existing-element.js');
+    // require('examples/core/Context/context-in-existing-element.js');
     // require('examples/core/Context/example.js');
     // require('examples/core/Context/setting-perspective.js');
     // require('examples/core/Engine/example.js');
@@ -58,6 +58,8 @@ define(function(require, exports, module) {
     // require('examples/views/EdgeSwapper/example.js');
     // require('examples/views/GridLayout/example.js');
     // require('examples/views/GridLayout/with-sized-modifier.js');
+    require('src/examples/views/FlexibleLayout/example.js');
+    // require('src/examples/views/FlexibleLayout/with-transition.js');
     // require('examples/views/HeaderFooterLayout/example.js');
     // require('examples/views/HeaderFooterLayout/with-sized-modifier.js');
     // require('examples/views/RenderController/example.js');
