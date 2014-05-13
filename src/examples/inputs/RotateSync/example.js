@@ -36,7 +36,10 @@
 define(function(require, exports, module) {
     var Engine     = require("famous/core/Engine");
     var Surface    = require("famous/core/Surface");
+    var Modifier = require("famous/core/Modifier");
     var RotateSync = require("famous/inputs/RotateSync");
+    var Transform = require('famous/core/Transform');
+    var StateModifier = require('famous/modifiers/StateModifier');
 
     var mainContext = Engine.createContext();
 
@@ -60,29 +63,46 @@ define(function(require, exports, module) {
         "<div>Angle: " + angle + "</div>";
     };
 
-    var surface = new Surface({
-        size: [undefined, undefined],
-        classes: ['grey-bg'],
+    var rotation = new StateModifier({
+        origin: [0.5, 0.5]
+    });
+
+    var origin = new Modifier({
+        origin: [0.5, 0.5]
+    });
+
+    var rotatableSurface = new Surface({
+        size: [400, 400],
+        classes: ['red-bg']
+    });
+
+    var infoSurface = new Surface({
+        size: [300, 100],
+        properties: {
+            textAlign: 'center'
+        },
         content: contentTemplate()
     });
 
     rotateSync.on("start", function() {
         start++;
         angle = 0;
-        surface.setContent(contentTemplate());
+        infoSurface.setContent(contentTemplate());
     });
 
     rotateSync.on("update", function(data) {
         update++;
         direction = data.velocity > 0 ? "Clockwise" : "Counter-Clockwise";
         angle = data.angle;
-        surface.setContent(contentTemplate());
+        rotation.setTransform(Transform.rotateZ(angle));
+        infoSurface.setContent(contentTemplate());
     });
 
     rotateSync.on("end", function() {
         end++;
-        surface.setContent(contentTemplate());
+        infoSurface.setContent(contentTemplate());
     });
 
-    mainContext.add(surface);
+    mainContext.add(rotation).add(rotatableSurface);
+    mainContext.add(origin).add(infoSurface);
 });
