@@ -3,8 +3,7 @@
   "repository": "git@github.com:Famous/views.git",
   "versions": {
       "0.2.0": [
-          "example.js",
-          "with-transition.js"
+          "example.js"
       ]
   } 
 }

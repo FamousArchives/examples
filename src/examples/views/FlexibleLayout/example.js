@@ -18,10 +18,13 @@ define(function(require, exports, module) {
         'rgba(0, 0, 256, .7)'
     ];
 
-    var flex = new FlexibleLayout();
+    var initialRatios = [1, true, 1, true, 1, true, 1, true];
+
+    var flex = new FlexibleLayout({
+        ratios : initialRatios
+    });
 
     var surfaces = [];
-    var ratios = [1, true, 1, true, 1, true, 1, true];
     for (var i = 1; i <= 8; i++) {
         size = (i % 2 === 0) ? [10, undefined] : [undefined, undefined]
         surfaces.push(new Surface({
@@ -32,9 +35,15 @@ define(function(require, exports, module) {
         }));
     }
 
-    flex.set(surfaces, ratios);
+    flex.sequenceFrom(surfaces);
 
-    window.f = flex;
+    var finalRatios = [4, true, 1, true, 0, true, 7, true];
+    var toggle = false;
+    Engine.on('click', function(){
+        var ratios = toggle ? initialRatios : finalRatios;
+        flex.setRatios(ratios, {curve : 'easeOut', duration : 500});
+        toggle = !toggle;
+    });
 
     mainContext.add(flex);
 });
