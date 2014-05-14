@@ -12,30 +12,27 @@
  */
 define(function(require, exports, module) {
     var Engine    = require("famous/core/Engine");
-    var MouseSync = require("famous/inputs/MouseSync");
+    var TouchSync = require("famous/inputs/TouchSync");
     var Surface   = require("famous/core/Surface");
+    var Accumulator = require("famous/inputs/Accumulator");
 
     var mainContext = Engine.createContext();
 
-    var start = 0;
     var update = 0;
-    var end = 0;
-    var delta = 0;
 
     var x = 0;
     var y = 0;
     var position = [x, y];
 
-    var mouseSync = new MouseSync({direction : MouseSync.DIRECTION_X});
+    var TouchSync = new TouchSync();
+    var accumulator = new Accumulator(position);
 
-    Engine.pipe(mouseSync);
+    Engine.pipe(TouchSync);
+    TouchSync.pipe(accumulator);
 
     var contentTemplate = function() {
-        return "<div>Start Count: " + start + "</div>" +
-               "<div>End Count: " + end + "</div>" +
-               "<div>Update Count: " + update + "</div>" +
-               "<div>Delta: " + delta + "</div>" +
-               "<div>Distance from start: " + position + "</div>";
+        return "<div>Update Count: " + update + "</div>" +
+               "<div>Accumulated distance: " + accumulator.get() + "</div>";
     };
 
     var surface = new Surface({
@@ -44,21 +41,13 @@ define(function(require, exports, module) {
         content: contentTemplate()
     });
 
-    mouseSync.on("start", function() {
-        start++;
-        position = [x, y];
+    TouchSync.on("start", function() {
+        accumulator.set([x,y]);
         surface.setContent(contentTemplate());
     });
 
-    mouseSync.on("update", function(data) {
+    TouchSync.on("update", function() {
         update++;
-        position[0] = data.position;
-        delta = data.delta;
-        surface.setContent(contentTemplate());
-    });
-
-    mouseSync.on("end", function() {
-        end++;
         surface.setContent(contentTemplate());
     });
 
