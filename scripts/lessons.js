@@ -3,7 +3,6 @@ var path = require('path');
 var esprima = require("esprima");
 var doctrine = require("doctrine");
 var async = require('async');
-var createCourses = require('./courses');
 
 module.exports = function(jsonFiles, examplesPath, cb) {
     var lessons = {};
