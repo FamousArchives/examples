@@ -27,7 +27,7 @@ module.exports = function(jsonFiles, examplesPath, cb) {
         }
     }
 
-    fs.writeFile('output.txt', JSON.stringify(lessons, null, 4), cb);
+    fs.writeFile('build.json', JSON.stringify(lessons, null, 4), cb);
 }
 
 function createIndividualLesson(version, name, example, examplesPath) {
