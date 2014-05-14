@@ -1,9 +1,12 @@
 {
-  "name": "famous/inputs/RotateSync",
-  "repository": "git@github.com:Famous/inputs.git",
-  "versions": {
-      "0.1.0": [
-          "example.js"
-      ]
-  } 
+    "name": "famous/inputs/RotateSync",
+    "repository": "git@github.com:Famous/inputs.git",
+    "versions": {
+        "0.2.0": [
+            "example.js"
+        ],
+        "0.1.0": [
+            "example.js"
+        ]
+    } 
 }

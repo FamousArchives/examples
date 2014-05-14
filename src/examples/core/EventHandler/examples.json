@@ -1,10 +1,14 @@
 {
-  "name": "famous/core/EventHandler",
-  "repository": "git@github.com:Famous/core.git",
-  "versions": {
-      "0.1.0": [
-          "example.js",
-          "trigger.js"
-      ]
-  } 
+    "name": "famous/core/EventHandler",
+    "repository": "git@github.com:Famous/core.git",
+    "versions": {
+        "0.2.0": [
+            "example.js",
+            "trigger.js"
+        ]
+        "0.1.0": [
+            "example.js",
+            "trigger.js"
+        ]
+    } 
 }

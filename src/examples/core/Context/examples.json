@@ -1,11 +1,16 @@
 {
-  "name": "famous/core/Context",
-  "repository": "git@github.com:Famous/core.git",
-  "versions": {
-      "0.1.0": [
-          "example.js",
-          "context-in-existing-element.js",
-          "setting-perspective"
-      ]
-  } 
+    "name": "famous/core/Context",
+    "repository": "git@github.com:Famous/core.git",
+    "versions": {
+        "0.2.0": [
+            "example.js",
+            "context-in-existing-element.js",
+            "setting-perspective.js"
+        ],
+        "0.1.0": [
+            "example.js",
+            "context-in-existing-element.js",
+            "setting-perspective.js"
+        ]
+    } 
 }
