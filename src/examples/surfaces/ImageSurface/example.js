@@ -30,7 +30,7 @@
  * ImageSurface is the same interface as a regular Surface
  * except that it will create an img tag instead of a
  * div tag.  When you call setContent on an ImageSurface,
- * it will chage the src property of the tag.
+ * it will change the src property of the tag.
  *
  * In this example we have an ImageSurface with the
  * Famo.us logo as it's content.
