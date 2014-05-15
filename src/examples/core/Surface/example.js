@@ -30,7 +30,7 @@
  * A Famo.us Surface is loosely coupled to an HTML <div> on screen. A Surface
  * can take in any valid HTML as content.
  *
- * A popular question to ask is, when should I craete multiple surfaces, versus
+ * A popular question to ask is, when should I create multiple surfaces, versus
  * populating a single surface with more HTML content? The answer hinges on animating
  * content, versus static content. If your content is dynamically changing, create
  * a Surface for it. If your content is static (or rarely changing) HTML,
