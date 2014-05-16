@@ -21,13 +21,14 @@ module.exports = function(jsonFiles, examplesPath, cb) {
                 var lessonData = createIndividualLesson(version, json.name, json.versions[version][example], examplesPath);
                 lessons[lessonData.id] = lessonData.data;
 
-                if (!lessons[version][lessonData.repo]) lessons[version][lessonData.repo] = {};
-                if (!lessons[version][lessonData.repo][lessonData.component]) lessons[version][lessonData.repo][lessonData.component] = [];
+                // if (!lessons[version][lessonData.repo]) lessons[version][lessonData.repo] = {};
+                // if (!lessons[version][lessonData.repo][lessonData.component]) lessons[version][lessonData.repo][lessonData.component] = [];
 
-                lessons[version][lessonData.repo][lessonData.component].push(lessonData.example);
+                if (!lessons[version][lessonData.component]) lessons[version][lessonData.component] = [];
+                lessons[version][lessonData.component].push(lessonData.example);
             }
             fs.writeFileSync('build-' + version + '.json', JSON.stringify(lessons[version]));
-            uploadFile('examples/build-' + version + '.json', 'build-' + version + '.json')
+            //uploadFile('examples/build-' + version + '.json', 'build-' + version + '.json')
         }
     }
 }
