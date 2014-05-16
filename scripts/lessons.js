@@ -127,6 +127,7 @@ function getComments(syntax, name) {
         return parsedComment;
     });
 
+    console.log(name)
     var result = parsedBlockComments[0]['description'];
 
     return result;

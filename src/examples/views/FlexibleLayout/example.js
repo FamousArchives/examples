@@ -1,3 +1,14 @@
+/**
+ * FlexibleLayout
+ * ------------
+ *
+ * FlexibleLayout is a component for making ratio based layouts
+ * similar to HTML5 Flexbox.
+ *
+ * In this example, use a FlexibleLayout to arrange an array of
+ * renderables based on both the parent size and the defined
+ * size of the renderables
+ */
 define(function(require, exports, module) {
     var Engine = require('famous/core/Engine');
     var Surface = require('famous/core/Surface');
