@@ -1,9 +1,12 @@
 {
-  "name": "famous/surfaces/InputSurface",
-  "repository": "git@github.com:Famous/surfaces.git",
-  "versions": {
-      "0.1.0": [
-          "example.js"
-      ]
-  } 
+    "name": "famous/surfaces/InputSurface",
+    "repository": "git@github.com:Famous/surfaces.git",
+    "versions": {
+        "0.2.0": [
+            "example.js"
+        ],
+        "0.1.0": [
+            "example.js"
+        ]
+    } 
 }

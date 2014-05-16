@@ -1,9 +1,12 @@
 {
-  "name": "famous/modifiers/ModifierChain",
-  "repository": "git@github.com:Famous/modifiers.git",
-  "versions": {
-      "0.1.0": [
-          "example.js"
-      ]
-  } 
+    "name": "famous/modifiers/ModifierChain",
+    "repository": "git@github.com:Famous/modifiers.git",
+    "versions": {
+        "0.2.0": [
+            "example.js"
+        ],
+        "0.1.0": [
+            "example.js"
+        ]
+    } 
 }

@@ -1,9 +1,12 @@
 {
-  "name": "famous/views/RenderController",
-  "repository": "git@github.com:Famous/views.git",
-  "versions": {
-      "0.1.0": [
-          "example.js"
-      ]
-  } 
+    "name": "famous/views/RenderController",
+    "repository": "git@github.com:Famous/views.git",
+    "versions": {
+        "0.2.0": [
+            "example.js"
+        ],
+        "0.1.0": [
+            "example.js"
+        ]
+    } 
 }
