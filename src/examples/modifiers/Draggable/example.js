@@ -24,12 +24,11 @@ define(function(require, exports, module) {
         classes: ['graph']
     });
 
-    // TODO Fix github issue: https://github.com/Famous/modifiers/issues/7
-    var draggable = new Draggable( {
+    var draggable = new Draggable({
         snapX: 40, 
         snapY: 40, 
         xRange: [-220, 220],
-        yRange: [-220, 220],
+        yRange: [-220, 220]
     });
 
     var surface = new Surface({
@@ -41,11 +40,9 @@ define(function(require, exports, module) {
             textAlign: 'center',
             cursor: 'pointer'
         }
-     });
-    surface.pipe(draggable);
-    surface.on('click', function() {
-        console.log('click')
-    })
+    });
+
+    draggable.subscribe(surface);
 
     var node = mainContext.add(new Modifier({origin:[0.5,0.5]}));
     node.add(grid);

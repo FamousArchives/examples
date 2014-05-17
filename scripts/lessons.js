@@ -8,11 +8,12 @@ var s3 = new aws.S3();
 
 module.exports = function(jsonFiles, examplesPath, cb) {
     var lessons = {};
+    var json;
     for (var i = 0; i < jsonFiles.length; i++) {
         var filePath = path.resolve('./src/examples/', jsonFiles[i]);
         var fileContents = fs.readFileSync(filePath, 'utf8');
 
-        var json = JSON.parse(fileContents);
+        json = JSON.parse(fileContents);
 
         for (var version in json.versions) {
             if (!lessons[version]) lessons[version] = {};
@@ -21,14 +22,17 @@ module.exports = function(jsonFiles, examplesPath, cb) {
                 var lessonData = createIndividualLesson(version, json.name, json.versions[version][example], examplesPath);
                 lessons[lessonData.id] = lessonData.data;
 
-                if (!lessons[version][lessonData.repo]) lessons[version][lessonData.repo] = {};
-                if (!lessons[version][lessonData.repo][lessonData.component]) lessons[version][lessonData.repo][lessonData.component] = [];
+                // if (!lessons[version][lessonData.repo]) lessons[version][lessonData.repo] = {};
+                // if (!lessons[version][lessonData.repo][lessonData.component]) lessons[version][lessonData.repo][lessonData.component] = [];
 
-                lessons[version][lessonData.repo][lessonData.component].push(lessonData.example);
+                if (!lessons[version][lessonData.component]) lessons[version][lessonData.component] = [];
+                lessons[version][lessonData.component].push(lessonData.example);
             }
-            fs.writeFileSync('build-' + version + '.json', JSON.stringify(lessons[version]));
-            uploadFile('examples/build-' + version + '.json', 'build-' + version + '.json')
         }
+    }
+
+    for (var version in json.versions) {
+        fs.writeFileSync('build' + version.replace(/\./g, '') + '.json', JSON.stringify(lessons[version]));
     }
 }
 
@@ -71,7 +75,7 @@ function createIndividualLesson(version, name, example, examplesPath) {
     var temp = name.split('/');
 
     var repo = temp[1];
-    var component = temp[2].toLowerCase();
+    var component = temp[2];
     var exampleName = example.split('.')[0];
 
     var id = [name, example].join('/');
@@ -81,7 +85,7 @@ function createIndividualLesson(version, name, example, examplesPath) {
     var example = fs.readFileSync(filePath, "utf8")
     var syntax = esprima.parse(example, { tokens: true, range: true, comment: true });
 
-    var baseWebsiteUrl = 'https://famo.us/examples'
+    var baseWebsiteUrl = '/examples'
 
 
 
@@ -90,7 +94,7 @@ function createIndividualLesson(version, name, example, examplesPath) {
         component: component,
         example: {
             "name": exampleName,
-            "url": [baseWebsiteUrl, version, repo, component, exampleName].join('/'),
+            "url": [baseWebsiteUrl, version, repo, component.toLowerCase(), exampleName].join('/'),
             "instruction": getComments(syntax, id),
             "javascript": commentlessCode(example)
         }
@@ -123,6 +127,7 @@ function getComments(syntax, name) {
         return parsedComment;
     });
 
+    console.log(name)
     var result = parsedBlockComments[0]['description'];
 
     return result;

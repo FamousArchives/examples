@@ -19,6 +19,7 @@ define(function(require, exports, module) {
     var start = 0;
     var update = 0;
     var end = 0;
+    var delta = [0,0];
     var position = [0, 0];
 
     var touchSync = new TouchSync(function() {
@@ -31,7 +32,8 @@ define(function(require, exports, module) {
         return "<div>Start Count: " + start + "</div>" +
         "<div>End Count: " + end + "</div>" + 
         "<div>Update Count: " + update + "</div>" +
-        "<div>Distance away from touch origin:<br>" + position + "</div>"
+        "<div>Delta: " + delta + "</div>" +
+        "<div>Distance from start: " + position + "</div>";
     };
 
     var surface = new Surface({
@@ -48,8 +50,8 @@ define(function(require, exports, module) {
 
     touchSync.on("update", function(data) {
         update++;
-        position[0] += data.position[0];
-        position[1] += data.position[1]; 
+        position = data.position;
+        delta = data.delta;
         surface.setContent(contentTemplate());
     });
 

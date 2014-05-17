@@ -1,8 +1,8 @@
 define(function(require, exports, module) {
     // uncomment your desired demo
 
-    require('examples/core/Context/context-in-existing-element');
     // require('examples/core/Context/example');
+    // require('examples/core/Context/context-in-existing-element');
     // require('examples/core/Context/setting-perspective');
     // require('examples/core/Engine/example');
     // require('examples/core/EventHandler/example');
@@ -22,8 +22,15 @@ define(function(require, exports, module) {
     // require('examples/events/EventFilter/pipe-filter');
     // require('examples/events/EventFilter/subscribe-filter');
     // require('examples/events/EventMapper/example');
+    // require('examples/views/HeaderFooterLayout/example');
+    // require('examples/views/HeaderFooterLayout/with-sized-modifier');
+    // require('examples/views/RenderController/example');
+    // require('examples/views/Scrollview/example');
+    // require('examples/views/SequentialLayout/example');
     // require('examples/inputs/GenericSync/example');
+    // require('examples/inputs/GenericSync/accumulator');
     // require('examples/inputs/MouseSync/example');
+    // require('examples/inputs/MouseSync/accumulator');
     // require('examples/inputs/MouseSync/single-dimensional');
     // require('examples/inputs/PinchSync/example');
     // require('examples/inputs/RotateSync/example');
@@ -31,6 +38,7 @@ define(function(require, exports, module) {
     // require('examples/inputs/ScrollSync/example');
     // require('examples/inputs/TouchSync/example');
     // require('examples/inputs/TouchSync/single-dimensional');
+    // require('examples/inputs/TouchSync/accumulator');
     // require('examples/math/Matrix/example');
     // require('examples/math/Quaternion/example');
     // require('examples/math/Random/example');
@@ -56,11 +64,14 @@ define(function(require, exports, module) {
     // require('examples/utilities/Utility/after');
     // require('examples/views/Deck/example');
     // require('examples/views/EdgeSwapper/example');
+    // require('examples/views/FlexibleLayout/example');
+    // require('examples/views/Flipper/example');
     // require('examples/views/GridLayout/example');
     // require('examples/views/GridLayout/with-sized-modifier');
     // require('examples/views/HeaderFooterLayout/example');
     // require('examples/views/HeaderFooterLayout/with-sized-modifier');
     // require('examples/views/RenderController/example');
-    // require('examples/views/Scrollview/example');
+    require('examples/views/Scrollview/example');
     // require('examples/views/SequentialLayout/example');
+
 });
