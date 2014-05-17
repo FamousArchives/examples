@@ -17,6 +17,7 @@
     "async": "~0.2.10",
     "readdirp": "~0.3.3",
     "wrench": "~1.5.8",
-    "underscore": "~1.6.0"
+    "underscore": "~1.6.0",
+    "aws-sdk": "^2.0.0-rc.16"
   }
 }
