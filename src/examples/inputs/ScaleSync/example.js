@@ -45,10 +45,9 @@ define(function(require, exports, module) {
     var update = 0;
     var end = 0;
     var growShrink = "";
+    var scale = 1;
 
-    var scaleSync = new ScaleSync(function() {
-        return [0,0];
-    });
+    var scaleSync = new ScaleSync();
 
     Engine.pipe(scaleSync);
 
@@ -56,6 +55,7 @@ define(function(require, exports, module) {
         return "<div>Start Count: " + start + "</div>" +
         "<div>End Count: " + end + "</div>" +
         "<div>Update Count: " + update + "</div>" +
+        "<div>Scale factor: " + scale.toFixed(3) + "</div>" +
         "<div>Scale Direction: " + growShrink + "</div>";
     };
 
@@ -73,6 +73,7 @@ define(function(require, exports, module) {
     scaleSync.on("update", function(data) {
         update++;
         growShrink = data.velocity > 0 ? "Growing" : "Shrinking";
+        scale = data.scale;
         surface.setContent(contentTemplate());
     });
 
