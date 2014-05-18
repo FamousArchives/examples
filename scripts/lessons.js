@@ -8,6 +8,7 @@ var s3 = new aws.S3();
 
 module.exports = function(jsonFiles, examplesPath, cb) {
     var lessons = {};
+    var lessonsByVersion = {};
     var json;
     for (var i = 0; i < jsonFiles.length; i++) {
         var filePath = path.resolve('./src/examples/', jsonFiles[i]);
@@ -17,22 +18,31 @@ module.exports = function(jsonFiles, examplesPath, cb) {
 
         for (var version in json.versions) {
             if (!lessons[version]) lessons[version] = {};
-
+            if (!lessonsByVersion[version]) lessonsByVersion[version] = {};
+            
             for (var example in json.versions[version]) {
                 var lessonData = createIndividualLesson(version, json.name, json.versions[version][example], examplesPath);
                 lessons[lessonData.id] = lessonData.data;
 
-                // if (!lessons[version][lessonData.repo]) lessons[version][lessonData.repo] = {};
-                // if (!lessons[version][lessonData.repo][lessonData.component]) lessons[version][lessonData.repo][lessonData.component] = [];
+                if (!lessonsByVersion[version][lessonData.repo]) lessonsByVersion[version][lessonData.repo] = {};
+                if (!lessonsByVersion[version][lessonData.repo][lessonData.component.toLowerCase()]) lessonsByVersion[version][lessonData.repo][lessonData.component.toLowerCase()] = {};
 
-                if (!lessons[version][lessonData.component]) lessons[version][lessonData.component] = [];
-                lessons[version][lessonData.component].push(lessonData.example);
+                lessonsByVersion[version][lessonData.repo][lessonData.component.toLowerCase()][lessonData.name] = lessonData.example;
+
+                if (!lessons[version][lessonData.component]) lessons[version][lessonData.component] = {};
+                lessons[version][lessonData.component][lessonData.name] = lessonData.example;
             }
         }
     }
 
     for (var version in json.versions) {
-        fs.writeFileSync('build' + version.replace(/\./g, '') + '.json', JSON.stringify(lessons[version]));
+        var outFile = 'build' + version.replace(/\./g, '') + '.json';
+        var s3File = 'examples/build-' + version + '.json';
+        var localS3 = 'localS3' + version + '.json';
+
+        fs.writeFileSync(outFile, JSON.stringify(lessons[version]));
+        fs.writeFileSync(localS3, JSON.stringify(lessonsByVersion[version]));
+        uploadFile(s3File, localS3);
     }
 }
 
@@ -92,6 +102,7 @@ function createIndividualLesson(version, name, example, examplesPath) {
     return {
         repo: repo,
         component: component,
+        "name": exampleName,
         example: {
             "name": exampleName,
             "url": [baseWebsiteUrl, version, repo, component.toLowerCase(), exampleName].join('/'),
