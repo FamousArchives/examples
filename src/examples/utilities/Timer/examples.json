@@ -1,13 +1,20 @@
 {
-  "name": "famous/utilities/Timer",
-  "repository": "git@github.com:Famous/utilities.git",
-  "versions": {
-    "0.1.0": [
-      "every.js",
-      "after.js",
-      "clear.js",
-      "setTimeout.js",
-      "setInterval.js"
-    ]
-  } 
+    "name": "famous/utilities/Timer",
+    "repository": "git@github.com:Famous/utilities.git",
+    "versions": {
+        "0.2.0": [
+            "every.js",
+            "after.js",
+            "clear.js",
+            "setTimeout.js",
+            "setInterval.js"
+        ],
+        "0.1.0": [
+            "every.js",
+            "after.js",
+            "clear.js",
+            "setTimeout.js",
+            "setInterval.js"
+        ]
+    } 
 }

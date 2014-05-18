@@ -1,9 +1,12 @@
 {
-  "name": "famous/transitions/SnapTransition",
-  "repository": "git@github.com:Famous/transitions.git",
-  "versions": {
-      "0.1.0": [
-          "example.js"
-      ]
-  } 
+    "name": "famous/transitions/SnapTransition",
+    "repository": "git@github.com:Famous/transitions.git",
+    "versions": {
+        "0.2.0": [
+            "example.js"
+        ],
+        "0.1.0": [
+            "example.js"
+        ]
+    } 
 }

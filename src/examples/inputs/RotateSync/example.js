@@ -45,10 +45,9 @@ define(function(require, exports, module) {
     var end = 0;
     var direction = "";
     var angle = 0;
+    var delta = 0;
 
-    var rotateSync = new RotateSync(function() {
-        return [0, 0];
-    });
+    var rotateSync = new RotateSync();
 
     Engine.pipe(rotateSync);
 
@@ -57,7 +56,8 @@ define(function(require, exports, module) {
         "<div>End Count: " + end + "</div>" +
         "<div>Update Count: " + update + "</div>" +
         "<div>Direction: " + direction + "</div>" +
-        "<div>Angle: " + angle + "</div>";
+        "<div>Delta: " + delta.toFixed(3) + "</div>" +
+        "<div>Angle: " + angle.toFixed(3) + "</div>";
     };
 
     var surface = new Surface({
@@ -76,6 +76,7 @@ define(function(require, exports, module) {
         update++;
         direction = data.velocity > 0 ? "Clockwise" : "Counter-Clockwise";
         angle = data.angle;
+        delta = data.delta;
         surface.setContent(contentTemplate());
     });
 

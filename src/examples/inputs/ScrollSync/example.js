@@ -43,17 +43,19 @@ define(function(require, exports, module) {
     var start = 0;
     var update = 0;
     var end = 0;
+    var delta = [0,0];
+    var position = [0,0];
 
-    var scrollSync = new ScrollSync(function() {
-        return [0,0];
-    });
+    var scrollSync = new ScrollSync();
 
     Engine.pipe(scrollSync);
 
     var contentTemplate = function() {
         return "<div>Start Count: " + start + "</div>" +
         "<div>End Count: " + end + "</div>" +
-        "<div>Update Count: " + update + "</div>";
+        "<div>Update Count: " + update + "</div>" +
+        "<div>Delta: " + delta + "</div>" +
+        "<div>Position: " + position + "</div>";
     };
 
     var surface = new Surface({
@@ -69,6 +71,8 @@ define(function(require, exports, module) {
 
     scrollSync.on("update", function(data) {
         update++;
+        position = data.position;
+        delta = data.delta;
         surface.setContent(contentTemplate());
     });
 
