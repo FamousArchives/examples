@@ -1,16 +1,21 @@
 {
     "name": "famous/core/Context",
     "repository": "git@github.com:Famous/core.git",
-    "versions": {
-        "0.2.0": [
-            "example.js",
-            "context-in-existing-element.js",
-            "setting-perspective.js"
-        ],
-        "0.1.0": [
-            "example.js",
-            "context-in-existing-element.js",
-            "setting-perspective.js"
-        ]
-    } 
+    "examples": [
+        {
+            "name": "example",
+            "file": "./example.js",
+            "description": ""
+        },
+        {
+            "name": "context-in-existing-element",
+            "file": "./context-in-existing-element.js",
+            "description": ""
+        },
+        {
+            "name": "setting-perspective",
+            "file": "./setting-perspective.js",
+            "description": ""
+        },
+    ]
 }

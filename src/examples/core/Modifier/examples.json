@@ -1,22 +1,36 @@
 {
     "name": "famous/core/Modifier",
     "repository": "git@github.com:Famous/core.git",
-    "versions": {
-        "0.2.0": [
-            "example.js",
-            "chaining.js",
-            "branching.js",
-            "size.js",
-            "origin.js",
-            "opacity.js"
-        ],
-        "0.1.0": [
-            "example.js",
-            "chaining.js",
-            "branching.js",
-            "size.js",
-            "origin.js",
-            "opacity.js"
-        ]
-    } 
+    "examples": [
+        {
+            "name": "example",
+            "file": "./example.js",
+            "description": ""
+        },
+        {
+            "name": "branching",
+            "file": "./branching.js",
+            "description": ""
+        },
+        {
+            "name": "chaining",
+            "file": "./chaining.js",
+            "description": ""
+        },
+        {
+            "name": "size",
+            "file": "./size.js",
+            "description": ""
+        },
+        {
+            "name": "origin",
+            "file": "./origin.js",
+            "description": ""
+        },
+        {
+            "name": "opacity",
+            "file": "./opacity.js",
+            "description": ""
+        }
+    ]
 }

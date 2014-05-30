@@ -1,12 +1,21 @@
 {
     "name": "famous/inputs/TouchSync",
     "repository": "git@github.com:Famous/inputs.git",
-    "versions": {
-        "0.2.0": [
-            "example.js"
-        ],
-        "0.1.0": [
-            "example.js"
-        ]
-    } 
+    "examples": [
+        {
+            "name": "example",
+            "file": "./example.js",
+            "description": ""
+        },
+        {
+            "name": "accumulator",
+            "file": "./accumulator.js",
+            "description": ""
+        },
+        {
+            "name": "single-dimensional",
+            "file": "./single-dimensional.js",
+            "description": ""
+        }
+    ]
 }

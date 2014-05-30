@@ -1,14 +1,17 @@
 {
     "name": "famous/core/Surface",
     "repository": "git@github.com:Famous/core.git",
-    "versions": {
-        "0.2.0": [
-            "example.js",
-            "true-sizing.js"
-        ],
-        "0.1.0": [
-            "example.js",
-            "true-sizing.js"
-        ]
-    } 
+    "examples": [
+        {
+            "name": "example",
+            "file": "./example.js",
+            "description": ""
+        },
+        {
+            "name": "true-sizing",
+            "file": "./true-sizing.js",
+            "description": ""
+        }
+    ]
+
 }

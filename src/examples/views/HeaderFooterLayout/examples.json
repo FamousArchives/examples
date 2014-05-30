@@ -1,14 +1,16 @@
 {
     "name": "famous/views/HeaderFooterLayout",
     "repository": "git@github.com:Famous/views.git",
-    "versions": {
-        "0.2.0": [
-            "example.js",
-            "with-sized-modifier.js"
-        ],
-        "0.1.0": [
-            "example.js",
-            "with-sized-modifier.js"
-        ]
-    } 
+    "examples": [
+        {
+            "name": "example",
+            "file": "./example.js",
+            "description": ""
+        },
+        {
+            "name": "with-sized-modifier",
+            "file": "./with-sized-modifier.js",
+            "description": ""
+        }
+    ]
 }

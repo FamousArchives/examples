@@ -1,9 +1,11 @@
 {
-  "name": "famous/views/Flipper",
-  "repository": "git@github.com:Famous/views.git",
-  "versions": {
-      "0.2.0": [
-          "example.js"
-      ]
-  } 
+    "name": "famous/views/Flipper",
+    "repository": "git@github.com:Famous/views.git",
+    "examples": [
+        {
+            "name": "example",
+            "file": "./example.js",
+            "description": ""
+        }
+    ]
 }

@@ -1,12 +1,11 @@
 {
     "name": "famous/modifiers/Draggable",
     "repository": "git@github.com:Famous/modifiers.git",
-    "versions": {
-        "0.2.0": [
-            "example.js"
-        ],
-        "0.1.0": [
-            "example.js"
-        ]
-    } 
+    "examples": [
+        {
+            "name": "example",
+            "file": "./example.js",
+            "description": ""
+        }
+    ]
 }
