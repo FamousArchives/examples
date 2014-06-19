@@ -28,7 +28,7 @@
  * -------------------
  *
  * RenderController is a dynamic view that can show or hide
- * different renerables with transitions.
+ * different renderables with transitions.
  *
  * In this example, we iterate through a collection of 10
  * surfaces on click events.
