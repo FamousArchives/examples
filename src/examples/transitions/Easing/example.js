@@ -72,7 +72,7 @@ define(function(require, exports, module) {
     //Create a scroll view to let the user play with the different easing curves available.
     var curves = [];
     for(var curve in Easing){
-        var surface = new Surface({
+        surface = new Surface({
             size:[200,40],
             content: "<h3>" + curve + "</h3>",
             properties: {color:"#3cf"}
