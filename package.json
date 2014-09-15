@@ -1,23 +1,39 @@
 {
-  "name": "parseExamples",
-  "version": "0.0.0",
-  "description": "famous examples parser",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "famous-example",
+  "version": "0.3.0-alpha",
+  "description": "famous examples",
+  "browser": "src/index.js",
+  "main": "plugin.js",
+  "browserify": {
+    "transform": [
+      "cssify",
+      "deamdify"
+    ]
   },
-  "author": "",
+  "scripts": {
+    "start": "npm run build && node server.js",
+    "start-dev": "npm run watch & node server.js",
+    "test": "npm run lint -s && npm run build",
+    "build": "browserify src/index.js | uglifyjs > public/bundle.js",
+    "watch": "watchify src/index.js -o public/bundle.js --debug --verbose",
+    "lint-eslint": "eslint src/",
+    "lint-jscs": "jscs src/",
+    "lint": "npm run lint-eslint && npm run lint-jscs"
+  },
+  "devDependencies": {
+    "eslint": "^0.7.4",
+    "jscs": "^1.5.8"
+  },
+  "author": "TheAlphaNerd",
+  "license": "ISC",
   "dependencies": {
-    "findit": "~1.1.1",
-    "graceful-fs": "~2.0.3",
-    "esprima": "~1.0.4",
-    "doctrine": "~0.5.0",
-    "escodegen": "~1.3.0",
-    "firebase": "~1.0.11",
-    "async": "~0.2.10",
-    "readdirp": "~0.3.3",
-    "wrench": "~1.5.8",
-    "underscore": "~1.6.0",
-    "aws-sdk": "~2.0.0-rc.17"
+    "browserify": "^5.9.1",
+    "cssify": "^0.6.0",
+    "deamdify": "^0.1.1",
+    "famous": "famous/famous#v0.3.0-alpha",
+    "famous-polyfills": "^0.2.2",
+    "hapi": "^6.5.1",
+    "uglify-js": "^2.4.15",
+    "watchify": "^1.0.1"
   }
 }

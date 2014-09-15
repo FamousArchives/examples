@@ -1,5 +1,1 @@
-node_modules/
-build*
-build0*
-localS3*
-.DS_Store
+public/*bundle.*
