@@ -56,7 +56,8 @@ define(function(require, exports, module) {
     });
 
     var modifier = new Modifier({
-        origin: [.5,.5],
+        align: [.5, .5],
+        origin: [.5, .5],
         transform: Transform.translate(0,-240,0)
     });
 

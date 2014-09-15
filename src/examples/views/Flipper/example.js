@@ -44,7 +44,10 @@ define(function(require, exports, module) {
     flipper.setFront(frontSurface);
     flipper.setBack(backSurface);
 
-    var centerModifier = new Modifier({origin : [.5,.5]});
+    var centerModifier = new Modifier({
+        align : [.5,.5],
+        origin : [.5,.5]
+    });
 
     mainContext.add(centerModifier).add(flipper);
 

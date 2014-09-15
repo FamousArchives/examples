@@ -41,6 +41,8 @@ define(function(require, exports, module) {
     var Engine       = require('famous/core/Engine');
     var EventArbiter = require('famous/events/EventArbiter');
 
+    Engine.createContext();
+
     var MODES = {
         A: 'A',
         B: 'B'

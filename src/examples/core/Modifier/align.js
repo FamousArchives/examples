@@ -50,29 +50,36 @@ define(function(require, exports, module) {
 
     var mainContext = Engine.createContext();
 
-    var origins = [
+    var aligns = [
+        [.5, .5],
         [ 0,  0],
         [.5,  0],
         [ 1,  0],
         [ 0, .5],
-        [.5, .5],
         [ 1, .5],
         [ 0,  1],
         [.5,  1],
         [ 1,  1]
     ];
 
-    var originKey = 0;
+    var alignKey = 0;
 
     var modifier = new Modifier({
-        origin: function() {
-            return origins[originKey];
+        align: function() {
+            return aligns[alignKey];
+        }
+    });
+
+    var border = new Surface({
+        size: [undefined, undefined],
+        properties: {
+            border: '2px solid black'
         }
     });
 
     var surface = new Surface({
         size: [100, 100],
-        content: '[0, 0]',
+        content: '[.5, .5]',
         classes: ['red-bg'],
         properties: {
             lineHeight: '100px',
@@ -80,13 +87,17 @@ define(function(require, exports, module) {
         }
     });
 
-    var node = mainContext.add(new Modifier({align: [.5, .5]}));
+    var node = mainContext.add(new Modifier({
+        align: [.5, .5],
+        origin: [.5, .5],
+        size: [300, 300]
+    }));
 
-    node.add(new Modifier({origin: [.5, .5]})).add(new Surface({size: [4, 4], properties: {backgroundColor: 'black'}}));
+    node.add(border);
     node.add(modifier).add(surface);
 
     Engine.on('click', function() {
-        originKey = ++originKey % origins.length;
-        surface.setContent(origins[originKey]);
+        alignKey = ++alignKey % aligns.length;
+        surface.setContent(aligns[alignKey]);
     })
 });

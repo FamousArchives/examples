@@ -54,7 +54,10 @@ define(function(require, exports, module) {
         }
     });
 
-    mainContext.add(new Modifier({origin :[.5, .5]})).add(surface);
+    mainContext.add(new Modifier({
+        align  :[.5, .5],
+        origin :[.5, .5]
+    })).add(surface);
 
     Timer.after(function() {
         surface.setContent('this function was run after 200 Engine ticks')

@@ -77,7 +77,8 @@ define(function(require, exports, module) {
     }
 
     var containerModifier = new Modifier({
-        origin: [0.5, 0.5]
+        origin: [0.5, 0.5],
+        align: [0.5, 0.5]
     });
 
     mainContext.add(containerModifier).add(myLayout);

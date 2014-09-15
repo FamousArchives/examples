@@ -80,5 +80,10 @@ define(function(require, exports, module) {
         }
     }));
 
-    mainContext.add(new Modifier({transform: Transform.rotateZ(.7),size: [300, 300], origin: [.5, .5]})).add(layout);
+    mainContext.add(new Modifier({
+        transform: Transform.rotateZ(.7),
+        size: [300, 300],
+        origin: [.5, .5],
+        align: [.5, .5]
+    })).add(layout);
 });

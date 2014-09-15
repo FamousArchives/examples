@@ -54,7 +54,8 @@ define(function(require, exports, module) {
     });
 
     var modifier = new Modifier({
-        origin: [.5,.5],
+        align: [.5, .5],
+        origin: [.5, .5],
         transform: Transform.translate(100,-240,0)
     });
 
@@ -75,7 +76,10 @@ define(function(require, exports, module) {
         var surface = new Surface({
             size:[200,40],
             content: "<h3>" + curve + "</h3>",
-            properties: {color:"#3cf"}
+            properties: {
+                color:"#3cf",
+                cursor: 'pointer'
+            }
         });
 
         curves.push(surface);
@@ -109,5 +113,5 @@ define(function(require, exports, module) {
     scrollContainer.add(new Modifier({transform: Transform.translate(20,0,0)})).add(scrollView);
     
     //finally add the scroll container to the context
-    mainContext.add(new Modifier({origin: [.5,.5], transform: Transform.translate(-240,0,0)})).add(scrollContainer);
+    mainContext.add(new Modifier({align: [.5, .5], origin: [.5, .5], transform: Transform.translate(-240,0,0)})).add(scrollContainer);
 });

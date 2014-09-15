@@ -35,9 +35,9 @@
  *
  */
 define(function(require, exports, module) {
-    var Engine  = require("famous/core/Engine");
-    var Surface = require("famous/core/Surface");
-    var Modifier = require("famous/core/Modifier");
+    var Engine    = require("famous/core/Engine");
+    var Surface   = require("famous/core/Surface");
+    var Modifier  = require("famous/core/Modifier");
     var Transform = require("famous/core/Transform");
 
     var mainContext = Engine.createContext();
@@ -45,17 +45,18 @@ define(function(require, exports, module) {
     mainContext.setPerspective(200);
 
     var surface = new Surface({
-        size: [200, 200],
-        content: "Hello World",
-        classes: ["red-bg"],
-        properties: {
-            lineHeight: "200px",
-            textAlign: "center"
+        size       : [200, 200],
+        content    : "Hello World",
+        classes    : ["red-bg"],
+        properties : {
+            lineHeight : "200px",
+            textAlign  : "center"
         }
     });
 
     var rotateX = new Modifier({
-        origin : [.5,.5],
+        align     : [.5, .5],
+        origin    : [.5, .5],
         transform : Transform.rotateX(Math.PI/4)
     });
 

@@ -51,7 +51,10 @@ define(function(require, exports, module) {
         }
     });
 
-    mainContext.add(new Modifier({origin :[.5, .5]})).add(surface);
+    mainContext.add(new Modifier({
+        align  : [.5, .5],
+        origin : [.5, .5]
+    })).add(surface);
 
     Engine.on('keypress', function(event) {
         if (event.charCode >= KeyCodes['0'] && event.charCode <= KeyCodes['9']) {

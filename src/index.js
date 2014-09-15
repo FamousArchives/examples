@@ -16,6 +16,7 @@ define(function(require, exports, module) {
   // require('./examples/core/Modifier/example');
   // require('./examples/core/Modifier/opacity');
   // require('./examples/core/Modifier/origin');
+  // require('./examples/core/Modifier/align');
   // require('./examples/core/Modifier/size');
   // require('./examples/core/Scene/example');
   // require('./examples/core/Surface/example');
@@ -26,11 +27,6 @@ define(function(require, exports, module) {
   // require('./examples/events/EventFilter/pipe-filter');
   // require('./examples/events/EventFilter/subscribe-filter');
   // require('./examples/events/EventMapper/example');
-  // require('./examples/views/HeaderFooterLayout/example');
-  // require('./examples/views/HeaderFooterLayout/with-sized-modifier');
-  // require('./examples/views/RenderController/example');
-  // require('./examples/views/Scrollview/example');
-  // require('./examples/views/SequentialLayout/example');
   // require('./examples/inputs/GenericSync/example');
   // require('./examples/inputs/GenericSync/accumulator');
   // require('./examples/inputs/MouseSync/example');
@@ -75,6 +71,6 @@ define(function(require, exports, module) {
   // require('./examples/views/HeaderFooterLayout/example');
   // require('./examples/views/HeaderFooterLayout/with-sized-modifier');
   // require('./examples/views/RenderController/example');
-  require('./examples/views/Scrollview/example');
-  // require('./examples/views/SequentialLayout/example');
+  // require('./examples/views/Scrollview/example');
+  require('./examples/views/SequentialLayout/example');
 });

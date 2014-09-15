@@ -69,7 +69,7 @@ define(function(require, exports, module) {
 
     draggable.subscribe(surface);
 
-    var node = mainContext.add(new Modifier({origin:[0.5,0.5]}));
+    var node = mainContext.add(new Modifier({align: [.5, .5], origin:[0.5,0.5]}));
     node.add(grid);
     node.add(draggable).add(surface);
 });

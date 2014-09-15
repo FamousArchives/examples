@@ -46,7 +46,10 @@ define(function(require, exports, module) {
         size: [200, 200]
     });
 
-    image.setContent("content/famous_symbol.svg");
+    image.setContent("http://code.famo.us/assets/famous.jpg");
 
-    mainCtx.add(new Modifier({origin: [.5, .5]})).add(image);
+    mainCtx.add(new Modifier({
+        align: [.5, .5],
+        origin: [.5, .5]
+    })).add(image);
 });

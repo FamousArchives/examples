@@ -53,11 +53,6 @@ define(function(require, exports, module) {
         size: [200, 200]
     });
 
-    var rotateMod = new Modifier({
-        origin : [.5,.5],
-        transform : Transform.rotateZ(Math.PI/4)
-    });
-
     var surface = new Surface({
         size: [undefined, undefined],
         classes: ["grey-bg"],
@@ -67,5 +62,5 @@ define(function(require, exports, module) {
         }
     });
 
-    mainContext.add(sizeMod).add(rotateMod).add(surface);
+    mainContext.add(sizeMod).add(surface);
 });

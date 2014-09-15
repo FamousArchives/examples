@@ -43,6 +43,7 @@ define(function(require, exports, module) {
 
     var modifierOne = new Modifier({
         transform: Transform.rotateZ(0.7),
+        align: [0.5, 0.5],
         origin: [0.5, 0.5]
     });
 
@@ -70,7 +71,8 @@ define(function(require, exports, module) {
         }
     });
 
-    var node = mainContext.add(modifierOne)
+    var node = mainContext.add(modifierOne);
+
     node.add(surfaceOne);
     node.add(modifierTwo).add(surfaceTwo);    
 });

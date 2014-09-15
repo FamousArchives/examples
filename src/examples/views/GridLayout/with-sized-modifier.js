@@ -61,5 +61,9 @@ define(function(require, exports, module) {
         }));
     }
 
-    mainContext.add(new Modifier({size: [400, 200], origin: [.5, .5]})).add(grid);
+    mainContext.add(new Modifier({
+        size: [400, 200],
+        origin: [.5, .5],
+        align: [.5, .5]
+    })).add(grid);
 });

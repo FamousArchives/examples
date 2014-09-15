@@ -47,6 +47,7 @@ define(function(require, exports, module) {
     var modifierChain = new ModifierChain();
 
     var modifierOne = new Modifier({
+        align: [.5, .5],
         origin: [0.5, 0.5]
     });
 
@@ -55,8 +56,8 @@ define(function(require, exports, module) {
     });
     
     var surface = new Surface({
-        size: [200, true],
-        content: "Click me to remove the center origin modifier",
+        size: [200, 200],
+        content: "Click me to remove the center align/origin modifier",
         classes: ["red-bg"],
         properties: {
             textAlign: "center",

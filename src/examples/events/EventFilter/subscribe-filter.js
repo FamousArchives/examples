@@ -42,6 +42,8 @@ define(function(require, exports, module) {
     var EventHandler = require('famous/core/EventHandler');
     var EventFilter  = require('famous/events/EventFilter');
 
+    Engine.createContext();
+
     var eventHandlerA = new EventHandler();
     var eventHandlerB = new EventHandler();
    

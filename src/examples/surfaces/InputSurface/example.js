@@ -51,5 +51,8 @@ define(function(require, exports, module) {
         type: 'text'
     });
 
-    mainCtx.add(new Modifier({origin: [.5, .5]})).add(input);
+    mainCtx.add(new Modifier({
+        align: [.5, .5],
+        origin: [.5, .5]
+    })).add(input);
 });

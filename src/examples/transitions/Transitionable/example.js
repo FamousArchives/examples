@@ -61,7 +61,8 @@ define(function(require, exports, module) {
 
     //this controls the position of surface
     var modifier = new Modifier({
-        origin: [.5,.5]
+        align: [.5, .5],
+        origin: [.5, .5]
     });
 
     modifier.transformFrom(function() {

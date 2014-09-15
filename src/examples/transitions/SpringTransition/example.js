@@ -34,10 +34,10 @@
  * In this example, there is a surface attached to a SpringTransition.
  */
 define(function(require, exports, module) {
-    var Engine              = require("famous/core/Engine");
+    var Engine           = require("famous/core/Engine");
     var Surface          = require("famous/core/Surface");
     var Modifier         = require("famous/core/Modifier");
-    var Transform          = require("famous/core/Transform");
+    var Transform        = require("famous/core/Transform");
     var Transitionable   = require("famous/transitions/Transitionable");
     var SpringTransition = require("famous/transitions/SpringTransition");
 
@@ -55,7 +55,8 @@ define(function(require, exports, module) {
     });
 
     var modifier = new Modifier({
-        origin: [.5,.5],
+        align: [.5, .5],
+        origin: [.5, .5],
         transform: Transform.translate(0,-240,0)
     });
 

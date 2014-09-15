@@ -63,5 +63,8 @@ define(function(require, exports, module) {
         this.show(surfaces[next]);
     }.bind(renderController));
 
-    mainContext.add(new Modifier({origin: [.5, .5]})).add(renderController);
+    mainContext.add(new Modifier({
+        origin: [.5, .5],
+        align: [.5, .5]
+    })).add(renderController);
 });

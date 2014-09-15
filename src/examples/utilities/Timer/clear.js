@@ -50,7 +50,10 @@ define(function(require, exports, module) {
             textAlign: 'center'
         }
     });
-    mainContext.add(new Modifier({origin :[.5, .5]})).add(surface);
+    mainContext.add(new Modifier({
+        align  :[.5, .5],
+        origin :[.5, .5]
+    })).add(surface);
 
     var fn = function() {
         surface.setContent('this function has run ' + ++counter + ' time(s) and will stop after 1 second')

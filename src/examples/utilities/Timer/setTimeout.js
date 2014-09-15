@@ -49,7 +49,11 @@ define(function(require, exports, module) {
             textAlign: 'center'
         }
     });
-    mainContext.add(new Modifier({origin :[.5, .5]})).add(surface);
+    
+    mainContext.add(new Modifier({
+        origin :[.5, .5],
+        align: [.5, .5]
+    })).add(surface);
 
     Timer.setTimeout(function() {
         surface.setContent('this function was run after 1000 milliseconds')

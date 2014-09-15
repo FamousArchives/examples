@@ -55,7 +55,8 @@ define(function(require, exports, module) {
     var transitionableTransform = new TransitionableTransform();
     
     var modifier = new Modifier({
-        origin: [.5,.5],
+        align: [.5, .5],
+        origin: [.5, .5],
         transform: transitionableTransform
     });
 

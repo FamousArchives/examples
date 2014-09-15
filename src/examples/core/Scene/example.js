@@ -57,6 +57,7 @@ define(function(require, exports, module) {
                     {scale: [0.5, 0.5, 1]}
                 ],
                 origin: [0.5, 0.5],
+                align: [0.5, 0.5],
                 target: {id: "bar"}
             }
         ]

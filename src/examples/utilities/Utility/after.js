@@ -38,6 +38,8 @@ define(function(require, exports, module) {
     var Engine  = require('famous/core/Engine');
     var Utility = require('famous/utilities/Utility');
 
+    Engine.createContext();
+
     var fn = Utility.after(5, function() {
         alert('Was called on 5th try');
     });

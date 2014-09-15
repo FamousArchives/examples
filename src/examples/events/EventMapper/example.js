@@ -40,6 +40,8 @@ define(function(require, exports, module) {
     var EventHandler = require('famous/core/EventHandler');
     var EventMapper  = require('famous/events/EventMapper');
    
+    Engine.createContext();
+   
     var eventHandlerA = new EventHandler();
     var eventHandlerB = new EventHandler();
     var eventHandlerC = new EventHandler();

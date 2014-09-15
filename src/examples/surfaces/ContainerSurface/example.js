@@ -82,5 +82,8 @@ define(function(require, exports, module) {
     scrollview.sequenceFrom(surfaces);
     container.add(scrollview);
 
-    mainContext.add(new Modifier({origin: [.5, .5]})).add(container);
+    mainContext.add(new Modifier({
+        align: [.5, .5],
+        origin: [.5, .5]
+    })).add(container);
 });
