@@ -1,0 +1,33 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'run', 'watch' ]
+2 info using npm@2.0.0
+3 info using node@v0.10.28
+4 verbose run-script [ 'prewatch', 'watch', 'postwatch' ]
+5 info prewatch famous-example@0.3.0-alpha
+6 info watch famous-example@0.3.0-alpha
+7 verbose unsafe-perm in lifecycle true
+8 info famous-example@0.3.0-alpha Failed to exec watch script
+9 verbose stack Error: famous-example@0.3.0-alpha watch: `watchify src/index.js -o public/bundle.js --debug --verbose`
+9 verbose stack Exit status 143
+9 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:212:16)
+9 verbose stack     at ChildProcess.EventEmitter.emit (events.js:98:17)
+9 verbose stack     at maybeClose (child_process.js:753:16)
+9 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:820:5)
+10 verbose pkgid famous-example@0.3.0-alpha
+11 verbose cwd /Users/joseph/code/famous/famous-examples
+12 error Darwin 13.3.0
+13 error argv "node" "/usr/local/bin/npm" "run" "watch"
+14 error node v0.10.28
+15 error npm  v2.0.0
+16 error code ELIFECYCLE
+17 error famous-example@0.3.0-alpha watch: `watchify src/index.js -o public/bundle.js --debug --verbose`
+17 error Exit status 143
+18 error Failed at the famous-example@0.3.0-alpha watch script.
+18 error This is most likely a problem with the famous-example package,
+18 error not with npm itself.
+18 error Tell the author that this fails on your system:
+18 error     watchify src/index.js -o public/bundle.js --debug --verbose
+18 error You can get their info via:
+18 error     npm owner ls famous-example
+18 error There is likely additional logging output above.
+19 verbose exit [ 1, true ]

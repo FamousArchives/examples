@@ -30,7 +30,7 @@
     "browserify": "^5.9.1",
     "cssify": "^0.6.0",
     "deamdify": "^0.1.1",
-    "famous": "famous/famous#v0.3.0-alpha",
+    "famous": "redwoodfavorite/famous#native-scrollview",
     "famous-polyfills": "^0.2.2",
     "hapi": "^6.5.1",
     "uglify-js": "^2.4.15",
