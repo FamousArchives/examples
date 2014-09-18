@@ -3,6 +3,7 @@ define(function(require, exports, module) {
     var Modifier = require('famous/core/Modifier');
     var Transform = require('famous/core/Transform');
     var NativeScrollview = require('famous/views/NativeScrollview');
+    var NativeScrollview2 = require('famous/views/NativeScrollview2');
     var Surface = require('famous/core/Surface');
 
     Engine.setOptions({
@@ -24,7 +25,7 @@ define(function(require, exports, module) {
     // CREATE NATIVE SCROLLVIEW
     //////////////////////////////////////////////////////////////////////
 
-    var scroller = new NativeScrollview({
+    var scroller = new NativeScrollview2({
         size: [500, 500],
         direction: 'y'
     });
@@ -42,6 +43,8 @@ define(function(require, exports, module) {
             }
         }));
     }
+
+    scroller.setVScrollPosition(100, {duration: 1000});
 
     //////////////////////////////////////////////////////////////////////
     // SEQUENCEFROM RENDERABLES
