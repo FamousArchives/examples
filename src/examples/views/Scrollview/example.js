@@ -34,6 +34,12 @@
  *
  * In this example, we have a Scrollview that sequences over
  * a collection of surfaces that vary in color
+ * 
+ * Side Note : If you are adding an array of childViews to a scrollView
+ * you can pipe each childView to scrollView.
+ * At the same time pipe surfaces in childView to
+ * `_eventOutput` of childView to make the connection complete.
+ * 
  */
 define(function(require, exports, module) {
     var Engine     = require("famous/core/Engine");
